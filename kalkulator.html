@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator Gizi</title>
+    <link rel="icon" href="A_2D_digital_illustration_features_a_flat_design_n.png" type="image/png">
+    <link rel="stylesheet" href="style.css">
+    <!-- Link to Google Fonts for Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar {
+            background-color: #345e37;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 40px;
+            margin-right: 10px; 
+            vertical-align: middle;
+        }
+
+        .logo span {
+            color: #ffffff;
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .navbar-button {
+            background-color: #7aad8f;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .navbar-button:hover {
+            background-color: #5d9b77;
+        }
+
+        .container {
+            margin: 20px auto;
+            padding: 20px;
+            max-width: 1200px;
+        }
+
+        .flex-container {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .card {
+            border: 1px solid #ffffff;
+            padding: 20px;
+            border-radius: 30px;
+            background-color: #f9f9f9;
+            flex: 1;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+
+        table td {
+            border: 1px solid #999;
+            padding: 5px;
+        }
+
+        h2, h3 {
+            color: #345e37;
+        }
+
+        .input-group {
+            margin-bottom: 15px;
+        }
+
+        .input-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .input-group input, .input-group select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            background-color: #345e37;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #2b4d2e;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <img src="image/1.jpeg" alt="Logo">
+                <span>Catchy </span>
+            </div>
+            <div class="nav-links">
+                <a href="index.html" class="nav-item">Beranda</a>
+                <a href="kalkulator.html" class="nav-item">Kalkulator</a>
+                <a href="anggota.html" class="nav-item">Anggota</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Kalkulator -->
+    <div id="kalkulator" class="container">
+        <h2>Kalkulator Gizi</h2>
+        <div class="flex-container">
+            <div class="card">
+                <form id="nutritionForm">
+                    <div class="input-group">
+                        <label for="birthDate">Tanggal Lahir:</label>
+                        <input type="date" id="birthDate" name="birthDate">
+                    </div>
+                    <div class="input-group">
+                        <label for="measurementDate">Tanggal Pengukuran:</label>
+                        <input type="date" id="measurementDate" name="measurementDate">
+                    </div>
+                    <div class="input-group">
+                        <label for="gender">Jenis Kelamin:</label>
+                        <select id="gender" name="gender">
+                            <option value="">Pilih Jenis Kelamin</option>
+                            <option value="male">Laki-laki</option>
+                            <option value="female">Perempuan</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label for="weight">Berat Badan (kg):</label>
+                        <input type="number" id="weight" name="weight" placeholder="Berat Badan (kg)">
+                    </div>
+                    <div class="input-group">
+                        <label for="height">Tinggi Badan (cm):</label>
+                        <input type="number" id="height" name="height" placeholder="Tinggi Badan (cm)">
+                    </div>
+                    <div class="input-group">
+                        <label for="activityFactor">Faktor Aktivitas:</label>
+                        <input type="number" id="activityFactor" name="activityFactor" placeholder="Faktor Aktivitas (contoh: 1.2)">
+                    </div>
+                    <div class="input-group">
+                        <label for="stressFactor">Faktor Stres:</label>
+                        <input type="number" id="stressFactor" name="stressFactor" placeholder="Faktor Stres (contoh: 1.3)">
+                    </div>
+                    <button type="button" onclick="calculateResults()">Hitung</button>
+                </form>
+            </div>
+
+            <div class="card">
+                <h3>Faktor Aktivitas</h3>
+                <table>
+                    <tr><td>Istirahat di Tempat Tidur</td><td>1,1</td></tr>
+                    <tr><td>Di Tempat Tidur, tetapi dapat bergerak terbatas</td><td>1,2</td></tr>
+                    <tr><td>Bangun dari Tempat Tidur</td><td>1,3</td></tr>
+                    <tr><td>Aktivitas Sedang</td><td>1,4 - 1,5</td></tr>
+                    <tr><td>Aktivitas Berat</td><td>1,75</td></tr>
+                </table>
+
+                <h3 style="margin-top: 20px;">Faktor Stres</h3>
+                <table>
+                    <tr><td>Tidak ada stres, status gizi normal</td><td>1,0 - 1,1</td></tr>
+                    <tr><td>Stres ringan: peradangan, demam, operasi ringan</td><td>1,2 - 1,4</td></tr>
+                    <tr><td>Stres sedang: sepsis, luka bakar, penyakit hati</td><td>1,4 - 1,5</td></tr>
+                    <tr><td>Stres berat: HIV, operasi besar, TB Paru</td><td>1,5 - 1,6</td></tr>
+                    <tr><td>Stres sangat berat: cedera kepala berat</td><td>1,7</td></tr>
+                </table>
+            </div>
+        </div>
+
+        <div class="card" id="resultsCard" style="display: none; margin-top: 20px;">
+            <h2>Hasil Perhitungan</h2>
+            <div id="results"></div>
+        </div>
+    </div>
+    <script>
+        function calculateResults() {
+            // Show the popup message
+            alert("Mari Kita Lihat Hasilnya, Klik OK");
+
+            const form = document.getElementById('nutritionForm');
+            const formData = new FormData(form);
+
+            const birthDate = new Date(formData.get('birthDate'));
+            const measurementDate = new Date(formData.get('measurementDate'));
+            const age = measurementDate.getFullYear() - birthDate.getFullYear();
+
+            const weight = parseFloat(formData.get('weight'));
+            const height = parseFloat(formData.get('height')) / 100;
+            const activityFactor = parseFloat(formData.get('activityFactor'));
+            const stressFactor = parseFloat(formData.get('stressFactor'));
+
+            const imt = weight / (height * height);
+            const imtCategory =
+                imt < 18.5 ? 'Underweight' :
+                imt < 24.9 ? 'Normal' :
+                imt < 29.9 ? 'Overweight' : 'Obesity';
+
+            const bbi = (height * 100 - 100) - (height * 100 - 100) * 10/100;
+
+            const gender = formData.get('gender');
+            const bmr =
+                gender === 'male'
+                    ? 88.362 + 13.397 * weight + 4.799 * height * 100 - 5.677 * age
+                    : 447.593 + 9.247 * weight + 3.098 * height * 100 - 4.330 * age;
+                    
+
+            const totalEnergy = bmr * activityFactor * stressFactor;
+
+            const protein = (0.15 * totalEnergy) / 4;
+            const carbs = (0.55 * totalEnergy) / 4;
+            const fats = (0.3 * totalEnergy) / 9;
+
+            const resultsCard = document.getElementById('resultsCard');
+            const resultsDiv = document.getElementById('results');
+            resultsDiv.innerHTML = ` 
+                <div style="margin-bottom: 10px; background-color: #eee; padding: 10px; border-radius: 8px;">
+                    <h3>Status Gizi</h3>
+                    <p><strong>IMT:</strong> ${imt.toFixed(2)} (${imtCategory})</p>
+                    <p><strong>BBI:</strong> ${bbi.toFixed(2)} kg</p>
+                </div>
+
+                <div style="margin-bottom: 10px; background-color: #fff3cd; padding: 10px; border-radius: 8px;">
+                    <h3>Kebutuhan Energi</h3>
+                    <p><strong>Energi (E):</strong> ${totalEnergy.toFixed(2)} kkal</p>
+                </div>
+
+                <div style="display: flex; flex-wrap: wrap; gap: 10px;">
+                    <div style="flex: 1; background-color: #d1ecf1; padding: 10px; border-radius: 8px;">
+                        <strong>Karbohidrat (KH):</strong> ${carbs.toFixed(2)} gram
+                    </div>
+                    <div style="flex: 1; background-color: #d4edda; padding: 10px; border-radius: 8px;">
+                        <strong>Protein (P):</strong> ${protein.toFixed(2)} gram
+                    </div>
+                    <div style="flex: 1; background-color: #f8d7da; padding: 10px; border-radius: 8px;">
+                        <strong>Lemak (L):</strong> ${fats.toFixed(2)} gram
+                    </div>
+                </div>
+            `;
+            resultsCard.style.display = 'block';
+            // Scroll to the results section
+            resultsCard.scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>
