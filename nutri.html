@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kalkulator Status Gizi</title>
     <style>
+        /* Reset and global styles */
         * {
             box-sizing: border-box;
             margin: 0;
@@ -12,17 +13,16 @@
         }
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #e0f7fa, #ffffff);
-            color: #333;
+            background: linear-gradient(135deg, #b2dfdb, #e8f5e9);
+            color: #37474f;
             min-height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
             padding: 30px 10px;
         }
-
         .container {
-            background: #fff;
+            background: #ffffff;
             padding: 40px;
             border-radius: 16px;
             box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
@@ -30,74 +30,26 @@
             max-width: 600px;
             text-align: center;
         }
-
         h1 {
             font-size: 28px;
             margin-bottom: 30px;
-            color: #00796b;
+            color: #004d40;
         }
-
         .button-group .btn {
-            background: #009688;
-            color: #fff;
+            background: #004d40;
+            color: #ffffff;
             border: none;
             padding: 14px 24px;
             margin: 10px;
             border-radius: 12px;
             font-size: 18px;
             cursor: pointer;
-            transition: background 0.3s ease;
+            transition: all 0.3s ease;
         }
-
         .btn:hover {
             background: #00796b;
-        }
-
-        .kalkulator {
-            display: none;
-            margin-top: 30px;
-            text-align: left;
-        }
-
-        .kalkulator h2 {
-            margin-bottom: 20px;
-            color: #00796b;
-        }
-
-        .input-group {
-            margin-bottom: 15px;
-        }
-
-        .input-group label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: 600;
-        }
-
-        .input-group input {
-            width: 100%;
-            padding: 10px;
-            border-radius: 8px;
-            border: 1px solid #ccc;
-        }
-
-        button.hitung {
-            margin-top: 20px;
-            background-color: #4caf50;
-            color: white;
-            padding: 12px 24px;
-            border: none;
-            border-radius: 12px;
-            font-size: 16px;
-            cursor: pointer;
-        }
-
-        #hasil-anak, #hasil-dewasa {
-            margin-top: 20px;
-            background-color: #e0f2f1;
-            padding: 20px;
-            border-radius: 12px;
-            font-size: 16px;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
         }
     </style>
 </head>
@@ -105,51 +57,9 @@
     <div class="container">
         <h1>Kalkulator Status Gizi</h1>
         <div class="button-group">
-            <button class="btn" onclick="showKalkulator('anak')">Anak</button>
-            <button class="btn" onclick="showKalkulator('dewasa')">Dewasa</button>
-        </div>
-        <div id="form-anak" class="kalkulator">
-            <h2>Kalkulator Gizi Anak</h2>
-            <div class="input-group">
-                <label for="bb-anak">Berat Badan (kg)</label>
-                <input type="number" id="bb-anak">
-            </div>
-            <div class="input-group">
-                <label for="tb-anak">Tinggi Badan (cm)</label>
-                <input type="number" id="tb-anak">
-            </div>
-            <button class="hitung" onclick="hitungAnak()">Hitung</button>
-            <div id="hasil-anak"></div>
+            <button class="btn" onclick="window.location.href='anak.html'">Anak</button>
+            <button class="btn" onclick="window.location.href='dewasa.html'">Dewasa</button>
         </div>
     </div>
-
-    <script>
-        function showKalkulator(jenis) {
-            if (jenis === 'dewasa') {
-                // Arahkan ke halaman kalkulator.html
-                window.location.href = 'kalkulator.html';
-            } else {
-                document.getElementById('form-anak').style.display = 'block';
-            }
-        }
-
-        function hitungAnak() {
-            const bb = parseFloat(document.getElementById('bb-anak').value);
-            const tb = parseFloat(document.getElementById('tb-anak').value) / 100;
-            const imt = bb / (tb * tb);
-            let status = '';
-
-            if (imt < 14) {
-                status = "Gizi Kurang";
-            } else if (imt < 17) {
-                status = "Gizi Normal";
-            } else {
-                status = "Gizi Lebih";
-            }
-
-            document.getElementById('hasil-anak').innerHTML =
-                `<p><strong>IMT:</strong> ${imt.toFixed(2)} <br> <strong>Status Gizi:</strong> ${status}</p>`;
-        }
-    </script>
 </body>
 </html>

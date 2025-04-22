@@ -155,7 +155,10 @@ button:hover {
     display: flex;
     gap: 20px;
 }
-
+.nav-item {
+    color: white;
+    background-color: #5d9b77;
+}
 .nav-item {
     text-decoration: none;
     font-size: 14px;
@@ -168,8 +171,7 @@ button:hover {
     color: #345e37;
 }
 
-.nav-item:hover {
-    background-color: #2b4d2e;
+.nav-item:hover {    background-color: #2b4d2e;
     color: #ffffff;
 }
 
