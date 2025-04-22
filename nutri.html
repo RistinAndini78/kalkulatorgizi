@@ -128,9 +128,10 @@
             if (jenis === 'dewasa') {
                 // Arahkan ke halaman kalkulator.html
                 window.location.href = 'kalkulator.html';
-            } else {
-                document.getElementById('form-anak').style.display = 'block';
-            }
+            } else if (jenis === 'anak') {
+        // Arahkan ke halaman anak.html
+        window.location.href = 'anak.html';
+    }
         }
 
         function hitungAnak() {
