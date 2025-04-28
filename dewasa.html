@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kalkulator Gizi</title>
+    <title>Kalkulator Gizi Dewasa</title>
     <link rel="icon" href="A_2D_digital_illustration_features_a_flat_design_n.png" type="image/png">
     <link rel="stylesheet" href="style.css">
     <!-- Link to Google Fonts for Poppins -->
@@ -39,10 +39,7 @@
             display: flex;
             gap: 15px;
         }
-        .nav-item {
-            color: white;
-            background-color: #5d9b77;
-        }
+
         .navbar-button {
             background-color: #7aad8f;
             color: white;
@@ -142,7 +139,7 @@
 
     <!-- Kalkulator -->
     <div id="kalkulator" class="container">
-        <h2>Kalkulator Gizi</h2>
+        <h2>Kalkulator Gizi Dewasa</h2>
         <div class="flex-container">
             <div class="card">
                 <form id="nutritionForm">
@@ -220,6 +217,8 @@
             const measurementDate = new Date(formData.get('measurementDate'));
             const age = measurementDate.getFullYear() - birthDate.getFullYear();
 
+            const currentDate = new Date();
+            const ageInYears = currentDate.getFullYear() - birthDate.getFullYear();
             const weight = parseFloat(formData.get('weight'));
             const height = parseFloat(formData.get('height')) / 100;
             const activityFactor = parseFloat(formData.get('activityFactor'));
@@ -250,6 +249,7 @@
             const resultsDiv = document.getElementById('results');
             resultsDiv.innerHTML = ` 
                 <div style="margin-bottom: 10px; background-color: #eee; padding: 10px; border-radius: 8px;">
+                    <p><strong>Usia:</strong> ${ageInYears} tahun</p>
                     <h3>Status Gizi</h3>
                     <p><strong>IMT:</strong> ${imt.toFixed(2)} (${imtCategory})</p>
                     <p><strong>BBI:</strong> ${bbi.toFixed(2)} kg</p>

@@ -108,20 +108,7 @@
             <button class="btn" onclick="showKalkulator('anak')">Anak</button>
             <button class="btn" onclick="showKalkulator('dewasa')">Dewasa</button>
         </div>
-        <div id="form-anak" class="kalkulator">
-            <h2>Kalkulator Gizi Anak</h2>
-            <div class="input-group">
-                <label for="bb-anak">Berat Badan (kg)</label>
-                <input type="number" id="bb-anak">
-            </div>
-            <div class="input-group">
-                <label for="tb-anak">Tinggi Badan (cm)</label>
-                <input type="number" id="tb-anak">
-            </div>
-            <button class="hitung" onclick="hitungAnak()">Hitung</button>
-            <div id="hasil-anak"></div>
-        </div>
-    </div>
+    
 
     <script>
         function showKalkulator(jenis) {
@@ -132,24 +119,6 @@
         // Arahkan ke halaman anak.html
         window.location.href = 'anak.html';
     }
-        }
-
-        function hitungAnak() {
-            const bb = parseFloat(document.getElementById('bb-anak').value);
-            const tb = parseFloat(document.getElementById('tb-anak').value) / 100;
-            const imt = bb / (tb * tb);
-            let status = '';
-
-            if (imt < 14) {
-                status = "Gizi Kurang";
-            } else if (imt < 17) {
-                status = "Gizi Normal";
-            } else {
-                status = "Gizi Lebih";
-            }
-
-            document.getElementById('hasil-anak').innerHTML =
-                `<p><strong>IMT:</strong> ${imt.toFixed(2)} <br> <strong>Status Gizi:</strong> ${status}</p>`;
         }
     </script>
 </body>
