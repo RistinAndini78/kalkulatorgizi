@@ -1,4 +1,3 @@
-
 /* Warna utama */
 :root {
     --primary-color: #8fbf9f;
@@ -25,6 +24,7 @@ body {
     padding: 5px;
     flex-grow: 1; /* Membuat container mengisi sisa ruang */
 }
+
 h2 {
     margin-top: 0; /* Hapus jarak margin atas */
     margin-bottom: 16px; /* Sesuaikan jarak bawah */
@@ -38,13 +38,13 @@ h2 {
     font-size: 32px;
     font-weight: 700;
 }
+
 .card {
     padding-top: 16px; /* Kurangi padding bagian atas */
     display: flex;
     flex-direction: column;
     justify-content: flex-start; /* Pastikan konten mulai dari atas */
 }
-
 
 .flex-container {
     display: flex;
@@ -179,6 +179,7 @@ button:hover {
     color: #ffffff;
     font-weight: bold;
 }
+
 .flex-container {
     display: flex;
     gap: 20px;
@@ -198,49 +199,48 @@ button:hover {
     margin: 0 auto; /* Centers the card within the flex container */
 }
 
-
 /* Styling untuk team-section */
 .team-section {
     padding: 50px 0;
     background-color: #f9f9f9;
-  }
-  
-  /* Grid layout untuk anggota tim */
-  .team-grid {
+}
+
+/* Grid layout untuk anggota tim */
+.team-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr); /* Tiga kolom default */
     gap: 20px;
     justify-items: center;
     align-items: stretch;
-  }
-  
-  @media screen and (max-width: 768px) {
+}
+
+@media screen and (max-width: 768px) {
     .team-grid {
-      grid-template-columns: repeat(2, 1fr); /* Dua kolom di layar kecil */
+        grid-template-columns: repeat(2, 1fr); /* Dua kolom di layar kecil */
     }
-  }
-  
-  @media screen and (max-width: 500px) {
+}
+
+@media screen and (max-width: 500px) {
     .team-grid {
-      grid-template-columns: 1fr; /* Satu kolom di layar sangat kecil */
+        grid-template-columns: 1fr; /* Satu kolom di layar sangat kecil */
     }
-  }
-  
-  /* Untuk memastikan dua kartu terakhir di tengah */
-  .team-grid > :nth-last-child(2):nth-child(odd),
-  .team-grid > :nth-last-child(1):nth-child(odd) {
+}
+
+/* Untuk memastikan dua kartu terakhir di tengah */
+.team-grid > :nth-last-child(2):nth-child(odd),
+.team-grid > :nth-last-child(1):nth-child(odd) {
     grid-column: 2 / span 2; /* Ambil dua kolom tengah */
-  }
-  
-  @media screen and (max-width: 768px) {
+}
+
+@media screen and (max-width: 768px) {
     .team-grid > :nth-last-child(2):nth-child(odd),
     .team-grid > :nth-last-child(1):nth-child(odd) {
-      grid-column: auto; /* Kembali ke default di layar kecil */
+        grid-column: auto; /* Kembali ke default di layar kecil */
     }
-  }
-  
-  /* Styling untuk setiap card anggota tim */
-  .team-card {
+}
+
+/* Styling untuk setiap card anggota tim */
+.team-card {
     background-color: #fff;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
@@ -253,69 +253,66 @@ button:hover {
     flex-direction: column;
     justify-content: space-between;
     padding: 20px;
-  }
-  
-  .team-card:hover {
+}
+
+.team-card:hover {
     transform: translateY(-10px); /* Efek hover */
-  }
-  
-  /* Gambar anggota tim */
-  .team-image {
+}
+
+/* Gambar anggota tim */
+.team-image {
     width: 100%;
     height: 250px;
     display: flex;
     justify-content: center;
     align-items: center;
     margin-bottom: 20px;
-  }
-  
-  .team-image img {
+}
+
+.team-image img {
     max-height: 310px;
     width: 85%;
     object-fit: cover;
     margin-top: 100px;
     margin-bottom: 10px;
     border-radius: 8px;
-  }
-  
-  /* Info anggota tim */
-  .team-info {
+}
+
+/* Info anggota tim */
+.team-info {
     text-align: center;
     margin-top: 50px;
-  }
-  
-  .team-info h3 {
+}
+
+.team-info h3 {
     font-size: 1.5rem;
     margin: 15px 0;
-  }
-  
-  .team-info .role {
+}
+
+.team-info .role {
     font-size: 1rem;
     color: #555;
     margin-bottom: 10px;
-  }
-  
-  .team-info .description {
+}
+
+.team-info .description {
     font-size: 1rem;
     color: #777;
     margin-bottom: 20px;
-  }
-  
-  /* Styling untuk sosial media */
-  .social-links a {
+}
+
+/* Styling untuk sosial media */
+.social-links a {
     margin: 0 10px;
     color: #333;
     font-size: 1.5rem;
     transition: color 0.3s;
-  }
-  
-  .social-links a:hover {
+}
+
+.social-links a:hover {
     color: #0077b5; /* LinkedIn color sebagai contoh */
-  }
-   
-  
-  
-  
+}
+
 /* Responsive: jika layar kecil, tampil 1 kolom */
 @media (max-width: 768px) {
     .card {
@@ -352,6 +349,7 @@ html, body {
     padding-bottom: 100px; /* Memberikan ruang di bagian bawah */
     flex-grow: 1;
 }
+
 @media (max-width: 768px) {
     .card {
         flex: 1 1 calc(50% - 20px); /* On smaller screens, show two cards per row */

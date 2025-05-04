@@ -9,7 +9,11 @@
       content="Kenali tim di balik Kalkulator Gizi yang membantu Anda mencapai kesehatan optimal."
     />
     <link rel="icon" href="image/1.jpeg" type="image/jpeg" />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style.css">
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
@@ -19,57 +23,158 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
     />
     <style>
-        body {
-            font-family: 'Poppins', sans-serif;
-            margin: 0;
-            padding: 0;
-        }
+      body {
+        font-family: "Poppins", sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+      /* Navbar */
+.navbar {
+    display: flex;
+    justify-content: center;
+    background-color: #345e37;
+    padding: 10px 20px;
+    border-radius: 50px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    width: 50%; /* Lebar navbar */
+}
+
+/* Navbar container */
+.nav-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 750px;
+}
+
+/* Logo styling */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+
+.logo span {
+    font-size: 16px;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+/* Navigation links */
+.nav-links {
+    display: flex;
+    gap: 20px;
+}
+
+.nav-item {
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    color: #ffffff;
+    padding: 5px 15px;
+    border-radius: 30px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    background-color: #fff;
+    color: #345e37;
+}
+
+.nav-item:hover {
+    background-color: #2b4d2e;
+    color: #ffffff;
+}
+
+.nav-item.active {
+    background-color: #2b4d2e;
+    color: #ffffff;
+    font-weight: bold;
+}
+      .team-card {
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        padding: 10px;
+        text-align: center;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        min-height: 455px; /* 30% lebih tinggi dari sebelumnya */
+        max-width: 85%;   /* 15% lebih pendek dari lebar penuh */
+        margin: 0 auto;   /* Tengah secara horizontal */
+      }
+      .team-image img {
+        width: 150px;
+        height: 250px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-bottom: 15px;
+      }
+      .team-info h3 {
+        margin: 10px 0 5px;
+        font-size: 18px;
+        font-weight: 600;
+      }
+      .team-info .description {
+        font-size: 14px;
+        color: #555;
+        margin-bottom: 15px;
+      }
+      .social-links a {
+        margin: 0 5px;
+        color: #555;
+        font-size: 16px;
+      }
+      .social-links a:hover {
+        color: #000;
+      }
     </style>
   </head>
   <body>
+    <!-- Navigasi -->
     <div class="navbar">
-        <div class="nav-container">
-            <div class="logo">
-                <img src="image/1.jpeg" alt="Logo">
-                <span>Catchy </span>
+      <div class="nav-container">
+          <div class="logo">
+              <img src="image/1.jpeg" alt="Logo">
+              <span>Catchy </span>
+          </div>
+          <div class="nav-links">
+              <a href="index.html" class="nav-item">Beranda</a>
+              <a href="nutri.html" class="nav-item">Kalkulator</a>
+              <a href="anggota.html" class="nav-item">Anggota</a>
+          </div>
+      </div>
+  </div>
+    <div class="container my-5">
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="team-card">
+            <div class="team-image">
+              <img src="image/cewe.png" alt="Shafa Rabbani Fityatul Mukarramah" />
             </div>
-            <div class="nav-links">
-                <a href="index.html" class="nav-item">Beranda</a>
-                <a href="nutri.html" class="nav-item">Kalkulator</a>
-                <a href="anggota.html" class="nav-item">Anggota</a>
+            <div class="team-info">
+              <h3>Shafa Rabbani Fityatul Mukarramah</h3>
+              <p class="description">
+                Mendesain antarmuka yang menarik dan mudah digunakan.
+              </p>
+              <div class="social-links">
+                <a href="#"><i class="fab fa-github"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+              </div>
             </div>
-        </div>
-    </div>
-
-    <!-- Anggota Tim -->
-    <section class="team-section">
-        <div class="container">
-          <div class="team-grid">
-    <div class="team-card">
-        <div class="team-image">
-          <img src="image/cewe.png" alt="Shafa Rabbani Fityatul Mukarramah" />
-        </div>
-        <div class="team-info">
-          <h3>Shafa Rabbani Fityatul Mukarramah</h3>
-          <p class="role"></p>
-          <p class="description">
-            Mendesain antarmuka yang menarik dan mudah digunakan.
-          </p>
-          <div class="social-links">
-            <a href="#"><i class="fab fa-github"></i></a>
-            <a href="#"><i class="fab fa-linkedin"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
           </div>
         </div>
-      </div>
-
+        <div class="col-md-4">
           <div class="team-card">
             <div class="team-image">
               <img src="image/cewe.png" alt="Sandria Nuriya" />
             </div>
             <div class="team-info">
               <h3>Sandria Nuriya</h3>
-              <p class="role"></p>
               <p class="description">
                 Mengembangkan sistem backend dan algoritma perhitungan gizi.
               </p>
@@ -80,33 +185,33 @@
               </div>
             </div>
           </div>
-
-                <div class="team-card">
-                  <div class="team-image">
-                    <img src="image/cewe.png" alt="Ristin Iman Andini" />
-                  </div>
-                  <div class="team-info">
-                    <h3>Ristin Iman Andini</h3>
-                    <p class="role"></p>
-                    <p class="description">
-                      Bertanggung jawab atas pengembangan antarmuka pengguna dan
-                      pengalaman pengguna.
-                    </p>
-                    <div class="social-links">
-                      <a href="#"><i class="fab fa-github"></i></a>
-                      <a href="#"><i class="fab fa-linkedin"></i></a>
-                      <a href="#"><i class="fab fa-twitter"></i></a>
-                    </div>
-                  </div>
-                </div>
-
+        </div>
+        <div class="col-md-4">
+          <div class="team-card">
+            <div class="team-image">
+              <img src="image/cewe.png" alt="Ristin Iman Andini" />
+            </div>
+            <div class="team-info">
+              <h3>Ristin Iman Andini</h3>
+              <p class="description">
+                Bertanggung jawab atas pengembangan antarmuka pengguna dan
+                pengalaman pengguna.
+              </p>
+              <div class="social-links">
+                <a href="#"><i class="fab fa-github"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 offset-md-2">
           <div class="team-card">
             <div class="team-image">
               <img src="image/cowo.png" alt="Muhamad Rizky Pratama" />
             </div>
             <div class="team-info">
               <h3>Muhamad Rizky Pratama</h3>
-              <p class="role">Nutrition Specialist</p>
               <p class="description">
                 Menyediakan pengetahuan gizi dan rekomendasi nutrisi.
               </p>
@@ -117,14 +222,14 @@
               </div>
             </div>
           </div>
-
+        </div>
+        <div class="col-md-4">
           <div class="team-card">
             <div class="team-image">
               <img src="image/cowo.png" alt="Muhammad Fawwazul Haq" />
             </div>
             <div class="team-info">
               <h3>Muhammad Fawwazul Haq</h3>
-              <p class="role">Project Manager</p>
               <p class="description">
                 Mengkoordinasikan tim dan memastikan proyek berjalan lancar.
               </p>
@@ -137,8 +242,6 @@
           </div>
         </div>
       </div>
-    </section>
-      </div>
-    </footer>
+    </div>
   </body>
-</html>
+</html> 
