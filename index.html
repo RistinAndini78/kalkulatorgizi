@@ -1,144 +1,186 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kalkulator Gizi</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <style>
-        body {
-            font-family: 'Poppins', sans-serif;
-            margin: 0;
-            padding: 0;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Kalkulator Gizi</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <style>
+    body {
+      font-family: "Poppins", sans-serif;
+    }
 
-        #beranda {
-            padding: 50px 20px;
-            text-align: center;
-        }
+    .dropdown-content {
+      display: none;
+      transform-origin: top;
+      transition: all 0.3s ease;
+    }
 
-        #beranda h2 {
-            font-size: 28px;
-            margin-bottom: 15px;
-        }
+    .dropdown.open .dropdown-content {
+      display: block;
+    }
 
-        #beranda p {
-            font-size: 16px;
-            color: #666;
-        }
+    #navbar {
+      transform: translateX(-100%);
+      transition: transform 0.3s ease-in-out;
+      border-top-right-radius: 2rem;
+      border-bottom-right-radius: 2rem;
+    }
 
-        .age-buttons {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            margin-top: 30px;
-        }
+    #navbar.open {
+      transform: translateX(0);
+    }
 
-        .age-card {
-            background-color: #fff;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            width: 300px;
-            padding: 20px;
-            text-align: center;
-            transition: box-shadow 0.3s ease, transform 0.3s ease;
-        }
+    #burgerIcon.open {
+      transform: rotate(90deg);
+      transition: transform 0.3s ease-in-out;
+    }
 
-        .age-card:hover {
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-            transform: translateY(-5px);
-        }
+    .nav-item {
+      border-radius: 9999px;
+      padding: 0.75rem 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      transition: background 0.3s, color 0.3s;
+      color: white;
+    }
 
-        .age-card i {
-            font-size: 50px;
-            color: #345e37;
-            margin-bottom: 15px;
-        }
+    .nav-item:hover,
+    .nav-item.active {
+      background-color: #e0ffe0;
+      color: #2f4f2f;
+    }
 
-        .age-card h3 {
-            font-size: 18px;
-            margin-bottom: 10px;
-            color: #333;
-        }
+    .nav-item i {
+      transition: color 0.3s;
+    }
 
-        .age-card p {
-            font-size: 14px;
-            color: #666;
-            margin-bottom: 20px;
-        }
-
-        .age-card button {
-            padding: 5px 10px;
-            font-size: 14px;
-            font-weight: 500;
-            background-color: #345e37;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-
-        .age-card button:hover {
-            background-color: #2d4f30;
-        }
-
-        .age-card button i {
-            font-size: 14px; /* Ukuran sesuai dengan teks */
-            color: white; /* Warna putih */
-            margin-left: 5px; /* Jarak antara teks dan ikon */
-        }
-    </style>
+    .nav-item.active i {
+      color: #2f4f2f;
+    }
+  </style>
 </head>
-<body>
-    <!-- Navigasi -->
-    <div class="navbar">
-        <div class="nav-container">
-            <div class="logo">
-                <img src="image/1.jpeg" alt="Logo">
-                <span>Catchy</span>
-            </div>
-            <div class="nav-links">
-                <a href="index.html" class="nav-item">Beranda</a>
-                <a href="nutri.html" class="nav-item">Kalkulator</a>
-                <a href="anggota.html" class="nav-item">Anggota</a>
-            </div>
-        </div>
-    </div>
-    <!--button-->
-    <div id="beranda">
-        <h2>Selamat Datang di Kalkulator Gizi</h2>
-        <p>Gunakan alat ini untuk menghitung kebutuhan gizi Anda secara akurat dan mudah.</p>
+<body class="bg-[#f1f6f2] min-h-screen flex">
 
-        <div class="age-buttons">
-            <div class="age-card">
-                <i class="fa-solid fa-baby"></i>
-                <h3>Kalkulator Gizi Balita</h3>
-                <p>Hitung kebutuhan gizi balita Anda berdasarkan usia dan berat badan.</p>
-                <button onclick="window.location.href='balita.html'">
-                    Mulai Hitung <i class="fa-solid fa-arrow-right"></i>
-                </button>
-            </div>
-            <div class="age-card">
-                <i class="fa-solid fa-child"></i>
-                <h3>Kalkulator Gizi Anak</h3>
-                <p>Hitung kebutuhan gizi anak Anda dengan mempertimbangkan usia dan tinggi badan.</p>
-                <button onclick="window.location.href='anak.html'">
-                    Mulai Hitung <i class="fa-solid fa-arrow-right"></i>
-                </button>
-            </div>
-            <div class="age-card">
-                <i class="fa-solid fa-user"></i>
-                <h3>Kalkulator Gizi Dewasa</h3>
-                <p>Hitung kebutuhan gizi dewasa berdasarkan BMR, IMT, dan tingkat aktivitas.</p>
-                <button onclick="window.location.href='dewasa.html'">
-                    Mulai Hitung <i class="fa-solid fa-arrow-right"></i>
-                </button>
-            </div>
-        </div>
+  <!-- Sidebar Navbar -->
+  <nav id="navbar" class="bg-gradient-to-b from-[#8FBC8F] to-[#345E37] shadow-lg w-64 min-h-screen p-6 flex flex-col space-y-3 text-sm font-medium fixed z-30">
+    <div class="flex items-center justify-start gap-3 mb-8">
+      <button id="closeNavbar" class="text-white focus:outline-none">
+        <i class="fas fa-times text-xl"></i>
+      </button>
+      <div class="flex items-center space-x-2">
+        <i class="far fa-smile text-2xl text-white"></i>
+        <h1 class="font-semibold text-lg text-white">Gizioneer</h1>
+      </div>
     </div>
+
+    <a href="index.html" class="nav-item">
+      <i class="fas fa-home"></i>
+      <span>Beranda</span>
+    </a>
+
+    <div id="dropdownKalkulator" class="dropdown relative">
+      <button class="nav-item w-full justify-between">
+        <span class="flex items-center gap-3">
+          <i class="fas fa-calculator"></i>
+          <span>Kalkulator</span>
+        </span>
+        <i class="fas fa-chevron-down"></i>
+      </button>
+      <div class="dropdown-content bg-[#e0ffe0] text-[#2f4f2f] mt-2 rounded-md shadow-md overflow-hidden">
+        <a href="balita.html" class="block px-4 py-2 hover:bg-[#d2f2d2]">Balita</a>
+        <a href="anak.html" class="block px-4 py-2 hover:bg-[#d2f2d2]">Anak</a>
+        <a href="dewasa.html" class="block px-4 py-2 hover:bg-[#d2f2d2]">Dewasa</a>
+      </div>
+    </div>
+
+    <a href="#" class="nav-item">
+      <i class="fas fa-book"></i>
+      <span>Materi</span>
+    </a>
+
+    <a href="anggota.html" class="nav-item">
+      <i class="fas fa-users"></i>
+      <span>Anggota</span>
+    </a>
+  </nav>
+
+  <!-- Burger Icon -->
+  <button id="openNavbar" class="fixed top-4 left-4 text-[#345E37] text-3xl focus:outline-none z-40">
+    <i id="burgerIcon" class="fas fa-bars"></i>
+  </button>
+
+  <!-- Main Content -->
+  <main class="flex-1 p-6 ml-0 lg:ml-64 transition-all">
+    <h2 class="text-4xl font-semibold mb-4 text-[#345e37] mt-20">Selamat Datang di Kalkulator Gizi</h2>
+    <p class="text-base text-gray-700 mb-6">Gunakan alat ini untuk menghitung kebutuhan gizi Anda secara akurat dan mudah.</p>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-24">
+      <div class="p-4 bg-white shadow-md rounded-md text-center">
+        <i class="fas fa-baby text-4xl text-[#345e37]"></i>
+        <h3 class="mt-4 text-lg font-semibold">Kalkulator Gizi Balita</h3>
+        <p class="text-sm text-gray-600 mt-2">Hitung kebutuhan gizi balita Anda berdasarkan usia dan berat badan.</p>
+        <button class="mt-4 px-4 py-2 bg-[#345e37] text-white rounded hover:bg-[#2d2d2d]" onclick="location.href='balita.html'">
+          Mulai Hitung
+        </button>
+      </div>
+
+      <div class="p-4 bg-white shadow-md rounded-md text-center">
+        <i class="fas fa-child text-4xl text-[#345e37]"></i>
+        <h3 class="mt-4 text-lg font-semibold">Kalkulator Gizi Anak</h3>
+        <p class="text-sm text-gray-600 mt-2">Hitung kebutuhan gizi anak Anda dengan mempertimbangkan usia dan tinggi badan.</p>
+        <button class="mt-4 px-4 py-2 bg-[#345e37] text-white rounded hover:bg-[#2d2d2d]" onclick="location.href='anak.html'">
+          Mulai Hitung
+        </button>
+      </div>
+
+      <div class="p-4 bg-white shadow-md rounded-md text-center">
+        <i class="fas fa-user text-4xl text-[#345e37]"></i>
+        <h3 class="mt-4 text-lg font-semibold">Kalkulator Gizi Dewasa</h3>
+        <p class="text-sm text-gray-600 mt-2">Hitung kebutuhan gizi dewasa berdasarkan BMR, IMT, dan tingkat aktivitas.</p>
+        <button class="mt-4 px-4 py-2 bg-[#345e37] text-white rounded hover:bg-[#2d2d2d]" onclick="location.href='dewasa.html'">
+          Mulai Hitung
+        </button>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const navbar = document.getElementById("navbar");
+      const openNavbar = document.getElementById("openNavbar");
+      const closeNavbar = document.getElementById("closeNavbar");
+      const burgerIcon = document.getElementById("burgerIcon");
+      const dropdownKalkulator = document.getElementById("dropdownKalkulator");
+
+      // Toggle Navbar
+      openNavbar.addEventListener("click", () => {
+        navbar.classList.add("open");
+        burgerIcon.classList.add("open");
+      });
+
+      closeNavbar.addEventListener("click", () => {
+        navbar.classList.remove("open");
+        burgerIcon.classList.remove("open");
+      });
+
+      // Toggle Dropdown Kalkulator
+      dropdownKalkulator.addEventListener("click", () => {
+        dropdownKalkulator.classList.toggle("open");
+      });
+
+      // Aktifkan menu sesuai halaman
+      const currentPage = window.location.pathname.split("/").pop();
+      document.querySelectorAll(".nav-item").forEach(link => {
+        if (link.getAttribute("href") === currentPage) {
+          link.classList.add("active");
+        }
+      });
+    });
+  </script>
+
 </body>
 </html>

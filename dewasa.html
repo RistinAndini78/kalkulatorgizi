@@ -107,6 +107,52 @@
             border: 1px solid #ccc;
             border-radius: 5px;
         }
+        .gender-options {
+            width: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.gender-option {
+    text-align: center;
+    cursor: pointer;
+    flex: 0 0 auto; /* Hindari stretching */
+}
+
+
+        .gender-option input[type="radio"] {
+            display: none;
+        }
+
+        .gender-option img {
+            width: 80px;
+            height: 80px;
+            border: 3px solid transparent;
+            border-radius: 50%;
+            transition: 0.5s;   
+        }
+        .gender-option img:hover{
+            width: 80px;
+            height: 80px;
+            border-color: #345e37;
+            box-shadow: 0 0 10px rgba(52, 94, 55, 0.5);
+            border-radius: 50%;
+        }
+
+        .gender-option input[type="radio"]:checked + img {
+            border-color: #345e37;
+            box-shadow: 0 0 10px rgba(52, 94, 55, 0.5);
+
+        }
+
+        .gender-option span {
+            display: block;
+            margin-top: 5px;
+            font-weight: bold;
+            color: #345e37;
+        }
 
         button {
             background-color: #345e37;
@@ -120,6 +166,44 @@
         button:hover {
             background-color: #2b4d2e;
         }
+        button {
+            background-color: #345e37;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #2b4d2e;
+        }
+
+        .back-button {
+            display: block;
+            margin: 20px auto;
+            text-align: center;
+        }
+
+        .back-button a {
+            text-decoration: none;
+            color: white;
+            background-color: #345e37;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-weight: bold;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .back-button a:hover {
+            background-color: #2b4d2e;
+        }
+
+        .back-button i {
+            font-size: 16px;
+        }
     </style>
 </head>
 <body>
@@ -131,7 +215,7 @@
             </div>
             <div class="nav-links">
                 <a href="index.html" class="nav-item">Beranda</a>
-                <a href="kalkulator.html" class="nav-item">Kalkulator</a>
+                <a href="dewasa.html" class="nav-item">Kalkulator</a>
                 <a href="anggota.html" class="nav-item">Anggota</a>
             </div>
         </div>
@@ -152,12 +236,19 @@
                         <input type="date" id="measurementDate" name="measurementDate">
                     </div>
                     <div class="input-group">
-                        <label for="gender">Jenis Kelamin:</label>
-                        <select id="gender" name="gender">
-                            <option value="">Pilih Jenis Kelamin</option>
-                            <option value="male">Laki-laki</option>
-                            <option value="female">Perempuan</option>
-                        </select>
+                        <label>Jenis Kelamin:</label>
+                        <div class="gender-options">
+                            <label class="gender-option">
+                                <input type="radio" name="gender" value="male" required>
+                                <img src="image/male.png" alt="Laki-laki">
+                                <span>Laki-laki</span>
+                            </label>
+                            <label class="gender-option">
+                                <input type="radio" name="gender" value="female">
+                                <img src="image/female.png" alt="Perempuan">
+                                <span>Perempuan</span>
+                            </label>
+                        </div>
                     </div>
                     <div class="input-group">
                         <label for="weight">Berat Badan (kg):</label>
@@ -203,6 +294,12 @@
         <div class="card" id="resultsCard" style="display: none; margin-top: 20px;">
             <h2>Hasil Perhitungan</h2>
             <div id="results"></div>
+        </div>
+        <div class="back-button">
+            <a href="nutri.html">
+                <i class="fas fa-arrow-left"></i>
+                Kembali
+            </a>
         </div>
     </div>
     <script>

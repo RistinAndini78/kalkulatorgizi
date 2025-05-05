@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kalkulator Gizi</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+  <style>
+    body {
+      font-family: "Poppins", sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    .active {
+      color: #ffffff;
+      font-weight: bold;
+    }
+    .dropdown-content {
+      display: none;
+      position: relative;
+      padding-top: 8px;
+      padding-bottom: 8px;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease-out;
+    }
+    .dropdown-content a {
+      color: #1a1a1a;
+      text-decoration: none;
+      display: block;
+      padding: 10px 20px;
+    }
+    .dropdown-content a:hover {
+      background-color: #d9e6e0;
+    }
+    .dropdown.open .dropdown-content {
+      display: block;
+      max-height: 1000px;
+    }
+    .navbar-expanded {
+      padding-bottom: 50px;
+    }
+  </style>
+</head>
+<body class="bg-[#f1f6f2] min-h-screen flex">
+
+  <!-- Sidebar Navbar -->
+  <nav id="navbar" class="bg-gradient-to-b from-[#8FBC8F] to-[#345E37] w-60 min-h-screen p-6 flex flex-col space-y-6 text-white text-sm font-medium transform transition-transform duration-300">
+    <div class="flex items-center justify-between mb-8">
+      <div class="flex items-center space-x-2">
+        <div aria-label="smiley face icon" class="text-2xl text-[#ffffff]" role="img">
+          <i class="far fa-smile"></i>
+        </div>
+        <h1 class="font-semibold text-white text-lg leading-none">
+        Gizioneer
+        </h1>
+      </div>
+      <button id="closeNavbar" class="text-white focus:outline-none">
+        <i class="fas fa-times text-xl"></i>
+      </button>
+    </div>
+    <a href="cek.html" class="flex items-center space-x-3 hover:text-[#fffff0] active">
+      <i class="fas fa-home w-4"></i>
+      <span>Beranda</span>
+    </a>
+    <!-- Dropdown Kalkulator -->
+    <div id="dropdownKalkulator" class="dropdown relative">
+      <button class="flex items-center justify-between w-full hover:text-[#fffff0] focus:outline-none text-left">
+        <span class="flex items-center space-x-3">
+          <i class="fas fa-calculator w-4"></i>
+          <span>Kalkulator</span>
+        </span>
+        <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M19 9l-7 7-7-7"></path>
+        </svg>
+      </button>
+      <div class="dropdown-content">
+        <a href="balita.html" class="flex items-center space-x-2 text-sm text-[#1a1a1a] hover:bg-[#f1f6f2]">
+          <i class="fas fa-baby w-4"></i>
+          <span>Balita</span>
+        </a>
+        <a href="anak.html" class="flex items-center space-x-2 text-sm text-[#1a1a1a] hover:bg-[#f1f6f2]">
+          <i class="fas fa-child w-4"></i>
+          <span>Anak</span>
+        </a>
+        <a href="dewasa.html" class="flex items-center space-x-2 text-sm text-[#1a1a1a] hover:bg-[#f1f6f2]">
+          <i class="fas fa-user w-4"></i>
+          <span>Dewasa</span>
+        </a>
+      </div>
+    </div>
+    <a href="#" class="flex items-center space-x-3 hover:text-[#fffff0]">
+      <i class="fas fa-book w-4"></i>
+      <span>Materi</span>
+    </a>
+    <a href="anggota.html" class="flex items-center space-x-3 hover:text-[#fffff0]">
+      <i class="fas fa-users w-4"></i>
+      <span>Anggota</span>
+    </a>
+  </nav>
+
+  <!-- Burger Icon -->
+  <button id="openNavbar" class="fixed top-4 left-4 text-[#345E37] text-xl focus:outline-none z-20 mr">
+    <i class="fas fa-bars"></i>
+  </button>
+
+  <!-- Main Content -->
+  <main class="flex-1 p-6">
+    <div id="beranda">
+      <h2 class="text-4xl font-semibold mb-4 text-[#345e37] mt-20">Selamat Datang di Kalkulator Gizi</h2>
+      <p class="text-base text-gray-700 mb-6">
+        Gunakan alat ini untuk menghitung kebutuhan gizi Anda secara akurat dan mudah.
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-24">
+        <div class="p-4 bg-white shadow-md rounded-md text-center">
+          <i class="fas fa-baby text-4xl text-[#345e37]"></i>
+          <h3 class="mt-4 text-lg font-semibold">Kalkulator Gizi Balita</h3>
+          <p class="text-sm text-gray-600 mt-2">Hitung kebutuhan gizi balita Anda berdasarkan usia dan berat badan.</p>
+          <button class="mt-4 px-4 py-2 bg-[#345e37] text-white rounded hover:bg-[#2d2d2d]" onclick="location.href='balita.html'">
+            Mulai Hitung
+          </button>
+        </div>
+        <div class="p-4 bg-white shadow-md rounded-md text-center">
+          <i class="fas fa-child text-4xl text-[#345e37]"></i>
+          <h3 class="mt-4 text-lg font-semibold">Kalkulator Gizi Anak</h3>
+          <p class="text-sm text-gray-600 mt-2">Hitung kebutuhan gizi anak Anda dengan mempertimbangkan usia dan tinggi badan.</p>
+          <button class="mt-4 px-4 py-2 bg-[#345e37] text-white rounded hover:bg-[#2d2d2d]" onclick="location.href='anak.html'">
+            Mulai Hitung
+          </button>
+        </div>
+        <div class="p-4 bg-white shadow-md rounded-md text-center">
+          <i class="fas fa-user text-4xl text-[#345e37]"></i>
+          <h3 class="mt-4 text-lg font-semibold">Kalkulator Gizi Dewasa</h3>
+          <p class="text-sm text-gray-600 mt-2">Hitung kebutuhan gizi dewasa berdasarkan BMR, IMT, dan tingkat aktivitas.</p>
+          <button class="mt-4 px-4 py-2 bg-[#345e37] text-white rounded hover:bg-[#2d2d2d]" onclick="location.href='dewasa.html'">
+            Mulai Hitung
+          </button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const navbar = document.getElementById("navbar");
+      const openNavbar = document.getElementById("openNavbar");
+      const closeNavbar = document.getElementById("closeNavbar");
+      const dropdownKalkulator = document.getElementById("dropdownKalkulator");
+
+      openNavbar.addEventListener("click", () => {
+        navbar.style.transform = "translateX(0)";
+        openNavbar.style.display = "none";
+      });
+
+      closeNavbar.addEventListener("click", () => {
+        navbar.style.transform = "translateX(-100%)";
+        openNavbar.style.display = "block";
+      });
+
+      // Open/Close dropdown
+      dropdownKalkulator.addEventListener("click", () => {
+        dropdownKalkulator.classList.toggle("open");
+        navbar.classList.toggle("navbar-expanded");
+      });
+    });
+  </script>
+
+</body>
+</html>
