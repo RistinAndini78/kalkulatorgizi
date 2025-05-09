@@ -1,0 +1,323 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Materi Kalkulus - HealthTrack</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+    rel="stylesheet"
+  />
+  <link href="style.css"rel="stylesheet"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+  />
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+    }
+
+    /* Style untuk kotak artikel */
+    article {
+      transition: transform 0.2s ease, box-shadow 0.3s ease;
+    }
+
+    /* Bayangan pada bagian atas kotak artikel */
+    article:focus,
+    article:active {
+      outline: none;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1),
+                  0 4px 6px rgba(0, 0, 0, 0.1);
+      transform: translateY(-5px); /* Animasi saat artikel diklik */
+    }
+
+    /* Menambahkan bayangan ketika artikel dalam keadaan normal */
+    article {
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Bayangan default */
+    }
+    /* navbar */
+
+*{
+    margin: 0px;
+    padding: 0px;
+  }
+  
+  body{
+    max-width: 1600px;
+    margin: auto;
+    height: 700px;
+    background: white;
+  }
+  
+  nav{
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    width: 214px;
+    background: #212523;
+    overflow-y: scroll;
+    top: 0;
+    bottom: 0;
+    display: block;
+  }
+  
+  nav .top{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: blue;
+  }
+  
+  nav .top img{
+    width: 90px;
+    border-radius: 50%;
+    border: 2px solid white;
+    margin: 10px;
+  }
+  
+  nav .top h1{
+    color: white;
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 28px;
+  }
+  
+  nav .top span.line{
+    display: block;
+    width: 205px;
+    height: 1px;
+    background: white;
+  }
+  
+  nav .bot .nav-links a{
+    display: block;
+    padding: 20px;
+    text-decoration: none;
+    color: white;
+    font-size: 15px;
+  }
+  
+  nav a span{
+    margin-left: 25px;
+  }
+  
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #DCDCDC;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #999;
+  }
+  
+  input{
+    position: absolute;
+    margin-left: 22.5px;
+    margin-top: 22px;
+    transform: scale(2.1);
+    opacity: 0;
+    cursor: pointer;
+  }
+  
+  .navbar{
+    max-width: 100%;
+    min-height: 60px;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    background: blue;
+    margin-left: 214px;
+  }
+  
+  .navbar .left .hamburger{
+    padding: 10px;
+  }
+  
+  .navbar .left .hamburger span{
+    display: block;
+    width: 25px;
+    height: 3px;
+    background: white;
+    margin: 6.5px;
+  }
+  
+  .navbar .right h1{
+    color: white;
+    padding: 10px;
+  }
+  
+  input{
+    margin-left: 237px;
+  }
+  
+  input:checked ~ nav{
+    display: none;
+  }
+  
+  input:checked ~ .navbar{
+    margin-left: 0px;
+  }
+  
+  input:checked{
+    margin-left: 22.5px;
+  }
+  
+  @media(max-width: 900px){
+    body{
+      overflow-y: scroll;
+    }
+  
+    nav{
+      display: none;
+      width: 200px;
+    }
+  
+    nav .top span.line{
+      width: 191px;
+    }
+  
+    .navbar{
+      margin-left: 0px;
+      width: 100%;
+    }
+  
+    input{
+      opacity: 0;
+      margin-left: 22.5px;
+    }
+  
+    input:checked{
+      margin-left: 222px;
+    }
+  
+    input:checked ~ nav{
+      display: block;
+    }
+  
+    input:checked ~ .navbar{
+      margin-left: 200px;
+    }
+  }
+  </style>
+</head>
+<body>
+    <input type="checkbox"> <!-- terakhir -->
+    <nav>
+        <div class="top">
+          <img src="img/profile.jfif" alt="">
+          <h1>David G.S</h1>
+          <span class = "line"></span>
+        </div>
+        <div class="bot">
+          <div class="nav-links">
+            <div class="nav-link-wrapper"><a href=""><img src="https://img.icons8.com/android/22/ffffff/home.png"><span>Home</span></a></div>
+            <div class="nav-link-wrapper"><a href=""><img src="https://img.icons8.com/metro/22/ffffff/about.png"/><span>About</span></a></div>
+            <div class="nav-link-wrapper"><a href=""><img src="https://img.icons8.com/metro/22/ffffff/download.png"><span>Download</span></a></div>
+            <div class="nav-link-wrapper"><a href=""><img src="https://img.icons8.com/metro/22/ffffff/settings.png"/><span>Settings</span></a></div>
+            <div class="nav-link-wrapper"><a href=""><img src="https://img.icons8.com/pastel-glyph/22/ffffff/online-support.png"/><span>Support</span></a></div>
+            <div class="nav-link-wrapper"><a href=""><img src="https://img.icons8.com/metro/22/ffffff/export.png"/><span>Sign Out</span></a></div>
+          </div>
+        </div>
+      </nav>
+      <div class="navbar"> <!-- terakhir -->
+        <div class="left">
+          <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+        <div class="right">
+          <h1>David G.S</h1>
+        </div>
+      </div>
+<body class="bg-white min-h-screen p-6">
+  <main class="max-w-7xl mx-auto">
+    <header class="text-center mb-10">
+      <h1 class="text-4xl font-semibold text-gray-900">Materi Kalkulus dalam Perhitungan Gizi</h1>
+      <p class="text-gray-600 mt-3 text-lg">Pemahaman konsep kalkulus dalam perhitungan kebutuhan gizi</p>
+    </header>
+
+    <section class="flex flex-col sm:flex-row gap-6 mb-10">
+      <article tabindex="0" class="bg-white rounded-md p-8 flex-1 flex flex-col">
+        <h2 class="text-xl font-semibold text-gray-900 mb-3 flex items-center gap-3">
+          <i class="fas fa-calculator text-green-800 text-lg"></i> Turunan
+        </h2>
+        <p class="text-gray-700 mb-6 text-base leading-relaxed">
+          Konsep turunan digunakan dalam perhitungan BMR (Basal Metabolic Rate) untuk menentukan laju perubahan metabolisme terhadap variabel seperti berat badan, tinggi badan, dan usia.
+        </p>
+        <pre class="bg-green-100 border border-green-300 rounded-md p-6 text-sm text-green-900 whitespace-pre-wrap font-mono mt-auto">
+Persamaan Harris-Benedict:
+
+Laki-laki: BMR = 66.5 + (13.75 × berat) + (5.003 × tinggi) - (6.755 × usia)
+
+Perempuan: BMR = 655.1 + (9.563 × berat) + (1.850 × tinggi) - (4.676 × usia)
+        </pre>
+      </article>
+
+      <article tabindex="0" class="bg-white rounded-md p-8 flex-1 flex flex-col">
+        <h2 class="text-xl font-semibold text-gray-900 mb-3 flex items-center gap-3">
+          <i class="fas fa-chart-line text-green-800 text-lg"></i> Integral
+        </h2>
+        <p class="text-gray-700 mb-6 text-base leading-relaxed">
+          Integral digunakan untuk menghitung total kebutuhan kalori harian dengan mempertimbangkan faktor aktivitas dan stres.
+        </p>
+        <pre class="bg-green-100 border border-green-300 rounded-md p-6 text-sm text-green-900 whitespace-pre-wrap font-mono mt-auto">
+Total Kalori = BMR × Faktor Aktivitas × Faktor Stres
+
+Faktor Aktivitas:
+  • Sangat Ringan: 1.2
+  • Ringan: 1.375
+  • Sedang: 1.55
+  • Berat: 1.725
+  • Sangat Berat: 1.9
+        </pre>
+      </article>
+
+      <article tabindex="0" class="bg-white rounded-md p-8 flex-1 flex flex-col">
+        <h2 class="text-xl font-semibold text-gray-900 mb-3 flex items-center gap-3">
+          <i class="fas fa-balance-scale text-green-800 text-lg"></i> Fungsi Kuadrat
+        </h2>
+        <p class="text-gray-700 mb-6 text-base leading-relaxed">
+          Fungsi kuadrat digunakan dalam perhitungan IMT (Indeks Massa Tubuh) untuk menentukan status gizi seseorang.
+        </p>
+        <pre class="bg-green-100 border border-green-300 rounded-md p-6 text-sm text-green-900 whitespace-pre-wrap font-mono mt-auto">
+IMT = Berat Badan (kg) / (Tinggi Badan (m))²
+
+Kategori IMT:
+  • Kurus: &lt; 18.5
+  • Normal: 18.5 - 24.9
+  • Gemuk: 25 - 29.9
+  • Obesitas: ≥ 30
+        </pre>
+      </article>
+    </section>
+
+    <section class="bg-white border border-gray-200 rounded-md shadow-xl p-8">
+      <h3 class="text-xl font-semibold text-gray-900 mb-5">Aplikasi Kalkulus dalam Nutrisi</h3>
+      <p class="text-gray-800 mb-5 text-base leading-relaxed">
+        Kalkulus memainkan peran penting dalam perhitungan kebutuhan gizi dengan cara:
+      </p>
+      <ul class="list-disc list-inside text-gray-800 text-base leading-relaxed space-y-2">
+        <li>Menentukan laju perubahan metabolisme (turunan)</li>
+        <li>Menghitung total kebutuhan energi (integral)</li>
+        <li>Memodelkan hubungan antara variabel nutrisi (fungsi)</li>
+        <li>Memprediksi perubahan kebutuhan gizi (diferensial)</li>
+      </ul>
+    </section>
+  </main>
+</body>
+</body>
+</html>

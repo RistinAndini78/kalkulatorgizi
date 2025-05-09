@@ -22,22 +22,6 @@
       display: block;
     }
 
-    #navbar {
-      transform: translateX(-100%);
-      transition: transform 0.3s ease-in-out;
-      border-top-right-radius: 2rem;
-      border-bottom-right-radius: 2rem;
-    }
-
-    #navbar.open {
-      transform: translateX(0);
-    }
-
-    #burgerIcon.open {
-      transform: rotate(90deg);
-      transition: transform 0.3s ease-in-out;
-    }
-
     .nav-item {
       border-radius: 9999px;
       padding: 0.75rem 1rem;
@@ -46,6 +30,7 @@
       gap: 0.75rem;
       transition: background 0.3s, color 0.3s;
       color: white;
+      font-weight: bold;
     }
 
     .nav-item:hover,
@@ -61,16 +46,26 @@
     .nav-item.active i {
       color: #2f4f2f;
     }
+
+    #navbar {
+      border-top-right-radius: 20px;
+      border-bottom-right-radius: 20px;
+    }
   </style>
 </head>
-<body class="bg-[#f1f6f2] min-h-screen flex">
+<body class="bg-[#f1f6f2] min-h-screen">
 
-  <!-- Sidebar Navbar -->
-  <nav id="navbar" class="bg-gradient-to-b from-[#8FBC8F] to-[#345E37] shadow-lg w-64 min-h-screen p-6 flex flex-col space-y-3 text-sm font-medium fixed z-30">
+  <!-- Mobile Navbar Toggle -->
+  <div class="lg:hidden p-4 bg-[#345E37] text-white flex items-center justify-between">
+    <h1 class="font-semibold text-lg">Gizioneer</h1>
+    <button id="toggleSidebar" class="text-2xl focus:outline-none">
+      <i class="fas fa-bars"></i>
+    </button>
+  </div>
+
+  <!-- Sidebar -->
+  <nav id="navbar" class="bg-[#345E37] shadow-lg w-64 min-h-screen p-6 flex flex-col space-y-3 text-sm font-medium fixed top-0 left-0 transform -translate-x-full lg:translate-x-0 transition-transform duration-300 z-40">
     <div class="flex items-center justify-start gap-3 mb-8">
-      <button id="closeNavbar" class="text-white focus:outline-none">
-        <i class="fas fa-times text-xl"></i>
-      </button>
       <div class="flex items-center space-x-2">
         <i class="far fa-smile text-2xl text-white"></i>
         <h1 class="font-semibold text-lg text-white">Gizioneer</h1>
@@ -84,20 +79,19 @@
 
     <div id="dropdownKalkulator" class="dropdown relative">
       <button class="nav-item w-full justify-between">
-        <span class="flex items-center gap-3">
+        <a href="kalkulator.html" class="flex items-center gap-3 text-white">
           <i class="fas fa-calculator"></i>
           <span>Kalkulator</span>
-        </span>
+        </a>
         <i class="fas fa-chevron-down"></i>
       </button>
       <div class="dropdown-content bg-[#e0ffe0] text-[#2f4f2f] mt-2 rounded-md shadow-md overflow-hidden">
-        <a href="balita.html" class="block px-4 py-2 hover:bg-[#d2f2d2]">Balita</a>
         <a href="anak.html" class="block px-4 py-2 hover:bg-[#d2f2d2]">Anak</a>
         <a href="dewasa.html" class="block px-4 py-2 hover:bg-[#d2f2d2]">Dewasa</a>
       </div>
     </div>
 
-    <a href="#" class="nav-item">
+    <a href="materi.html" class="nav-item">
       <i class="fas fa-book"></i>
       <span>Materi</span>
     </a>
@@ -108,71 +102,38 @@
     </a>
   </nav>
 
-  <!-- Burger Icon -->
-  <button id="openNavbar" class="fixed top-4 left-4 text-[#345E37] text-3xl focus:outline-none z-40">
-    <i id="burgerIcon" class="fas fa-bars"></i>
-  </button>
+  <!-- Sidebar Overlay -->
+  <div id="overlay" class="fixed inset-y-0 left-0 w-64 bg-black bg-opacity-50 z-30 hidden lg:hidden"></div>
 
   <!-- Main Content -->
-  <main class="flex-1 p-6 ml-0 lg:ml-64 transition-all">
-    <h2 class="text-4xl font-semibold mb-4 text-[#345e37] mt-20">Selamat Datang di Kalkulator Gizi</h2>
+  <main class="lg:ml-64 transition-all p-6">
+    <h2 class="text-4xl font-semibold mb-4 text-[#345e37] mt-6">Selamat Datang di Kalkulator Gizi</h2>
     <p class="text-base text-gray-700 mb-6">Gunakan alat ini untuk menghitung kebutuhan gizi Anda secara akurat dan mudah.</p>
-
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-24">
-      <div class="p-4 bg-white shadow-md rounded-md text-center">
-        <i class="fas fa-baby text-4xl text-[#345e37]"></i>
-        <h3 class="mt-4 text-lg font-semibold">Kalkulator Gizi Balita</h3>
-        <p class="text-sm text-gray-600 mt-2">Hitung kebutuhan gizi balita Anda berdasarkan usia dan berat badan.</p>
-        <button class="mt-4 px-4 py-2 bg-[#345e37] text-white rounded hover:bg-[#2d2d2d]" onclick="location.href='balita.html'">
-          Mulai Hitung
-        </button>
-      </div>
-
-      <div class="p-4 bg-white shadow-md rounded-md text-center">
-        <i class="fas fa-child text-4xl text-[#345e37]"></i>
-        <h3 class="mt-4 text-lg font-semibold">Kalkulator Gizi Anak</h3>
-        <p class="text-sm text-gray-600 mt-2">Hitung kebutuhan gizi anak Anda dengan mempertimbangkan usia dan tinggi badan.</p>
-        <button class="mt-4 px-4 py-2 bg-[#345e37] text-white rounded hover:bg-[#2d2d2d]" onclick="location.href='anak.html'">
-          Mulai Hitung
-        </button>
-      </div>
-
-      <div class="p-4 bg-white shadow-md rounded-md text-center">
-        <i class="fas fa-user text-4xl text-[#345e37]"></i>
-        <h3 class="mt-4 text-lg font-semibold">Kalkulator Gizi Dewasa</h3>
-        <p class="text-sm text-gray-600 mt-2">Hitung kebutuhan gizi dewasa berdasarkan BMR, IMT, dan tingkat aktivitas.</p>
-        <button class="mt-4 px-4 py-2 bg-[#345e37] text-white rounded hover:bg-[#2d2d2d]" onclick="location.href='dewasa.html'">
-          Mulai Hitung
-        </button>
-      </div>
-    </div>
   </main>
 
+  <!-- Script -->
   <script>
     document.addEventListener("DOMContentLoaded", function () {
-      const navbar = document.getElementById("navbar");
-      const openNavbar = document.getElementById("openNavbar");
-      const closeNavbar = document.getElementById("closeNavbar");
-      const burgerIcon = document.getElementById("burgerIcon");
       const dropdownKalkulator = document.getElementById("dropdownKalkulator");
+      const toggleSidebar = document.getElementById("toggleSidebar");
+      const navbar = document.getElementById("navbar");
+      const overlay = document.getElementById("overlay");
 
-      // Toggle Navbar
-      openNavbar.addEventListener("click", () => {
-        navbar.classList.add("open");
-        burgerIcon.classList.add("open");
-      });
-
-      closeNavbar.addEventListener("click", () => {
-        navbar.classList.remove("open");
-        burgerIcon.classList.remove("open");
-      });
-
-      // Toggle Dropdown Kalkulator
       dropdownKalkulator.addEventListener("click", () => {
         dropdownKalkulator.classList.toggle("open");
       });
 
-      // Aktifkan menu sesuai halaman
+      toggleSidebar.addEventListener("click", () => {
+        navbar.classList.toggle("-translate-x-full");
+        overlay.classList.toggle("hidden");
+      });
+
+      overlay.addEventListener("click", () => {
+        navbar.classList.add("-translate-x-full");
+        overlay.classList.add("hidden");
+      });
+
+      // Highlight active link
       const currentPage = window.location.pathname.split("/").pop();
       document.querySelectorAll(".nav-item").forEach(link => {
         if (link.getAttribute("href") === currentPage) {
@@ -181,6 +142,5 @@
       });
     });
   </script>
-
 </body>
 </html>
