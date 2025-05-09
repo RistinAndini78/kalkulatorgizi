@@ -8,6 +8,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <link rel="icon" href="A_2D_digital_illustration_features_a_flat_design_n.png" type="image/png">
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
     <style>
         body {
             font-family: 'Poppins', sans-serif;
@@ -15,45 +16,138 @@
             padding: 0;
         }
 
-        .navbar {
-            background-color: #345e37;
-            padding: 10px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+        * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-        .logo img {
-            height: 40px;
-            margin-right: 10px;
-            vertical-align: middle;
-        }
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: #eef1f6;
+}
 
-        .logo span {
-            color: #ffffff;
-            font-weight: bold;
-            font-size: 20px;
-        }
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 80px;
+  height: 100vh;
+  background-color: #345e37;
+  color: white;
+  transition: width 0.3s ease;
+  overflow: hidden;
+}
 
-        .nav-links {
-            display: flex;
-            gap: 15px;
-        }
+.sidebar:hover {
+  width: 250px;
+}
 
-        .navbar-button {
-            background-color: #7aad8f;
-            color: white;
-            padding: 10px 20px;
-            border-radius: 20px;
-            text-decoration: none;
-            font-size: 16px;
-            font-weight: bold;
-        }
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 20px;
+}
 
-        .navbar-button:hover {
-            background-color: #5d9b77;
-        }
+.logo img {
+  width: 30px;
+}
 
+.logo-text {
+  font-size: 1.2rem;
+  font-weight: bold;
+  display: none;
+}
+
+.sidebar:hover .logo-text {
+  display: inline;
+}
+
+.menu-section {
+  margin-top: 20px;
+  padding-left: 15px;
+}
+
+.section-title {
+  font-size: 0.75rem;
+  color: #aaa;
+  margin-bottom: 10px;
+  display: none;
+  text-decoration: none;
+}
+
+.sidebar:hover .section-title {
+  display: block;
+}
+
+.menu-section ul {
+  list-style: none;
+  text-decoration: none;
+}
+
+.menu-section li {
+  display: flex;
+  align-items: center;
+  padding: 10px 15px;
+  gap: 15px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+  border-radius: 6px;
+}
+
+.menu-section li:hover,
+.menu-section li.active {
+  background-color: #1c2b3d;
+}
+
+.menu-section .material-icons-outlined {
+  font-size: 20px;
+}
+
+.text {
+  display: none;
+  white-space: nowrap;
+  text-decoration: none;
+}
+
+.sidebar:hover .text {
+  display: inline;
+}
+
+.profile {
+  margin-top: auto;
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #132235;
+  cursor: pointer;
+}
+
+.profile img {
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+}
+
+.details {
+  display: none;
+}
+
+.sidebar:hover .details {
+  display: block;
+}
+
+.details .name {
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+.details .role {
+  font-size: 0.7rem;
+  color: #aaa;
+}
         .container {
             margin: 20px auto;
             padding: 20px;
@@ -189,22 +283,37 @@
         .back-button i {
             font-size: 16px;
         }
+
     </style>
 </head>
 <body>
-    <div class="navbar">
-        <div class="nav-container">
-            <div class="logo">
-                <img src="image/1.jpeg" alt="Logo">
-                <span>Catchy</span>
-            </div>
-            <div class="nav-links">
-                <a href="index.html" class="nav-item">Beranda</a>
-                <a href="kalkulator.html" class="nav-item">Kalkulator</a>
-                <a href="anggota.html" class="nav-item">Anggota</a>
-            </div>
-        </div>
+    <!-- navbar -->
+  <div class="sidebar">
+    <div class="logo">
+      <img src="image/1.jpeg" alt="logo">
+      <span class="logo-text">NutriCalc</span>
     </div>
+
+    <div class="menu-section">
+      <p class="section-title">Main Menu</p>
+      <ul>
+        <li><span class="material-icons-outlined">dashboard</span><span class="text">Beranda</span></li>
+        <li><span class="material-icons-outlined">flag</span><span class="text">Materi</span></li>
+        <li><a href="anak.html"><span class="material-icons-outlined">description</span><span class="text">Kalkulator Anak</span></a></li>
+        <li><span class="material-icons-outlined">bar_chart</span><span class="text">Kalkulator Dewasa</span></li>
+      </ul>
+    </div>
+
+    <div class="menu-section">
+      <p class="section-title">General</p>
+      <ul>
+        <li class="active"><span class="material-icons-outlined">groups</span><span class="text">Groups</span></li>
+        
+      </ul>
+    </div>
+      </div>
+    </div>
+  </div>
 
     <div id="kalkulator" class="container">
         <h2>Kalkulator Gizi Anak</h2>
