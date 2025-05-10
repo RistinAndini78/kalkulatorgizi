@@ -36,6 +36,7 @@
       transition: width 0.3s ease;
       overflow: hidden;
       flex-shrink: 0;
+      position: fixed;
     }
 
     .sidebar:hover {
@@ -54,7 +55,7 @@
     }
 
     .logo-text {
-      font-size: 1.2rem;
+      font-size: 5.5rem;
       font-weight: bold;
       display: none;
     }
@@ -308,11 +309,10 @@
         <span class="logo-text">NutriCalc</span>
       </div>
       <div class="menu-section">
-        <p class="section-title">Main Menu</p>
         <ul>
           <li><a href="index.html"><span class="material-icons-outlined">dashboard</span><span class="text">Beranda</span></a></li>
           <li><a href="materi.html"><span class="material-icons">description</span><span class="text">Materi</span></a></li>
-          <li><a href="anak.html"><span class="material-icons">calculate</span><span class="text">Kalkulator Anak</span></a></li>
+          <li class="active"><a href="anak.html"><span class="material-icons">calculate</span><span class="text">Kalkulator Anak</span></a></li>
           <li><a href="dewasa.html"><span class="material-icons">calculate</span><span class="text">Kalkulator Dewasa</span></a></li>
           <li><a href="anggota.html"><span class="material-icons-outlined">groups</span><span class="text">Anggota</span></a></li>
         </ul>

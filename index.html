@@ -7,104 +7,321 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet"/>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet"/>
   <style>
     body {
       font-family: "Poppins", sans-serif;
     }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-    .dropdown-content {
-      display: none;
-      transform-origin: top;
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #eef1f6;
+    }
+
+    .wrapper {
+      display: flex;
       transition: all 0.3s ease;
     }
 
-    .dropdown.open .dropdown-content {
+    .sidebar {
+      top: 0;
+      left: 0;
+      width: 80px;
+      height: 100vh;
+      background-color: #0e1a2b;
+      color: white;
+      transition: width 0.3s ease;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+
+    .sidebar:hover {
+      width: 250px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 20px;
+    }
+
+    .logo img {
+      width: 30px;
+    }
+
+    .logo-text {
+      font-size: 5.5rem;
+      font-weight: bold;
+      display: none;
+    }
+
+    .sidebar:hover .logo-text {
+      display: inline;
+    }
+
+    .menu-section {
+      margin-top: 20px;
+      padding-left: 15px;
+    }
+
+    .section-title {
+      font-size: 0.75rem;
+      color: #aaa;
+      margin-bottom: 10px;
+      display: none;
+    }
+
+    .sidebar:hover .section-title {
       display: block;
     }
 
-    .nav-item {
-      border-radius: 9999px;
-      padding: 0.75rem 1rem;
+    .menu-section ul {
+      list-style: none;
+    }
+
+    .menu-section li {
       display: flex;
       align-items: center;
-      gap: 0.75rem;
-      transition: background 0.3s, color 0.3s;
+      padding: 10px 15px;
+      gap: 15px;
+      cursor: pointer;
+      transition: background 0.2s ease;
+      border-radius: 6px;
+    }
+
+    .menu-section li:hover,
+    .menu-section li.active {
+      background-color: #1c2b3d;
+    }
+
+    .menu-section .material-icons-outlined {
+      font-size: 20px;
+    }
+
+    .text {
+      display: none;
+      white-space: nowrap;
+    }
+
+    .sidebar:hover .text {
+      display: inline;
+    }
+
+    .profile {
+      margin-top: auto;
+      padding: 15px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: #132235;
+      cursor: pointer;
+    }
+
+    .profile img {
+      border-radius: 50%;
+      width: 30px;
+      height: 30px;
+    }
+
+    .details {
+      display: none;
+    }
+
+    .sidebar:hover .details {
+      display: block;
+    }
+
+    .details .name {
+      font-weight: bold;
+      font-size: 0.9rem;
+    }
+
+    .details .role {
+      font-size: 0.7rem;
+      color: #aaa;
+    }
+
+    .sidebar a {
+      text-decoration: none;
+      color: inherit;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .sidebar a:hover {
       color: white;
+    }
+
+    .sidebar li.active a {
+      background-color: #1c2b3d;
+      color: white;
+      border-radius: 6px;
+    }
+
+    .container {
+      flex: 1;
+      padding: 20px;
+      transition: margin-left 0.3s ease;
+    }
+
+    .flex-container {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+
+    .card {
+      border: 1px solid #ffffff;
+      padding: 20px;
+      border-radius: 30px;
+      background-color: #f9f9f9;
+      flex: 1;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+
+    table td {
+      border: 1px solid #999;
+      padding: 5px;
+    }
+
+    h2, h3 {
+      color: #345e37;
+    }
+
+    .input-group {
+      margin-bottom: 15px;
+    }
+
+    .input-group label {
+      display: block;
+      margin-bottom: 5px;
       font-weight: bold;
     }
 
-    .nav-item:hover,
-    .nav-item.active {
-      background-color: #e0ffe0;
-      color: #2f4f2f;
+    .input-group input, .input-group select {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
     }
 
-    .nav-item i {
-      transition: color 0.3s;
+    .gender-options {
+      width: 60%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 10px;
     }
 
-    .nav-item.active i {
-      color: #2f4f2f;
+    .gender-option {
+      text-align: center;
+      cursor: pointer;
+      flex: 0 0 auto;
     }
 
-    #navbar {
-      border-top-right-radius: 20px;
-      border-bottom-right-radius: 20px;
+    .gender-option input[type="radio"] {
+      display: none;
     }
+
+    .gender-option img {
+      width: 80px;
+      height: 80px;
+      border: 3px solid transparent;
+      border-radius: 50%;
+      transition: 0.5s;
+    }
+
+    .gender-option img:hover {
+      border-color: #345e37;
+      box-shadow: 0 0 10px rgba(52, 94, 55, 0.5);
+    }
+
+    .gender-option input[type="radio"]:checked + img {
+      border-color: #345e37;
+      box-shadow: 0 0 10px rgba(52, 94, 55, 0.5);
+    }
+
+    .gender-option span {
+      display: block;
+      margin-top: 5px;
+      font-weight: bold;
+      color: #345e37;
+    }
+
+    button {
+      background-color: #345e37;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #2b4d2e;
+    }
+
+    .back-button {
+      display: block;
+      margin: 20px auto;
+      text-align: center;
+    }
+
+    .back-button a {
+      text-decoration: none;
+      color: white;
+      background-color: #345e37;
+      padding: 10px 20px;
+      border-radius: 5px;
+      font-weight: bold;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .back-button a:hover {
+      background-color: #2b4d2e;
+    }
+
+    .back-button i {
+      font-size: 16px;
+    }
+
+    
   </style>
 </head>
-<body class="bg-[#f1f6f2] min-h-screen">
-
-  <!-- Mobile Navbar Toggle -->
-  <div class="lg:hidden p-4 bg-[#345E37] text-white flex items-center justify-between">
-    <h1 class="font-semibold text-lg">Gizioneer</h1>
-    <button id="toggleSidebar" class="text-2xl focus:outline-none">
-      <i class="fas fa-bars"></i>
-    </button>
-  </div>
-
-  <!-- Sidebar -->
-  <nav id="navbar" class="bg-[#345E37] shadow-lg w-64 min-h-screen p-6 flex flex-col space-y-3 text-sm font-medium fixed top-0 left-0 transform -translate-x-full lg:translate-x-0 transition-transform duration-300 z-40">
-    <div class="flex items-center justify-start gap-3 mb-8">
-      <div class="flex items-center space-x-2">
-        <i class="far fa-smile text-2xl text-white"></i>
-        <h1 class="font-semibold text-lg text-white">Gizioneer</h1>
+<body>
+  <div class="wrapper">
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <div class="logo">
+        <img src="image/1.jpeg" alt="logo">
+        <span class="logo-text">NutriCalc</span>
+      </div>
+      <div class="menu-section">
+        <ul>
+          <li class="active"><a href="index.html"><span class="material-icons-outlined">dashboard</span><span class="text">Beranda</span></a></li>
+          <li><a href="materi.html"><span class="material-icons">description</span><span class="text">Materi</span></a></li>
+          <li><a href="anak.html"><span class="material-icons">calculate</span><span class="text">Kalkulator Anak</span></a></li>
+          <li><a href="dewasa.html"><span class="material-icons">calculate</span><span class="text">Kalkulator Dewasa</span></a></li>
+          <li><a href="anggota.html"><span class="material-icons-outlined">groups</span><span class="text">Anggota</span></a></li>
+        </ul>
       </div>
     </div>
-
-    <a href="index.html" class="nav-item">
-      <i class="fas fa-home"></i>
-      <span>Beranda</span>
-    </a>
-
-    <div id="dropdownKalkulator" class="dropdown relative">
-      <button class="nav-item w-full justify-between">
-        <a href="kalkulator.html" class="flex items-center gap-3 text-white">
-          <i class="fas fa-calculator"></i>
-          <span>Kalkulator</span>
-        </a>
-        <i class="fas fa-chevron-down"></i>
-      </button>
-      <div class="dropdown-content bg-[#e0ffe0] text-[#2f4f2f] mt-2 rounded-md shadow-md overflow-hidden">
-        <a href="anak.html" class="block px-4 py-2 hover:bg-[#d2f2d2]">Anak</a>
-        <a href="dewasa.html" class="block px-4 py-2 hover:bg-[#d2f2d2]">Dewasa</a>
-      </div>
-    </div>
-
-    <a href="materi.html" class="nav-item">
-      <i class="fas fa-book"></i>
-      <span>Materi</span>
-    </a>
-
-    <a href="anggota.html" class="nav-item">
-      <i class="fas fa-users"></i>
-      <span>Anggota</span>
-    </a>
-  </nav>
-
-  <!-- Sidebar Overlay -->
-  <div id="overlay" class="fixed inset-y-0 left-0 w-64 bg-black bg-opacity-50 z-30 hidden lg:hidden"></div>
-
   <!-- Main Content -->
   <main class="lg:ml-64 transition-all p-6">
     <h2 class="text-4xl font-semibold mb-4 text-[#345e37] mt-6">Selamat Datang di Kalkulator Gizi</h2>

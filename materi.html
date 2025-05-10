@@ -14,235 +14,337 @@
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
   />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet"/>
   <style>
     body {
       font-family: 'Poppins', sans-serif;
     }
-
-    /* Style untuk kotak artikel */
     article {
       transition: transform 0.2s ease, box-shadow 0.3s ease;
     }
 
-    /* Bayangan pada bagian atas kotak artikel */
     article:focus,
     article:active {
       outline: none;
       box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1),
                   0 4px 6px rgba(0, 0, 0, 0.1);
-      transform: translateY(-5px); /* Animasi saat artikel diklik */
+      transform: translateY(-5px); 
     }
 
-    /* Menambahkan bayangan ketika artikel dalam keadaan normal */
     article {
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Bayangan default */
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); 
     }
     /* navbar */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-*{
-    margin: 0px;
-    padding: 0px;
-  }
-  
-  body{
-    max-width: 1600px;
-    margin: auto;
-    height: 700px;
-    background: white;
-  }
-  
-  nav{
-    display: flex;
-    flex-direction: column;
-    position: fixed;
-    width: 214px;
-    background: #212523;
-    overflow-y: scroll;
-    top: 0;
-    bottom: 0;
-    display: block;
-  }
-  
-  nav .top{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background: blue;
-  }
-  
-  nav .top img{
-    width: 90px;
-    border-radius: 50%;
-    border: 2px solid white;
-    margin: 10px;
-  }
-  
-  nav .top h1{
-    color: white;
-    text-align: center;
-    margin-bottom: 10px;
-    font-size: 28px;
-  }
-  
-  nav .top span.line{
-    display: block;
-    width: 205px;
-    height: 1px;
-    background: white;
-  }
-  
-  nav .bot .nav-links a{
-    display: block;
-    padding: 20px;
-    text-decoration: none;
-    color: white;
-    font-size: 15px;
-  }
-  
-  nav a span{
-    margin-left: 25px;
-  }
-  
-  ::-webkit-scrollbar {
-    width: 8px;
-  }
-  
-  /* Track */
-  ::-webkit-scrollbar-track {
-    background: #f1f1f1;
-  }
-  
-  /* Handle */
-  ::-webkit-scrollbar-thumb {
-    background: #DCDCDC;
-  }
-  
-  /* Handle on hover */
-  ::-webkit-scrollbar-thumb:hover {
-    background: #999;
-  }
-  
-  input{
-    position: absolute;
-    margin-left: 22.5px;
-    margin-top: 22px;
-    transform: scale(2.1);
-    opacity: 0;
-    cursor: pointer;
-  }
-  
-  .navbar{
-    max-width: 100%;
-    min-height: 60px;
-    align-items: center;
-    display: flex;
-    justify-content: space-between;
-    background: blue;
-    margin-left: 214px;
-  }
-  
-  .navbar .left .hamburger{
-    padding: 10px;
-  }
-  
-  .navbar .left .hamburger span{
-    display: block;
-    width: 25px;
-    height: 3px;
-    background: white;
-    margin: 6.5px;
-  }
-  
-  .navbar .right h1{
-    color: white;
-    padding: 10px;
-  }
-  
-  input{
-    margin-left: 237px;
-  }
-  
-  input:checked ~ nav{
-    display: none;
-  }
-  
-  input:checked ~ .navbar{
-    margin-left: 0px;
-  }
-  
-  input:checked{
-    margin-left: 22.5px;
-  }
-  
-  @media(max-width: 900px){
-    body{
-      overflow-y: scroll;
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #eef1f6;
     }
-  
-    nav{
+
+    .wrapper {
+      display: flex;
+      transition: all 0.3s ease;
+    }
+
+    .sidebar {
+      top: 0;
+      left: 0;
+      width: 80px;
+      height: 100vh;
+      background-color: #0e1a2b;
+      color: white;
+      transition: width 0.3s ease;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+
+    .sidebar:hover {
+      width: 250px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 20px;
+    }
+
+    .logo img {
+      width: 30px;
+    }
+
+    .logo-text {
+      font-size: 5.5rem;
+      font-weight: bold;
       display: none;
-      width: 200px;
     }
-  
-    nav .top span.line{
-      width: 191px;
+
+    .sidebar:hover .logo-text {
+      display: inline;
     }
-  
-    .navbar{
-      margin-left: 0px;
-      width: 100%;
+
+    .menu-section {
+      margin-top: 20px;
+      padding-left: 15px;
     }
-  
-    input{
-      opacity: 0;
-      margin-left: 22.5px;
+
+    .section-title {
+      font-size: 0.75rem;
+      color: #aaa;
+      margin-bottom: 10px;
+      display: none;
     }
-  
-    input:checked{
-      margin-left: 222px;
-    }
-  
-    input:checked ~ nav{
+
+    .sidebar:hover .section-title {
       display: block;
     }
-  
-    input:checked ~ .navbar{
-      margin-left: 200px;
+
+    .menu-section ul {
+      list-style: none;
     }
-  }
+
+    .menu-section li {
+      display: flex;
+      align-items: center;
+      padding: 10px 15px;
+      gap: 15px;
+      cursor: pointer;
+      transition: background 0.2s ease;
+      border-radius: 6px;
+    }
+
+    .menu-section li:hover,
+    .menu-section li.active {
+      background-color: #1c2b3d;
+    }
+
+    .menu-section .material-icons-outlined {
+      font-size: 20px;
+    }
+
+    .text {
+      display: none;
+      white-space: nowrap;
+    }
+
+    .sidebar:hover .text {
+      display: inline;
+    }
+
+    .profile {
+      margin-top: auto;
+      padding: 15px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: #132235;
+      cursor: pointer;
+    }
+
+    .profile img {
+      border-radius: 50%;
+      width: 30px;
+      height: 30px;
+    }
+
+    .details {
+      display: none;
+    }
+
+    .sidebar:hover .details {
+      display: block;
+    }
+
+    .details .name {
+      font-weight: bold;
+      font-size: 0.9rem;
+    }
+
+    .details .role {
+      font-size: 0.7rem;
+      color: #aaa;
+    }
+
+    .sidebar a {
+      text-decoration: none;
+      color: inherit;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .sidebar a:hover {
+      color: white;
+    }
+
+    .sidebar li.active a {
+      background-color: #1c2b3d;
+      color: white;
+      border-radius: 6px;
+    }
+
+    .container {
+      flex: 1;
+      padding: 20px;
+      transition: margin-left 0.3s ease;
+    }
+
+    .flex-container {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+
+    .card {
+      border: 1px solid #ffffff;
+      padding: 20px;
+      border-radius: 30px;
+      background-color: #f9f9f9;
+      flex: 1;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+
+    table td {
+      border: 1px solid #999;
+      padding: 5px;
+    }
+
+    h2, h3 {
+      color: #345e37;
+    }
+
+    .input-group {
+      margin-bottom: 15px;
+    }
+
+    .input-group label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+
+    .input-group input, .input-group select {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .gender-options {
+      width: 60%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 10px;
+    }
+
+    .gender-option {
+      text-align: center;
+      cursor: pointer;
+      flex: 0 0 auto;
+    }
+
+    .gender-option input[type="radio"] {
+      display: none;
+    }
+
+    .gender-option img {
+      width: 80px;
+      height: 80px;
+      border: 3px solid transparent;
+      border-radius: 50%;
+      transition: 0.5s;
+    }
+
+    .gender-option img:hover {
+      border-color: #345e37;
+      box-shadow: 0 0 10px rgba(52, 94, 55, 0.5);
+    }
+
+    .gender-option input[type="radio"]:checked + img {
+      border-color: #345e37;
+      box-shadow: 0 0 10px rgba(52, 94, 55, 0.5);
+    }
+
+    .gender-option span {
+      display: block;
+      margin-top: 5px;
+      font-weight: bold;
+      color: #345e37;
+    }
+
+    button {
+      background-color: #345e37;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #2b4d2e;
+    }
+
+    .back-button {
+      display: block;
+      margin: 20px auto;
+      text-align: center;
+    }
+
+    .back-button a {
+      text-decoration: none;
+      color: white;
+      background-color: #345e37;
+      padding: 10px 20px;
+      border-radius: 5px;
+      font-weight: bold;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .back-button a:hover {
+      background-color: #2b4d2e;
+    }
+
+    .back-button i {
+      font-size: 16px;
+    }
+
+
   </style>
 </head>
 <body>
-    <input type="checkbox"> <!-- terakhir -->
-    <nav>
-        <div class="top">
-          <img src="img/profile.jfif" alt="">
-          <h1>David G.S</h1>
-          <span class = "line"></span>
-        </div>
-        <div class="bot">
-          <div class="nav-links">
-            <div class="nav-link-wrapper"><a href=""><img src="https://img.icons8.com/android/22/ffffff/home.png"><span>Home</span></a></div>
-            <div class="nav-link-wrapper"><a href=""><img src="https://img.icons8.com/metro/22/ffffff/about.png"/><span>About</span></a></div>
-            <div class="nav-link-wrapper"><a href=""><img src="https://img.icons8.com/metro/22/ffffff/download.png"><span>Download</span></a></div>
-            <div class="nav-link-wrapper"><a href=""><img src="https://img.icons8.com/metro/22/ffffff/settings.png"/><span>Settings</span></a></div>
-            <div class="nav-link-wrapper"><a href=""><img src="https://img.icons8.com/pastel-glyph/22/ffffff/online-support.png"/><span>Support</span></a></div>
-            <div class="nav-link-wrapper"><a href=""><img src="https://img.icons8.com/metro/22/ffffff/export.png"/><span>Sign Out</span></a></div>
-          </div>
-        </div>
-      </nav>
-      <div class="navbar"> <!-- terakhir -->
-        <div class="left">
-          <div class="hamburger">
-            <span></span>
-            <span></span>
-            <span></span>
-          </div>
-        </div>
-        <div class="right">
-          <h1>David G.S</h1>
-        </div>
+  <div class="wrapper">
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <div class="logo">
+        <img src="image/1.jpeg" alt="logo">
+        <span class="logo-text">NutriCalc</span>
       </div>
+      <div class="menu-section">
+        <ul>
+          <li><a href="index.html"><span class="material-icons-outlined">dashboard</span><span class="text">Beranda</span></a></li>
+          <li class="active"><a href="materi.html"><span class="material-icons">description</span><span class="text">Materi</span></a></li>
+          <li><a href="anak.html"><span class="material-icons">calculate</span><span class="text">Kalkulator Anak</span></a></li>
+          <li><a href="dewasa.html"><span class="material-icons">calculate</span><span class="text">Kalkulator Dewasa</span></a></li>
+          <li><a href="anggota.html"><span class="material-icons-outlined">groups</span><span class="text">Anggota</span></a></li>
+        </ul>
+      </div>
+    </div>
 <body class="bg-white min-h-screen p-6">
   <main class="max-w-7xl mx-auto">
     <header class="text-center mb-10">
