@@ -2,16 +2,18 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Kalkulator Gizi</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet"/>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet"/>
   <style>
     body {
       font-family: "Poppins", sans-serif;
+      background: #eef1f6;
     }
     * {
       margin: 0;
@@ -58,7 +60,7 @@
     }
 
     .logo-text {
-      font-size: 1rem;
+      font-size: 5.5rem;
       font-weight: bold;
       display: none;
     }
@@ -166,7 +168,6 @@
       color: white;
       border-radius: 6px;
     }
-
     .container {
       margin-left: 80px; /* Default sidebar width */
       padding: 20px;
@@ -175,6 +176,10 @@
     .sidebar:hover + .container {
       margin-left: 250px; /* Expanded sidebar width */
     }
+    .wrapper {
+  display: flex;
+  transition: all 0.3s ease;
+}
 
     .flex-container {
       display: flex;
@@ -304,63 +309,70 @@
     .back-button i {
       font-size: 16px;
     }
-
-    
   </style>
 </head>
 <body>
   <div class="wrapper">
-    <!-- Sidebar -->
-    <div class="sidebar">
-      <div class="logo">
-        <img src="image/1.jpeg" alt="logo">
-        <span class="logo-text">NutriCalc</span>
+      <!-- Sidebar -->
+      <div class="sidebar">
+        <div class="logo">
+          <img src="image/1.jpeg" alt="logo">
+          <span class="logo-text">NutriCalc</span>
+        </div>
+        <div class="menu-section">
+          <ul>
+            <li><a href="index.html"><span class="material-icons-outlined">dashboard</span><span class="text">Beranda</span></a></li>
+            <li><a href="materi.html"><span class="material-icons">description</span><span class="text">Materi</span></a></li>
+            <li><a href="anak.html"><span class="material-icons">calculate</span><span class="text">Kalkulator Anak</span></a></li>
+            <li  class="active"><a href="dewasa.html"><span class="material-icons">calculate</span><span class="text">Kalkulator Dewasa</span></a></li>
+            <li><a href="anggota.html"><span class="material-icons-outlined">groups</span><span class="text">Anggota</span></a></li>
+          </ul>
+        </div>
       </div>
-      <div class="menu-section">
-        <ul>
-          <li class="active"><a href="index.html"><span class="material-icons-outlined">dashboard</span><span class="text">Beranda</span></a></li>
-          <li><a href="materi.html"><span class="material-icons">description</span><span class="text">Materi</span></a></li>
-          <li><a href="anak.html"><span class="material-icons">calculate</span><span class="text">Kalkulator Anak</span></a></li>
-          <li><a href="dewasa.html"><span class="material-icons">calculate</span><span class="text">Kalkulator Dewasa</span></a></li>
-          <li><a href="anggota.html"><span class="material-icons-outlined">groups</span><span class="text">Anggota</span></a></li>
+    <!-- Main Content -->
+    <main class="ml-20 p-6 transition-all">
+      <h1 class="text-3xl font-bold text-[#345e37]">Selamat Datang di Kalkulator Gizi</h1>
+      <p class="text-gray-700 mt-4">Gunakan alat ini untuk menghitung kebutuhan gizi Anda secara akurat dan mudah.</p>
+
+      <!-- Kartu Kalkulator -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+        <!-- Kalkulator Anak -->
+        <div class="p-6 bg-white rounded-lg shadow hover:shadow-md text-center">
+          <i class="fas fa-child text-4xl text-[#345e37]"></i>
+          <h2 class="mt-4 text-lg font-semibold">Kalkulator Gizi Anak</h2>
+          <p class="text-gray-600 mt-2">Hitung kebutuhan gizi anak Anda berdasarkan usia dan tinggi badan.</p>
+          <button onclick="location.href='anak.html'" class="mt-4 px-6 py-2 bg-[#345e37] text-white rounded hover:bg-[#2b4d2e]">Mulai Hitung</button>
+        </div>
+
+        <!-- Kalkulator Dewasa -->
+        <div class="p-6 bg-white rounded-lg shadow hover:shadow-md text-center">
+          <i class="fas fa-user text-4xl text-[#345e37]"></i>
+          <h2 class="mt-4 text-lg font-semibold">Kalkulator Gizi Dewasa</h2>
+          <p class="text-gray-600 mt-2">Hitung kebutuhan gizi dewasa berdasarkan BMR, IMT, dan tingkat aktivitas.</p>
+          <button onclick="location.href='dewasa.html'" class="mt-4 px-6 py-2 bg-[#345e37] text-white rounded hover:bg-[#2b4d2e]">Mulai Hitung</button>
+        </div>
+      </div>
+      <!-- Fitur Utama -->
+      <div class="bg-white p-6 rounded-lg shadow-lg mt-12">
+        <h3 class="text-xl font-semibold text-[#345e37] mb-4">Kenapa Memilih Kalkulator Gizi Ini?</h3>
+        <ul class="list-disc pl-6 text-gray-700">
+          <li>Mudah digunakan untuk semua kalangan.</li>
+          <li>Mempertimbangkan parameter seperti usia, tinggi, berat, dan aktivitas fisik.</li>
+          <li>Dapat digunakan untuk anak-anak dan dewasa.</li>
         </ul>
       </div>
-    </div>
-  <!-- Main Content -->
-  <main class="lg:ml-64 transition-all p-6">
-    <h2 class="text-4xl font-semibold mb-4 text-[#345e37] mt-6">Selamat Datang di Kalkulator Gizi</h2>
-    <p class="text-base text-gray-700 mb-6">Gunakan alat ini untuk menghitung kebutuhan gizi Anda secara akurat dan mudah.</p>
-  </main>
-
-  <!-- Script -->
+    </main>
+  </div>
   <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const dropdownKalkulator = document.getElementById("dropdownKalkulator");
-      const toggleSidebar = document.getElementById("toggleSidebar");
-      const navbar = document.getElementById("navbar");
-      const overlay = document.getElementById("overlay");
+    const sidebar = document.getElementById('sidebar');
+    const container = document.querySelector('.container');
 
-      dropdownKalkulator.addEventListener("click", () => {
-        dropdownKalkulator.classList.toggle("open");
-      });
+    sidebar.addEventListener('mouseenter', () => {
+      container.style.marginLeft = '250px'; // Move the container when sidebar expands
+    });
 
-      toggleSidebar.addEventListener("click", () => {
-        navbar.classList.toggle("-translate-x-full");
-        overlay.classList.toggle("hidden");
-      });
-
-      overlay.addEventListener("click", () => {
-        navbar.classList.add("-translate-x-full");
-        overlay.classList.add("hidden");
-      });
-
-      // Highlight active link
-      const currentPage = window.location.pathname.split("/").pop();
-      document.querySelectorAll(".nav-item").forEach(link => {
-        if (link.getAttribute("href") === currentPage) {
-          link.classList.add("active");
-        }
-      });
+    sidebar.addEventListener('mouseleave', () => {
+      container.style.marginLeft = '80px'; // Return the container to the default margin
     });
   </script>
 </body>
