@@ -36,8 +36,8 @@
       left: 0;
       width: 80px;
       height: 100vh;
-      background-color: #0e1a2b;
-      color: white;
+      background-color: #BAE8E8;
+      color: #272343;
       transition: width 0.3s ease;
       overflow: hidden;
       flex-shrink: 0;
@@ -64,6 +64,7 @@
       font-size: 1.5rem;
       font-weight: bold;
       display: none;
+      color: #272343;
     }
 
     .sidebar:hover .logo-text {
@@ -102,7 +103,7 @@
 
     .menu-section li:hover,
     .menu-section li.active {
-      background-color: #1c2b3d;
+      background-color: #E3F6F5;
     }
 
     .menu-section .material-icons-outlined {
@@ -161,12 +162,12 @@
     }
 
     .sidebar a:hover {
-      color: white;
+      color: #272343;
     }
 
     .sidebar li.active a {
-      background-color: #1c2b3d;
-      color: white;
+      background-color: #E3F6F5;
+      color: #272343;
       border-radius: 6px;
     }
     .container {
@@ -216,7 +217,7 @@
     }
 
     h2, h3 {
-      color: #0e1a2b;
+      color: #BAE8E8;
     }
 
     .input-group {
@@ -263,12 +264,12 @@
     }
 
     .gender-option img:hover {
-      border-color: #0e1a2b;
+      border-color: #BAE8E8;
       box-shadow: 0 0 10px rgba(52, 94, 55, 0.5);
     }
 
     .gender-option input[type="radio"]:checked + img {
-      border-color: #0e1a2b;
+      border-color: #BAE8E8;
       box-shadow: 0 0 10px rgba(52, 94, 55, 0.5);
     }
 
@@ -276,12 +277,12 @@
       display: block;
       margin-top: 5px;
       font-weight: bold;
-      color: #0e1a2b;
+      color: #BAE8E8;
     }
 
     button {
-      background-color: #0e1a2b;
-      color: white;
+      background-color: #BAE8E8;
+      color: #272343;
       padding: 10px 20px;
       border: none;
       border-radius: 5px;
@@ -289,7 +290,7 @@
     }
 
     button:hover {
-      background-color: #1c2b3d;
+      background-color: #E3F6F5;
     }
 
     .back-button {
@@ -300,8 +301,8 @@
 
     .back-button a {
       text-decoration: none;
-      color: white;
-      background-color: #0e1a2b;
+      color: #272343;
+      background-color: #BAE8E8;
       padding: 10px 20px;
       border-radius: 5px;
       font-weight: bold;
@@ -311,7 +312,7 @@
     }
 
     .back-button a:hover {
-      background-color: #1c2b3d;
+      background-color: #E3F6F5;
     }
 
     .back-button i {
@@ -324,7 +325,7 @@
     <div class="sidebar">
       <div class="logo">
         <img src="image/1.jpeg" alt="logo">
-        <span class="logo-text">NutriCalc</span>
+        <span class="logo-text" style="color: #272343;">NutriCalc</span>
       </div>
       <div class="menu-section">
         <ul>
@@ -337,27 +338,27 @@
       </div>
     </div>
     <main class="container">
-      <h1 class="text-3xl font-bold text-[#0e1a2b]">Selamat Datang di Kalkulator Gizi</h1>
+      <h1 class="text-3xl font-bold text-[#272343]">Selamat Datang di Kalkulator Gizi</h1>
       <p class="text-gray-700 mt-4">Gunakan alat ini untuk menghitung kebutuhan gizi Anda secara akurat dan mudah.</p>
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
         <div class="p-6 bg-white rounded-lg shadow hover:shadow-md text-center">
-          <i class="fas fa-child text-4xl text-[#0e1a2b]"></i>
-          <h2 class="mt-4 text-lg font-semibold">Kalkulator Gizi Anak</h2>
-          <p class="text-gray-600 mt-2">Hitung kebutuhan gizi anak Anda dengan mempertimbangkan usia, tinggi badan, dan aktivitas fisik yang tepat.</p>
-          <button onclick="location.href='anak.html'" class="mt-4 px-6 py-2 bg-[#0e1a2b] text-white rounded hover:bg-[#1c2b3d]">Mulai Hitung</button>
+          <i class="fas fa-child text-4xl text-[#272343]"></i>
+          <h2 class="mt-4 text-lg font-semibold" style="color: #272343;">Kalkulator Gizi Anak</h2>
+          <p class="text-[#272343] mt-2">Hitung kebutuhan gizi anak Anda dengan mempertimbangkan usia, tinggi badan, dan aktivitas fisik yang tepat.</p>
+          <button onclick="location.href='anak.html'" class="mt-4 px-6 py-2 bg-[#BAE8E8] text-[#272343] rounded hover:bg-[#272343]">Mulai Hitung</button>
         </div>
 
         <div class="p-6 bg-white rounded-lg shadow hover:shadow-md text-center">
-          <i class="fas fa-user text-4xl text-[#0e1a2b]"></i>
-          <h2 class="mt-4 text-lg font-semibold">Kalkulator Gizi Dewasa</h2>
-          <p class="text-gray-600 mt-2">Hitung kebutuhan gizi untuk dewasa secara mudah dan akurat berdasarkan BMR, IMT, serta tingkat aktivitas fisik harian.
+          <i class="fas fa-user text-4xl text-[#272343]"></i>
+          <h2 class="mt-4 text-lg font-semibold" style="color: #272343;">Kalkulator Gizi Dewasa</h2>
+          <p class="text-[#272343] mt-2">Hitung kebutuhan gizi untuk dewasa secara mudah dan akurat berdasarkan BMR, IMT, serta tingkat aktivitas fisik harian.
           </p>
-          <button onclick="location.href='dewasa.html'" class="mt-4 px-6 py-2 bg-[#0e1a2b] text-white rounded hover:bg-[#1c2b3d]">Mulai Hitung</button>
+          <button onclick="location.href='dewasa.html'" class="mt-4 px-6 py-2 bg-[#BAE8E8] text-[#272343] rounded hover:bg-[#272343]">Mulai Hitung</button>
         </div>
       </div>
       <div class="bg-white p-6 rounded-lg shadow-lg mt-12">
-        <h3 class="text-xl font-semibold text-[#0e1a2b] mb-4">Kenapa Memilih Kalkulator Gizi Ini?</h3>
+        <h3 class="text-xl font-semibold text-[#272343] mb-4">Kenapa Memilih Kalkulator Gizi Ini?</h3>
         <ul class="list-disc pl-6 text-gray-700">
           <li>Mudah digunakan untuk semua kalangan.</li>
           <li>Mempertimbangkan parameter seperti usia, tinggi, berat, dan aktivitas fisik.</li>
