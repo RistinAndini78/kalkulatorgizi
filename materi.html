@@ -35,301 +35,239 @@
     article {
       box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); 
     }
-    /* navbar */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    /* Reset dasar */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-    body {
-      font-family: 'Poppins', sans-serif;
-      background: #eef1f6;
-    }
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #eef1f6;
+  overflow-x: hidden;
+}
 
-    .wrapper {
-      display: flex;
-      transition: all 0.3s ease;
-    }
+/* Wrapper utama */
+.wrapper {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+}
 
-    .sidebar {
-      top: 0;
-      left: 0;
-      width: 80px;
-      height: 100vh;
-      background-color: #0e1a2b;
-      color: white;
-      transition: width 0.3s ease;
-      overflow: hidden;
-      flex-shrink: 0;
-      position: fixed;
-    }
+/* Sidebar */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 80px;
+  height: 100vh;
+  background-color: #0e1a2b;
+  color: white;
+  transition: width 0.3s ease;
+  z-index: 1000; /* Pastikan sidebar berada di atas konten utama */
+  overflow: hidden;
+}
 
-    .sidebar:hover {
-      width: 250px;
-    }
+.sidebar:hover {
+  width: 250px;
+}
 
-    .logo {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      padding: 20px;
-    }
+/* Logo pada sidebar */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 20px;
+}
 
-    .logo img {
-      width: 30px;
-    }
+.logo img {
+  width: 30px;
+}
 
-    .logo-text {
-      font-size: 5.5rem;
-      font-weight: bold;
-      display: none;
-    }
+.logo-text {
+  font-size: 1.5rem;
+  font-weight: bold;
+  display: none;
+}
 
-    .sidebar:hover .logo-text {
-      display: inline;
-    }
+.sidebar:hover .logo-text {
+  display: inline;
+}
 
-    .menu-section {
-      margin-top: 20px;
-      padding-left: 15px;
-    }
+/* Menu di sidebar */
+.menu-section {
+  margin-top: 20px;
+  padding-left: 15px;
+}
 
-    .section-title {
-      font-size: 0.75rem;
-      color: #aaa;
-      margin-bottom: 10px;
-      display: none;
-    }
+.section-title {
+  font-size: 0.75rem;
+  color: #aaa;
+  margin-bottom: 10px;
+  display: none;
+}
 
-    .sidebar:hover .section-title {
-      display: block;
-    }
+.sidebar:hover .section-title {
+  display: block;
+}
 
-    .menu-section ul {
-      list-style: none;
-    }
+.menu-section ul {
+  list-style: none;
+}
 
-    .menu-section li {
-      display: flex;
-      align-items: center;
-      padding: 10px 15px;
-      gap: 15px;
-      cursor: pointer;
-      transition: background 0.2s ease;
-      border-radius: 6px;
-    }
+.menu-section li {
+  display: flex;
+  align-items: center;
+  padding: 10px 15px;
+  gap: 15px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+  border-radius: 6px;
+}
 
-    .menu-section li:hover,
-    .menu-section li.active {
-      background-color: #1c2b3d;
-    }
+.menu-section li:hover,
+.menu-section li.active {
+  background-color: #1c2b3d;
+}
 
-    .menu-section .material-icons-outlined {
-      font-size: 20px;
-    }
+.menu-section .material-icons-outlined {
+  font-size: 20px;
+}
 
-    .text {
-      display: none;
-      white-space: nowrap;
-    }
+.text {
+  display: none;
+  white-space: nowrap;
+}
 
-    .sidebar:hover .text {
-      display: inline;
-    }
+.sidebar:hover .text {
+  display: inline;
+}
 
-    .profile {
-      margin-top: auto;
-      padding: 15px;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      background: #132235;
-      cursor: pointer;
-    }
+/* Profil pengguna di sidebar */
+.profile {
+  margin-top: auto;
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #132235;
+  cursor: pointer;
+}
 
-    .profile img {
-      border-radius: 50%;
-      width: 30px;
-      height: 30px;
-    }
+.profile img {
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+}
 
-    .details {
-      display: none;
-    }
+.details {
+  display: none;
+}
 
-    .sidebar:hover .details {
-      display: block;
-    }
+.sidebar:hover .details {
+  display: block;
+}
 
-    .details .name {
-      font-weight: bold;
-      font-size: 0.9rem;
-    }
+.details .name {
+  font-weight: bold;
+  font-size: 0.9rem;
+}
 
-    .details .role {
-      font-size: 0.7rem;
-      color: #aaa;
-    }
+.details .role {
+  font-size: 0.7rem;
+  color: #aaa;
+}
 
-    .sidebar a {
-      text-decoration: none;
-      color: inherit;
-      display: flex;
-      align-items: center;
-      gap: 15px;
-    }
+.sidebar a {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
 
-    .sidebar a:hover {
-      color: white;
-    }
+.sidebar a:hover {
+  color: white;
+}
 
-    .sidebar li.active a {
-      background-color: #1c2b3d;
-      color: white;
-      border-radius: 6px;
-    }
+.sidebar li.active a {
+  background-color: #1c2b3d;
+  color: white;
+  border-radius: 6px;
+}
 
-    .container {
-      margin-left: 80px; /* Default sidebar width */
-      padding: 20px;
-      transition: margin-left 0.3s ease;
-    }
-    .sidebar:hover + .container {
-      margin-left: 250px; /* Expanded sidebar width */
-    }
+/* Konten utama */
+.container {
+  margin-left: 80px; /* Lebar sidebar default */
+  padding: 20px;
+  flex-grow: 1;
+  transition: margin-left 0.3s ease;
+}
 
-    .flex-container {
-      display: flex;
-      gap: 20px;
-      flex-wrap: wrap;
-      margin-top: 20px;
-    }
+.sidebar:hover ~ .container {
+  margin-left: 250px; /* Lebar sidebar saat diperluas */
+}
 
-    .card {
-      border: 1px solid #ffffff;
-      padding: 20px;
-      border-radius: 30px;
-      background-color: #f9f9f9;
-      flex: 1;
-    }
+/* Kontainer fleksibel untuk konten */
+.flex-container {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
 
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 10px;
-    }
+.flex-container > div {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  flex: 1;
+  min-width: 300px;
+  padding: 20px;
+}
 
-    table td {
-      border: 1px solid #999;
-      padding: 5px;
-    }
+h2, h3 {
+  color: #345e37;
+}
 
-    h2, h3 {
-      color: #345e37;
-    }
+button {
+  background-color: #345e37;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
 
-    .input-group {
-      margin-bottom: 15px;
-    }
+button:hover {
+  background-color: #2b4d2e;
+}
 
-    .input-group label {
-      display: block;
-      margin-bottom: 5px;
-      font-weight: bold;
-    }
+.back-button {
+  display: block;
+  margin: 20px auto;
+  text-align: center;
+}
 
-    .input-group input, .input-group select {
-      width: 100%;
-      padding: 10px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-    }
+.back-button a {
+  text-decoration: none;
+  color: white;
+  background-color: #345e37;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-weight: bold;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
 
-    .gender-options {
-      width: 60%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin-top: 10px;
-    }
+.back-button a:hover {
+  background-color: #2b4d2e;
+}
 
-    .gender-option {
-      text-align: center;
-      cursor: pointer;
-      flex: 0 0 auto;
-    }
-
-    .gender-option input[type="radio"] {
-      display: none;
-    }
-
-    .gender-option img {
-      width: 80px;
-      height: 80px;
-      border: 3px solid transparent;
-      border-radius: 50%;
-      transition: 0.5s;
-    }
-
-    .gender-option img:hover {
-      border-color: #345e37;
-      box-shadow: 0 0 10px rgba(52, 94, 55, 0.5);
-    }
-
-    .gender-option input[type="radio"]:checked + img {
-      border-color: #345e37;
-      box-shadow: 0 0 10px rgba(52, 94, 55, 0.5);
-    }
-
-    .gender-option span {
-      display: block;
-      margin-top: 5px;
-      font-weight: bold;
-      color: #345e37;
-    }
-
-    button {
-      background-color: #345e37;
-      color: white;
-      padding: 10px 20px;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-
-    button:hover {
-      background-color: #2b4d2e;
-    }
-
-    .back-button {
-      display: block;
-      margin: 20px auto;
-      text-align: center;
-    }
-
-    .back-button a {
-      text-decoration: none;
-      color: white;
-      background-color: #345e37;
-      padding: 10px 20px;
-      border-radius: 5px;
-      font-weight: bold;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .back-button a:hover {
-      background-color: #2b4d2e;
-    }
-
-    .back-button i {
-      font-size: 16px;
-    }
-
-
-
+.back-button i {
+  font-size: 16px;
+}
   </style>
 </head>
 <body>

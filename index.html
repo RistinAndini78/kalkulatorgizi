@@ -42,6 +42,7 @@
       overflow: hidden;
       flex-shrink: 0;
       position: fixed;
+      
     }
 
     .sidebar:hover {
@@ -172,7 +173,11 @@
       margin-left: 80px; /* Default sidebar width */
       padding: 20px;
       transition: margin-left 0.3s ease;
+      flex-grow: 1; /* Main content should take remaining space */
+      height: 100vh; /* Ensure container takes full height */
+      overflow-y: auto; /* Allow scrolling if content exceeds screen height */
     }
+
     .sidebar:hover + .container {
       margin-left: 250px; /* Expanded sidebar width */
     }
@@ -321,10 +326,10 @@
         </div>
         <div class="menu-section">
           <ul>
-            <li><a href="index.html"><span class="material-icons-outlined">dashboard</span><span class="text">Beranda</span></a></li>
+            <li class="active"><a href="index.html"><span class="material-icons-outlined">dashboard</span><span class="text">Beranda</span></a></li>
             <li><a href="materi.html"><span class="material-icons">description</span><span class="text">Materi</span></a></li>
             <li><a href="anak.html"><span class="material-icons">calculate</span><span class="text">Kalkulator Anak</span></a></li>
-            <li  class="active"><a href="dewasa.html"><span class="material-icons">calculate</span><span class="text">Kalkulator Dewasa</span></a></li>
+            <li><a href="dewasa.html"><span class="material-icons">calculate</span><span class="text">Kalkulator Dewasa</span></a></li>
             <li><a href="anggota.html"><span class="material-icons-outlined">groups</span><span class="text">Anggota</span></a></li>
           </ul>
         </div>
@@ -340,7 +345,7 @@
         <div class="p-6 bg-white rounded-lg shadow hover:shadow-md text-center">
           <i class="fas fa-child text-4xl text-[#345e37]"></i>
           <h2 class="mt-4 text-lg font-semibold">Kalkulator Gizi Anak</h2>
-          <p class="text-gray-600 mt-2">Hitung kebutuhan gizi anak Anda berdasarkan usia dan tinggi badan.</p>
+          <p class="text-gray-600 mt-2">Hitung kebutuhan gizi anak Anda dengan mempertimbangkan usia, tinggi badan, dan aktivitas fisik yang tepat.</p>
           <button onclick="location.href='anak.html'" class="mt-4 px-6 py-2 bg-[#345e37] text-white rounded hover:bg-[#2b4d2e]">Mulai Hitung</button>
         </div>
 
