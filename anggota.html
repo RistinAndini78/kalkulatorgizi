@@ -12,303 +12,239 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet"/>
     <style>
+         * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
       body {
         font-family: "Poppins", sans-serif;
         margin: 0;
         padding: 0;
         background: linear-gradient(to right, #fefefe, #e6f2ff);
       }
-      * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+   
+/* Wrapper utama */
+.wrapper {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+}
 
-    body {
-      font-family: 'Poppins', sans-serif;
-      background: #eef1f6;
-    }
+/* Sidebar */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 80px;
+  height: 100vh;
+  background-color: #0e1a2b;
+  color: white;
+  transition: width 0.3s ease;
+  z-index: 1000; /* Pastikan sidebar berada di atas konten utama */
+  overflow: hidden;
+}
 
-    .wrapper {
-      display: flex;
-      transition: all 0.3s ease;
-    }
+.sidebar:hover {
+  width: 250px;
+}
 
-    .sidebar {
-      top: 0;
-      left: 0;
-      width: 80px;
-      height: 100vh;
-      background-color: #0e1a2b;
-      color: white;
-      transition: width 0.3s ease;
-      overflow: hidden;
-      flex-shrink: 0;
-      position: fixed;
-    }
+/* Logo pada sidebar */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 20px;
+}
 
-    .sidebar:hover {
-      width: 250px;
-    }
+.logo img {
+  width: 30px;
+}
 
-    .logo {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      padding: 20px;
-    }
+.logo-text {
+  font-size: 1.5rem;
+  font-weight: bold;
+  display: none;
+}
 
-    .logo img {
-      width: 30px;
-    }
+.sidebar:hover .logo-text {
+  display: inline;
+}
 
-    .logo-text {
-      font-size: 1.5rem;
-      font-weight: bold;
-      display: none;
-    }
+/* Menu di sidebar */
+.menu-section {
+  margin-top: 20px;
+  padding-left: 15px;
+}
 
-    .sidebar:hover .logo-text {
-      display: inline;
-    }
+.section-title {
+  font-size: 0.75rem;
+  color: #aaa;
+  margin-bottom: 10px;
+  display: none;
+}
 
-    .menu-section {
-      margin-top: 20px;
-      padding-left: 15px;
-    }
+.sidebar:hover .section-title {
+  display: block;
+}
 
-    .section-title {
-      font-size: 0.75rem;
-      color: #aaa;
-      margin-bottom: 10px;
-      display: none;
-    }
+.menu-section ul {
+  list-style: none;
+}
 
-    .sidebar:hover .section-title {
-      display: block;
-    }
+.menu-section li {
+  display: flex;
+  align-items: center;
+  padding: 10px 15px;
+  gap: 15px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+  border-radius: 6px;
+}
 
-    .menu-section ul {
-      list-style: none;
-    }
+.menu-section li:hover,
+.menu-section li.active {
+  background-color: #1c2b3d;
+}
 
-    .menu-section li {
-      display: flex;
-      align-items: center;
-      padding: 10px 15px;
-      gap: 15px;
-      cursor: pointer;
-      transition: background 0.2s ease;
-      border-radius: 6px;
-    }
+.menu-section .material-icons-outlined {
+  font-size: 20px;
+}
 
-    .menu-section li:hover,
-    .menu-section li.active {
-      background-color: #1c2b3d;
-    }
+.text {
+  display: none;
+  white-space: nowrap;
+}
 
-    .menu-section .material-icons-outlined {
-      font-size: 20px;
-    }
+.sidebar:hover .text {
+  display: inline;
+}
 
-    .text {
-      display: none;
-      white-space: nowrap;
-    }
+/* Profil pengguna di sidebar */
+.profile {
+  margin-top: auto;
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #132235;
+  cursor: pointer;
+}
 
-    .sidebar:hover .text {
-      display: inline;
-    }
+.profile img {
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+}
 
-    .profile {
-      margin-top: auto;
-      padding: 15px;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      background: #132235;
-      cursor: pointer;
-    }
+.details {
+  display: none;
+}
 
-    .profile img {
-      border-radius: 50%;
-      width: 30px;
-      height: 30px;
-    }
+.sidebar:hover .details {
+  display: block;
+}
 
-    .details {
-      display: none;
-    }
+.details .name {
+  font-weight: bold;
+  font-size: 0.9rem;
+}
 
-    .sidebar:hover .details {
-      display: block;
-    }
+.details .role {
+  font-size: 0.7rem;
+  color: #aaa;
+}
 
-    .details .name {
-      font-weight: bold;
-      font-size: 0.9rem;
-    }
+.sidebar a {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
 
-    .details .role {
-      font-size: 0.7rem;
-      color: #aaa;
-    }
+.sidebar a:hover {
+  color: white;
+}
 
-    .sidebar a {
-      text-decoration: none;
-      color: inherit;
-      display: flex;
-      align-items: center;
-      gap: 15px;
-    }
+.sidebar li.active a {
+  background-color: #1c2b3d;
+  color: white;
+  border-radius: 6px;
+}
 
-    .sidebar a:hover {
-      color: white;
-    }
+/* Konten utama */
+.container {
+  margin-left: 80px; /* Lebar sidebar default */
+  padding: 20px;
+  flex-grow: 1;
+  transition: margin-left 0.3s ease;
+}
 
-    .sidebar li.active a {
-      background-color: #1c2b3d;
-      color: white;
-      border-radius: 6px;
-    }
+.sidebar:hover ~ .container {
+  margin-left: 250px; /* Lebar sidebar saat diperluas */
+}
 
-    .container {
-      margin-left: 80px; /* Default sidebar width */
-      padding: 20px;
-      transition: margin-left 0.3s ease;
-    }
-    .sidebar:hover + .container {
-      margin-left: 250px; /* Expanded sidebar width */
-    }
+/* Kontainer fleksibel untuk konten */
+.flex-container {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
 
-    .flex-container {
-      display: flex;
-      gap: 20px;
-      flex-wrap: wrap;
-      margin-top: 20px;
-    }
+.flex-container > div {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  flex: 1;
+  min-width: 300px;
+  padding: 20px;
+}
 
-    .card {
-      border: 1px solid #ffffff;
-      padding: 20px;
-      border-radius: 30px;
-      background-color: #f9f9f9;
-      flex: 1;
-    }
+h2, h3 {
+  color: #0e1a2b;
+}
 
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 10px;
-    }
+button {
+  background-color: #0e1a2b;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
 
-    table td {
-      border: 1px solid #999;
-      padding: 5px;
-    }
+button:hover {
+  background-color: #1c2b3d;
+}
 
-    h2, h3 {
-      color: #345e37;
-    }
+.back-button {
+  display: block;
+  margin: 20px auto;
+  text-align: center;
+}
 
-    .input-group {
-      margin-bottom: 15px;
-    }
+.back-button a {
+  text-decoration: none;
+  color: white;
+  background-color: #0e1a2b;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-weight: bold;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
 
-    .input-group label {
-      display: block;
-      margin-bottom: 5px;
-      font-weight: bold;
-    }
+.back-button a:hover {
+  background-color: #1c2b3d;
+}
 
-    .input-group input, .input-group select {
-      width: 100%;
-      padding: 10px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-    }
-
-    .gender-options {
-      width: 60%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin-top: 10px;
-    }
-
-    .gender-option {
-      text-align: center;
-      cursor: pointer;
-      flex: 0 0 auto;
-    }
-
-    .gender-option input[type="radio"] {
-      display: none;
-    }
-
-    .gender-option img {
-      width: 80px;
-      height: 80px;
-      border: 3px solid transparent;
-      border-radius: 50%;
-      transition: 0.5s;
-    }
-
-    .gender-option img:hover {
-      border-color: #345e37;
-      box-shadow: 0 0 10px rgba(52, 94, 55, 0.5);
-    }
-
-    .gender-option input[type="radio"]:checked + img {
-      border-color: #345e37;
-      box-shadow: 0 0 10px rgba(52, 94, 55, 0.5);
-    }
-
-    .gender-option span {
-      display: block;
-      margin-top: 5px;
-      font-weight: bold;
-      color: #345e37;
-    }
-
-    button {
-      background-color: #345e37;
-      color: white;
-      padding: 10px 20px;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-
-    button:hover {
-      background-color: #2b4d2e;
-    }
-
-    .back-button {
-      display: block;
-      margin: 20px auto;
-      text-align: center;
-    }
-
-    .back-button a {
-      text-decoration: none;
-      color: white;
-      background-color: #345e37;
-      padding: 10px 20px;
-      border-radius: 5px;
-      font-weight: bold;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .back-button a:hover {
-      background-color: #2b4d2e;
-    }
-
-    .back-button i {
-      font-size: 16px;
-    }
+.back-button i {
+  font-size: 16px;
+}
       
       .team-card {
         border-radius: 15px;
@@ -382,7 +318,7 @@
             <li><a href="materi.html"><span class="material-icons">description</span><span class="text">Materi</span></a></li>
             <li><a href="anak.html"><span class="material-icons">calculate</span><span class="text">Kalkulator Anak</span></a></li>
             <li><a href="dewasa.html"><span class="material-icons">calculate</span><span class="text">Kalkulator Dewasa</span></a></li>
-            <li   class="active"><a href="anggota.html"><span class="material-icons-outlined">groups</span><span class="text">Anggota</span></a></li>
+            <li class="active"><a href="anggota.html"><span class="material-icons-outlined">groups</span><span class="text">Anggota</span></a></li>
           </ul>
         </div>
       </div>

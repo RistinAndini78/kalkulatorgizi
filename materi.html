@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -19,260 +20,242 @@
   <style>
     body {
       font-family: 'Poppins', sans-serif;
-    }
-    article {
-      transition: transform 0.2s ease, box-shadow 0.3s ease;
+      overflow-x: hidden; /* Pastikan tidak ada scroll horizontal */
     }
 
-    article:focus,
-    article:active {
-      outline: none;
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1),
-                  0 4px 6px rgba(0, 0, 0, 0.1);
-      transform: translateY(-5px); 
+    .wrapper {
+      display: flex;
+      width: 100%;
+      height: 100vh;
     }
 
-    article {
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); 
+    .sidebar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 80px;
+      height: 100vh;
+      background-color: #0e1a2b;
+      color: white;
+      transition: width 0.3s ease, transform 0.3s ease; /* Tambahkan transisi untuk transform */
+      z-index: 1000;
+      overflow: hidden;
+      transform: translateX(0); /* Posisi awal sidebar */
     }
+
+    .sidebar:hover {
+      width: 250px;
+      transform: translateX(0); /* Tetap di posisi 0 saat dihover */
+    }
+
+    .container {
+      flex-grow: 1;
+      padding: 20px;
+      padding-left: 80px; /* Jarak awal */
+      transition: transform 0.3s ease, scale 0.3s ease; /* Tambahkan scale ke transisi */
+      transform: translateX(0) scale(1); /* Inisialisasi scale */
+      transform-origin: top left; /* Agar scaling terjadi dari kiri atas */
+    }
+
+    /* Saat sidebar dihover, geser dan perkecil konten utama */
+    .sidebar:hover ~ .container {
+      transform: translateX(150px) scale(0.92); /* Pengurangan translateX menjadi 200px */
+    }
+
     /* Reset dasar */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-body {
-  font-family: 'Poppins', sans-serif;
-  background: #eef1f6;
-  overflow-x: hidden;
-}
+    /* Logo pada sidebar */
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 20px;
+    }
 
-/* Wrapper utama */
-.wrapper {
-  display: flex;
-  width: 100%;
-  height: 100vh;
-}
+    .logo img {
+      width: 30px;
+    }
 
-/* Sidebar */
-.sidebar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 80px;
-  height: 100vh;
-  background-color: #0e1a2b;
-  color: white;
-  transition: width 0.3s ease;
-  z-index: 1000; /* Pastikan sidebar berada di atas konten utama */
-  overflow: hidden;
-}
+    .logo-text {
+      font-size: 1.5rem;
+      font-weight: bold;
+      display: none;
+    }
 
-.sidebar:hover {
-  width: 250px;
-}
+    .sidebar:hover .logo-text {
+      display: inline;
+    }
 
-/* Logo pada sidebar */
-.logo {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  padding: 20px;
-}
+    /* Menu di sidebar */
+    .menu-section {
+      margin-top: 20px;
+      padding-left: 15px;
+    }
 
-.logo img {
-  width: 30px;
-}
+    .section-title {
+      font-size: 0.75rem;
+      color: #aaa;
+      margin-bottom: 10px;
+      display: none;
+    }
 
-.logo-text {
-  font-size: 1.5rem;
-  font-weight: bold;
-  display: none;
-}
+    .sidebar:hover .section-title {
+      display: block;
+    }
 
-.sidebar:hover .logo-text {
-  display: inline;
-}
+    .menu-section ul {
+      list-style: none;
+    }
 
-/* Menu di sidebar */
-.menu-section {
-  margin-top: 20px;
-  padding-left: 15px;
-}
+    .menu-section li {
+      display: flex;
+      align-items: center;
+      padding: 10px 15px;
+      gap: 15px;
+      cursor: pointer;
+      transition: background 0.2s ease;
+      border-radius: 6px;
+    }
 
-.section-title {
-  font-size: 0.75rem;
-  color: #aaa;
-  margin-bottom: 10px;
-  display: none;
-}
+    .menu-section li:hover,
+    .menu-section li.active {
+      background-color: #1c2b3d;
+    }
 
-.sidebar:hover .section-title {
-  display: block;
-}
+    .menu-section .material-icons-outlined {
+      font-size: 20px;
+    }
 
-.menu-section ul {
-  list-style: none;
-}
+    .text {
+      display: none;
+      white-space: nowrap;
+    }
 
-.menu-section li {
-  display: flex;
-  align-items: center;
-  padding: 10px 15px;
-  gap: 15px;
-  cursor: pointer;
-  transition: background 0.2s ease;
-  border-radius: 6px;
-}
+    .sidebar:hover .text {
+      display: inline;
+    }
 
-.menu-section li:hover,
-.menu-section li.active {
-  background-color: #1c2b3d;
-}
+    /* Profil pengguna di sidebar */
+    .profile {
+      margin-top: auto;
+      padding: 15px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: #132235;
+      cursor: pointer;
+    }
 
-.menu-section .material-icons-outlined {
-  font-size: 20px;
-}
+    .profile img {
+      border-radius: 50%;
+      width: 30px;
+      height: 30px;
+    }
 
-.text {
-  display: none;
-  white-space: nowrap;
-}
+    .details {
+      display: none;
+    }
 
-.sidebar:hover .text {
-  display: inline;
-}
+    .sidebar:hover .details {
+      display: block;
+    }
 
-/* Profil pengguna di sidebar */
-.profile {
-  margin-top: auto;
-  padding: 15px;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  background: #132235;
-  cursor: pointer;
-}
+    .details .name {
+      font-weight: bold;
+      font-size: 0.9rem;
+    }
 
-.profile img {
-  border-radius: 50%;
-  width: 30px;
-  height: 30px;
-}
+    .details .role {
+      font-size: 0.7rem;
+      color: #aaa;
+    }
 
-.details {
-  display: none;
-}
+    .sidebar a {
+      text-decoration: none;
+      color: inherit;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
 
-.sidebar:hover .details {
-  display: block;
-}
+    .sidebar a:hover {
+      color: white;
+    }
 
-.details .name {
-  font-weight: bold;
-  font-size: 0.9rem;
-}
+    .sidebar li.active a {
+      background-color: #1c2b3d;
+      color: white;
+      border-radius: 6px;
+    }
 
-.details .role {
-  font-size: 0.7rem;
-  color: #aaa;
-}
+    /* Kontainer fleksibel untuk konten */
+    .flex-container {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
 
-.sidebar a {
-  text-decoration: none;
-  color: inherit;
-  display: flex;
-  align-items: center;
-  gap: 15px;
-}
+    .flex-container > div {
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      flex: 1;
+      min-width: 300px;
+      padding: 20px;
+    }
 
-.sidebar a:hover {
-  color: white;
-}
+    h2, h3 {
+      color: #0e1a2b;
+    }
 
-.sidebar li.active a {
-  background-color: #1c2b3d;
-  color: white;
-  border-radius: 6px;
-}
+    button {
+      background-color: #0e1a2b;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
 
-/* Konten utama */
-.container {
-  margin-left: 80px; /* Lebar sidebar default */
-  padding: 20px;
-  flex-grow: 1;
-  transition: margin-left 0.3s ease;
-}
+    button:hover {
+      background-color: #1c2b3d;
+    }
 
-.sidebar:hover ~ .container {
-  margin-left: 250px; /* Lebar sidebar saat diperluas */
-}
+    .back-button {
+      display: block;
+      margin: 20px auto;
+      text-align: center;
+    }
 
-/* Kontainer fleksibel untuk konten */
-.flex-container {
-  display: flex;
-  gap: 20px;
-  flex-wrap: wrap;
-  margin-top: 20px;
-}
+    .back-button a {
+      text-decoration: none;
+      color: white;
+      background-color: #0e1a2b;
+      padding: 10px 20px;
+      border-radius: 5px;
+      font-weight: bold;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
 
-.flex-container > div {
-  background: white;
-  border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  flex: 1;
-  min-width: 300px;
-  padding: 20px;
-}
+    .back-button a:hover {
+      background-color: #1c2b3d;
+    }
 
-h2, h3 {
-  color: #0e1a2b;
-}
-
-button {
-  background-color: #0e1a2b;
-  color: white;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-button:hover {
-  background-color: #1c2b3d;
-}
-
-.back-button {
-  display: block;
-  margin: 20px auto;
-  text-align: center;
-}
-
-.back-button a {
-  text-decoration: none;
-  color: white;
-  background-color: #0e1a2b;
-  padding: 10px 20px;
-  border-radius: 5px;
-  font-weight: bold;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.back-button a:hover {
-  background-color: #1c2b3d;
-}
-
-.back-button i {
-  font-size: 16px;
-}
+    .back-button i {
+      font-size: 16px;
+    }
   </style>
 </head>
 <body>
   <div class="wrapper">
-    <!-- Sidebar -->
     <div class="sidebar">
       <div class="logo">
         <img src="image/1.jpeg" alt="logo">
@@ -288,8 +271,7 @@ button:hover {
         </ul>
       </div>
     </div>
-<body class="bg-white min-h-screen p-6">
-  <main class="max-w-7xl mx-auto">
+  <main class="max-w-7xl mx-auto container">
     <header class="text-center mb-10">
       <h1 class="text-4xl font-semibold text-gray-900">Materi Kalkulus dalam Perhitungan Gizi</h1>
       <p class="text-gray-600 mt-3 text-lg">Pemahaman konsep kalkulus dalam perhitungan kebutuhan gizi</p>
@@ -298,12 +280,12 @@ button:hover {
     <section class="flex flex-col sm:flex-row gap-6 mb-10">
       <article tabindex="0" class="bg-white rounded-md p-8 flex-1 flex flex-col">
         <h2 class="text-xl font-semibold text-gray-900 mb-3 flex items-center gap-3">
-          <i class="fas fa-calculator text-green-800 text-lg"></i> Turunan
+          <i class="fas fa-calculator text-[#1c2b3d] text-lg"></i> Turunan
         </h2>
         <p class="text-gray-700 mb-6 text-base leading-relaxed">
           Konsep turunan digunakan dalam perhitungan BMR (Basal Metabolic Rate) untuk menentukan laju perubahan metabolisme terhadap variabel seperti berat badan, tinggi badan, dan usia.
         </p>
-        <pre class="bg-[#1c2b3d] border border-green-300 rounded-md p-6 text-sm text-white whitespace-pre-wrap font-mono mt-auto">
+        <pre class="bg-[#1c2b3d] border border-[#1c66ed] rounded-md p-6 text-sm text-white whitespace-pre-wrap font-mono mt-auto">
 Persamaan Harris-Benedict:
 
 Laki-laki: BMR = 66.5 + (13.75 × berat) + (5.003 × tinggi) - (6.755 × usia)
@@ -314,12 +296,12 @@ Perempuan: BMR = 655.1 + (9.563 × berat) + (1.850 × tinggi) - (4.676 × usia)
 
       <article tabindex="0" class="bg-white rounded-md p-8 flex-1 flex flex-col">
         <h2 class="text-xl font-semibold text-gray-900 mb-3 flex items-center gap-3">
-          <i class="fas fa-chart-line text-green-800 text-lg"></i> Integral
+          <i class="fas fa-chart-line text-[#1c2b3d] text-lg"></i> Integral
         </h2>
         <p class="text-gray-700 mb-6 text-base leading-relaxed">
           Integral digunakan untuk menghitung total kebutuhan kalori harian dengan mempertimbangkan faktor aktivitas dan stres.
         </p>
-        <pre class="bg-[#1c2b3d] border border-green-300 rounded-md p-6 text-sm text-white whitespace-pre-wrap font-mono mt-auto">
+        <pre class="bg-[#1c2b3d] border border-[#1c66ed] rounded-md p-6 text-sm text-white whitespace-pre-wrap font-mono mt-auto">
 Total Kalori = BMR × Faktor Aktivitas × Faktor Stres
 
 Faktor Aktivitas:
@@ -333,12 +315,12 @@ Faktor Aktivitas:
 
       <article tabindex="0" class="bg-white rounded-md p-8 flex-1 flex flex-col">
         <h2 class="text-xl font-semibold text-gray-900 mb-3 flex items-center gap-3">
-          <i class="fas fa-balance-scale text-green-800 text-lg"></i> Fungsi Kuadrat
+          <i class="fas fa-balance-scale text-[#1c2b3d] text-lg"></i> Fungsi Kuadrat
         </h2>
         <p class="text-gray-700 mb-6 text-base leading-relaxed">
           Fungsi kuadrat digunakan dalam perhitungan IMT (Indeks Massa Tubuh) untuk menentukan status gizi seseorang.
         </p>
-        <pre class="bg-[#1c2b3d] border border-green-300 rounded-md p-6 text-sm text-white whitespace-pre-wrap font-mono mt-auto">
+        <pre class="bg-[#1c2b3d] border border-[#1c66ed] rounded-md p-6 text-sm text-white whitespace-pre-wrap font-mono mt-auto">
 IMT = Berat Badan (kg) / (Tinggi Badan (m))²
 
 Kategori IMT:
@@ -363,6 +345,5 @@ Kategori IMT:
       </ul>
     </section>
   </main>
-</body>
 </body>
 </html>
