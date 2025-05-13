@@ -54,16 +54,16 @@
 .logo {
   display: flex;
   align-items: center;
-  gap: 10px;
   padding: 20px;
 }
 
 .logo img {
   width: 30px;
+  margin-right: 10px; /* Berikan jarak antara logo dan teks */
 }
 
 .logo-text {
-  font-size: 1.5rem;
+  font-size: 1rem;
   font-weight: bold;
   display: none;
 }
@@ -75,13 +75,13 @@
 /* Menu di sidebar */
 .menu-section {
   margin-top: 20px;
-  padding-left: 15px;
 }
 
 .section-title {
   font-size: 0.75rem;
   color: #aaa;
   margin-bottom: 10px;
+  padding-left: 15px; /* Berikan sedikit ruang untuk judul saat sidebar diperluas */
   display: none;
 }
 
@@ -91,34 +91,47 @@
 
 .menu-section ul {
   list-style: none;
+  padding: 0; /* Reset padding default pada ul */
+  margin: 0; /* Reset margin default pada ul */
 }
 
 .menu-section li {
+  padding: 0; /* Reset padding pada li */
+  margin-bottom: 0px; /* Berikan sedikit jarak antar item menu */
+}
+
+.menu-section li a {
   display: flex;
   align-items: center;
-  padding: 10px 15px;
-  gap: 15px;
-  cursor: pointer;
-  transition: background 0.2s ease;
+  color: inherit;
+  text-decoration: none;
+  padding: 10px 30px; /* Berikan padding pada link agar area klik lebih besar */
+  gap: 0px; /* Jarak antara ikon dan teks */
+}
+
+.menu-section li:hover a,
+.menu-section li.active a {
+  background-color: #1c2b3d;
+  color: white;
   border-radius: 6px;
 }
 
-.menu-section li:hover,
-.menu-section li.active {
-  background-color: #1c2b3d;
-}
-
-.menu-section .material-icons-outlined {
-  font-size: 20px;
+.menu-section .material-icons-outlined,
+.menu-section .material-icons {
+  font-size: 24px;
+  margin-right: 10px; /* Berikan jarak antara ikon dan teks */
 }
 
 .text {
-  display: none;
   white-space: nowrap;
+  display: none;
 }
 
 .sidebar:hover .text {
   display: inline;
+  margin-left: 5px !important; /* Tambahkan !important */
+  line-height: 1;
+  vertical-align: middle;
 }
 
 /* Profil pengguna di sidebar */
@@ -172,6 +185,9 @@
   background-color: #1c2b3d;
   color: white;
   border-radius: 6px;
+  padding-left: 15px; /* Jarak ikon dan teks dari sisi kiri */
+  padding-right: 15px;
+  margin-left: 10px;
 }
 
 /* Konten utama */

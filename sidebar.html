@@ -317,7 +317,7 @@
     .back-button i {
       font-size: 16px;
     }
-  </style>
+</style>
 </head>
 <body>
   <div class="wrapper">
@@ -336,88 +336,19 @@
         </ul>
       </div>
     </div>
-      
-    <main class="container">
-      <body class="bg-[#ffffff] p-6">
-        <div
-          class="max-w-6xl mx-auto bg-white rounded-2xl p-6 flex flex-col md:flex-row items-center md:items-start gap-6 md:gap-0"
-          style="box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 -4px 6px rgba(0, 0, 0, 0.05);">
-          <div class="md:w-1/2 px-4 md:px-0">
-            <h1 class="text-3xl md:text-4xl font-extrabold leading-tight text-black mb-4">
-              Sudah Sehatkah
-              <span class="text-[#2f5f4e] block md:inline">
-                Tubuhmu?
-              </span>
-              <br />
-              Cari Tahu di Sini!
-            </h1>
-            <p class="text-[#4a4a4a] text-base md:text-lg mb-6 max-w-md">
-              Hitung status gizimu dalam beberapa menit dan dapatkan panduan kebutuhan energi harian: mulai dari kalori, karbohidrat, protein, hingga lemak.
-              <br />
-              Cocok untuk kamu yang ingin hidup lebih sehat dan seimbang!
-            </p>
-            <!-- <button class="bg-[#2f5f4e] text-white text-sm md:text-base font-semibold py-2.5 px-6 rounded-md hover:bg-[#244a3c] transition-colors">
-              Mulai Hitung
-            </button> -->
-          </div>
-          <div class="md:w-1/2 flex justify-center md:justify-end">
-            <img
-              alt="Cartoon style icons representing health and nutrition, including a heart, apple, and measuring tape"
-              class="max-w-full h-auto rounded-lg"
-              height="150"
-              src="https://storage.googleapis.com/a1aa/image/021390a2-7fc8-451f-b188-c600206b0a3a.jpg"
-              width="250"
-            />
-          </div>
-        </div>
-      </body>
-      
-
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
-        <div class="p-6 bg-white rounded-lg text-center" 
-             style="box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15), 0px -6px 12px rgba(0, 0, 0, 0.1);">
-          <i class="fas fa-child text-4xl text-[#0e1a2b]"></i>
-          <h2 class="mt-4 text-lg font-semibold">Kalkulator Gizi Anak</h2>
-          <p class="text-gray-600 mt-2">Hitung kebutuhan gizi anak Anda dengan mempertimbangkan usia, tinggi badan, dan aktivitas fisik yang tepat.</p>
-          <button onclick="location.href='anak.html'" 
-                  class="mt-4 px-6 py-2 bg-[#0e1a2b] text-white rounded hover:bg-[#1c2b3d]">Mulai Hitung</button>
-        </div>
-      
-        <div class="p-6 bg-white rounded-lg text-center" 
-             style="box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15), 0px -6px 12px rgba(0, 0, 0, 0.1);">
-          <i class="fas fa-user text-4xl text-[#0e1a2b]"></i>
-          <h2 class="mt-4 text-lg font-semibold">Kalkulator Gizi Dewasa</h2>
-          <p class="text-gray-600 mt-2">Hitung kebutuhan gizi untuk dewasa secara mudah dan akurat berdasarkan BBI, IMT, serta tingkat aktivitas fisik harian.</p>
-          <button onclick="location.href='dewasa.html'" 
-                  class="mt-4 px-6 py-2 bg-[#0e1a2b] text-white rounded hover:bg-[#1c2b3d]">Mulai Hitung</button>
-        </div>
-      </div>
-      
-      <div class="bg-white p-6 rounded-lg mt-12" 
-           style="box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15), 0px -6px 12px rgba(0, 0, 0, 0.1);">
-        <h3 class="text-xl font-semibold text-[#0e1a2b] mb-4">Kenapa Memilih Kalkulator Gizi Ini?</h3>
-        <ul class="list-disc pl-6 text-gray-700">
-          <li>Mudah digunakan untuk semua kalangan.</li>
-          <li>Mempertimbangkan parameter seperti usia, tinggi, berat, dan aktivitas fisik.</li>
-          <li>Dapat digunakan untuk anak-anak dan dewasa.</li>
-        </ul>
-      </div>
-      
-    </main>
-  </div>
-  <script>
-    const sidebar = document.querySelector('.sidebar');
-    const container = document.querySelector('.container');
-
-    sidebar.addEventListener('mouseenter', () => {
-      container.style.marginLeft = '250px'; // Move the container when sidebar expands
-      container.style.transform = 'scale(0.98)'; // Scale down the container to 90%
-    });
-
-    sidebar.addEventListener('mouseleave', () => {
-      container.style.marginLeft = '80px'; // Return the container to the default margin
-      container.style.transform = 'scale(1)'; // Return the container to the default scale
-    });
-  </script>
-</body>
-</html>
+    <script>
+        const sidebar = document.querySelector('.sidebar');
+        const container = document.querySelector('.container');
+    
+        sidebar.addEventListener('mouseenter', () => {
+          container.style.marginLeft = '250px'; // Move the container when sidebar expands
+          container.style.transform = 'scale(0.98)'; // Scale down the container to 90%
+        });
+    
+        sidebar.addEventListener('mouseleave', () => {
+          container.style.marginLeft = '80px'; // Return the container to the default margin
+          container.style.transform = 'scale(1)'; // Return the container to the default scale
+        });
+      </script>
+    </body>
+    </html>
