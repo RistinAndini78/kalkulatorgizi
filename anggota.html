@@ -29,7 +29,7 @@
 .wrapper {
   display: flex;
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
 }
 
 /* Sidebar */
@@ -44,6 +44,7 @@
   transition: width 0.3s ease;
   z-index: 1000; /* Pastikan sidebar berada di atas konten utama */
   overflow: hidden;
+  flex-shrink: 0;
 }
 
 .sidebar:hover {
@@ -54,16 +55,16 @@
 .logo {
   display: flex;
   align-items: center;
+  gap: 10px;
   padding: 20px;
 }
 
 .logo img {
   width: 30px;
-  margin-right: 10px; /* Berikan jarak antara logo dan teks */
 }
 
 .logo-text {
-  font-size: 1rem;
+  font-size: 1.5rem;
   font-weight: bold;
   display: none;
 }
@@ -75,13 +76,13 @@
 /* Menu di sidebar */
 .menu-section {
   margin-top: 20px;
+  padding-left: 15px;
 }
 
 .section-title {
   font-size: 0.75rem;
   color: #aaa;
   margin-bottom: 10px;
-  padding-left: 15px; /* Berikan sedikit ruang untuk judul saat sidebar diperluas */
   display: none;
 }
 
@@ -91,47 +92,37 @@
 
 .menu-section ul {
   list-style: none;
-  padding: 0; /* Reset padding default pada ul */
-  margin: 0; /* Reset margin default pada ul */
+  padding: 0;
+  margin: 0;
 }
 
 .menu-section li {
-  padding: 0; /* Reset padding pada li */
-  margin-bottom: 0px; /* Berikan sedikit jarak antar item menu */
-}
-
-.menu-section li a {
   display: flex;
   align-items: center;
-  color: inherit;
-  text-decoration: none;
-  padding: 10px 30px; /* Berikan padding pada link agar area klik lebih besar */
-  gap: 0px; /* Jarak antara ikon dan teks */
+  padding: 10px 15px;
+  gap: 15px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+  border-radius: 6px;
 }
 
-.menu-section li:hover a,
-.menu-section li.active a {
+.menu-section li:hover,
+.menu-section li.active {
   background-color: #1c2b3d;
-  color: white;
-  border-radius: 6px;
 }
 
 .menu-section .material-icons-outlined,
 .menu-section .material-icons {
-  font-size: 24px;
-  margin-right: 10px; /* Berikan jarak antara ikon dan teks */
+  font-size: 20px;
 }
 
 .text {
-  white-space: nowrap;
   display: none;
+  white-space: nowrap;
 }
 
 .sidebar:hover .text {
   display: inline;
-  margin-left: 5px !important; /* Tambahkan !important */
-  line-height: 1;
-  vertical-align: middle;
 }
 
 /* Profil pengguna di sidebar */
@@ -185,21 +176,23 @@
   background-color: #1c2b3d;
   color: white;
   border-radius: 6px;
-  padding-left: 15px; /* Jarak ikon dan teks dari sisi kiri */
-  padding-right: 15px;
-  margin-left: 10px;
 }
 
 /* Konten utama */
 .container {
-  margin-left: 80px; /* Lebar sidebar default */
+  margin-left: 80px;
   padding: 20px;
   flex-grow: 1;
-  transition: margin-left 0.3s ease;
+  transition: margin-left 0.3s ease, transform 0.3s ease, scale 0.3s ease;
+  height: 100vh;
+  transform-origin: top left;
+  transform: scale(1);
+  width: auto;
 }
 
-.sidebar:hover ~ .container {
-  margin-left: 250px; /* Lebar sidebar saat diperluas */
+.sidebar:hover + .container {
+  margin-left: 250px;
+  transform: scale(0.98);
 }
 
 /* Kontainer fleksibel untuk konten */
@@ -263,6 +256,13 @@ button:hover {
 }
       
       .team-card {
+        min-width: 220px;
+        max-width: 300px;
+        width: 100%;
+        margin-bottom: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
         border-radius: 15px;
         background: #ffffff;
         text-align: center;
@@ -278,11 +278,13 @@ button:hover {
       }
 
       .team-image img {
-        width: 180px;
+        width: 100%;
+        max-width: 180px;
         height: 220px;
         object-fit: cover;
         border-radius: 12px;
-        margin-bottom: 15px;
+        margin: 0 auto 15px auto;
+        display: block;
       }
 
       .team-info h3 {
@@ -318,6 +320,221 @@ button:hover {
         margin-bottom: 20px;
         color: #00509e;
       }
+
+      /* Media Queries */
+      @media screen and (max-width: 768px) {
+        .sidebar {
+          width: 60px;
+        }
+
+        .sidebar:hover {
+          width: 200px;
+        }
+
+        .container {
+          margin-left: 60px;
+        }
+
+        .sidebar:hover + .container {
+          margin-left: 200px;
+        }
+
+        .team-card {
+          min-width: 180px;
+          max-width: 250px;
+        }
+        .team-image img {
+          max-width: 140px;
+          height: 160px;
+        }
+      }
+
+      @media screen and (max-width: 480px) {
+        .sidebar {
+          width: 50px;
+        }
+
+        .sidebar:hover {
+          width: 180px;
+        }
+
+        .container {
+          margin-left: 50px;
+        }
+
+        .sidebar:hover + .container {
+          margin-left: 180px;
+        }
+
+        .team-card {
+          min-width: 140px;
+          max-width: 100%;
+        }
+        .team-image img {
+          max-width: 100px;
+          height: 120px;
+        }
+      }
+
+      /* Tambahan agar dua kartu terakhir tetap rata tengah jika jumlah anggota ganjil */
+      @media (min-width: 992px) {
+        .row.justify-content-center > .col-lg-3:nth-last-child(2):nth-child(odd),
+        .row.justify-content-center > .col-lg-3:last-child:nth-child(odd) {
+          margin-left: calc(16.66666667% + 12px); /* Offset satu kolom plus gap agar dua kartu di tengah */
+        }
+      }
+
+.anggota-container {
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+.anggota-row {
+  justify-content: center !important;
+}
+@media (max-width: 1200px) {
+  .anggota-container {
+    max-width: 98vw;
+  }
+}
+
+.team-card-minimal {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.07);
+  padding: 28px 18px 18px 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 180px;
+  max-width: 240px;
+  width: 100%;
+  margin-bottom: 20px;
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+.team-card-minimal:hover {
+  box-shadow: 0 8px 24px rgba(0,0,0,0.13);
+  transform: translateY(-6px) scale(1.03);
+}
+.team-image-minimal img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 16px;
+  border: 3px solid #e6e6e6;
+  background: #f8f8f8;
+}
+.team-info-minimal h3 {
+  font-size: 1.08rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+  text-align: center;
+  color: #222;
+}
+.social-links {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+}
+.social-links a {
+  color: #555;
+  font-size: 1.3rem;
+  transition: color 0.2s;
+}
+.social-links a:hover {
+  color: #0077b5;
+}
+.anggota-modern-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+.anggota-title {
+  text-align: center;
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: #222;
+  letter-spacing: -1px;
+}
+.anggota-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 36px 32px;
+  justify-items: center;
+}
+.anggota-card {
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.08);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 0 24px 0;
+  width: 100%;
+  max-width: 320px;
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+.anggota-card:hover {
+  box-shadow: 0 8px 32px rgba(0,0,0,0.13);
+  transform: translateY(-8px) scale(1.03);
+}
+.anggota-img-wrap {
+  width: 100%;
+  aspect-ratio: 1/1;
+  background: #f5f5f5;
+  border-radius: 16px 16px 0 0;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.anggota-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 16px 16px 0 0;
+}
+.anggota-nama {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #181818;
+  margin: 18px 0 10px 0;
+  text-align: center;
+}
+.anggota-sosmed {
+  display: flex;
+  gap: 18px;
+  justify-content: center;
+}
+.anggota-sosmed a {
+  color: #222;
+  font-size: 1.35rem;
+  transition: color 0.2s, transform 0.2s;
+}
+.anggota-sosmed a:hover {
+  color: #0077b5;
+  transform: scale(1.18);
+}
+@media (max-width: 992px) {
+  .anggota-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 600px) {
+  .anggota-title {
+    font-size: 2rem;
+  }
+  .anggota-grid {
+    grid-template-columns: 1fr;
+    gap: 28px 0;
+  }
+  .anggota-card {
+    max-width: 95vw;
+  }
+}
     </style>
   </head>
   <body>
@@ -339,91 +556,64 @@ button:hover {
         </div>
       </div>
 
-    <div class="container my-5">
-      <h2 class="section-title">Tim di Balik Kalkulator Gizi</h2>
-      <div class="row g-4">
-        <!-- Ulangi elemen berikut untuk setiap anggota tim -->
-        <div class="col-md-4">
-          <div class="team-card">
-            <div class="team-image">
+    <div class="container-fluid anggota-container">
+      <h2 class="section-title">Tim Kami</h2>
+      <div class="anggota-modern-wrapper py-5">
+        <h1 class="anggota-title mb-5">Halaman Anggota</h1>
+        <div class="anggota-grid">
+          <div class="anggota-card">
+            <div class="anggota-img-wrap">
               <img src="image/cewe.png" alt="Shafa Rabbani Fityatul Mukarramah" />
             </div>
-            <div class="team-info">
-              <h3>Shafa Rabbani Fityatul Mukarramah</h3>
-              <p class="description">Mendesain antarmuka yang menarik dan mudah digunakan.</p>
-              <div class="social-links">
-                <a href="#"><i class="fab fa-github"></i></a>
-                <a href="#"><i class="fab fa-linkedin"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
-              </div>
+            <div class="anggota-nama">Shafa Rabbani Fityatul Mukarramah</div>
+            <div class="anggota-sosmed">
+              <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+              <a href="#" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+              <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
             </div>
           </div>
-        </div>
-
-        <div class="col-md-4">
-          <div class="team-card">
-            <div class="team-image">
-              <img src="image/cewe.png" alt="Sandria Nuriya" />
+          <div class="anggota-card">
+            <div class="anggota-img-wrap">
+              <img src="image/cewe.png" alt="Sandria Nuriya Az Zahra" />
             </div>
-            <div class="team-info">
-              <h3>Sandria Nuriya Az Zahra</h3>
-              <p class="description">Menyediakan pengetahuan gizi dan rekomendasi nutrisi.</p>
-              <div class="social-links">
-                <a href="#"><i class="fab fa-github"></i></a>
-                <a href="#"><i class="fab fa-linkedin"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
-              </div>
+            <div class="anggota-nama">Sandria Nuriya Az Zahra</div>
+            <div class="anggota-sosmed">
+              <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+              <a href="#" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+              <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
             </div>
           </div>
-        </div>
-
-        <div class="col-md-4">
-          <div class="team-card">
-            <div class="team-image">
+          <div class="anggota-card">
+            <div class="anggota-img-wrap">
               <img src="image/iting.jpg" alt="Ristin Iman Andini" />
             </div>
-            <div class="team-info">
-              <h3>Ristin Iman Andini</h3>
-              <p class="description">Pengembangan antarmuka pengguna dan pengalaman pengguna.</p>
-              <div class="social-links">
-                <a href="#"><i class="fab fa-github"></i></a>
-                <a href="#"><i class="fab fa-linkedin"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
-              </div>
+            <div class="anggota-nama">Ristin Iman Andini</div>
+            <div class="anggota-sosmed">
+              <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+              <a href="#" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+              <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
             </div>
           </div>
-        </div>
-
-        <div class="col-md-4 offset-md-2">
-          <div class="team-card">
-            <div class="team-image">
+          <div class="anggota-card">
+            <div class="anggota-img-wrap">
               <img src="image/iky.jpg" alt="Muhamad Rizky Pratama" />
             </div>
-            <div class="team-info">
-              <h3>Muhamad Rizky Pratama</h3>
-              <p class="description">Mengembangkan sistem backend dan algoritma perhitungan gizi.</p>
-              <div class="social-links">
-                <a href="#"><i class="fab fa-github"></i></a>
-                <a href="#"><i class="fab fa-linkedin"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
-              </div>
+            <div class="anggota-nama">Muhamad Rizky Pratama</div>
+            <div class="anggota-sosmed">
+              <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+              <a href="#" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+              <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
             </div>
           </div>
-        </div>
-
-        <div class="col-md-4">
-          <div class="team-card">
-            <div class="team-image">
+          <div class="anggota-card">
+            <div class="anggota-img-wrap">
               <img src="image/cowo.png" alt="Muhammad Fawwazul Haq" />
             </div>
-            <div class="team-info">
-              <h3>Muhammad Fawwazul Haq</h3>
-              <p class="description">Mengkoordinasikan tim dan memastikan proyek berjalan lancar.</p>
-              <div class="social-links">
-                <a href="#"><i class="fab fa-github"></i></a>
-                <a href="#"><i class="fab fa-linkedin"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
-              </div>
+            <div class="anggota-nama">Muhammad Fawwazul Haq</div>
+            <div class="anggota-sosmed">
+              <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+              <a href="#" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+              <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
             </div>
           </div>
         </div>
