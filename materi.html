@@ -18,58 +18,44 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet"/>
   <style>
-    body {
-      font-family: 'Poppins', sans-serif;
-      overflow-x: hidden; /* Pastikan tidak ada scroll horizontal */
+   body {
+      font-family: "Poppins", sans-serif;
+      background: #eef1f6;
     }
-
-    .wrapper {
-      display: flex;
-      width: 100%;
-      height: 100vh;
-    }
-
-    .sidebar {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 80px;
-      height: 100vh;
-      background-color: #0e1a2b;
-      color: white;
-      transition: width 0.3s ease, transform 0.3s ease; /* Tambahkan transisi untuk transform */
-      z-index: 1000;
-      overflow: hidden;
-      transform: translateX(0); /* Posisi awal sidebar */
-    }
-
-    .sidebar:hover {
-      width: 250px;
-      transform: translateX(0); /* Tetap di posisi 0 saat dihover */
-    }
-
-    .container {
-      flex-grow: 1;
-      padding: 20px;
-      padding-left: 80px; /* Jarak awal */
-      transition: transform 0.3s ease, scale 0.3s ease; /* Tambahkan scale ke transisi */
-      transform: translateX(0) scale(1); /* Inisialisasi scale */
-      transform-origin: top left; /* Agar scaling terjadi dari kiri atas */
-    }
-
-    /* Saat sidebar dihover, geser dan perkecil konten utama */
-    .sidebar:hover ~ .container {
-      transform: translateX(150px) scale(0.92); /* Pengurangan translateX menjadi 200px */
-    }
-
-    /* Reset dasar */
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
 
-    /* Logo pada sidebar */
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #eef1f6;
+    }
+
+    .wrapper {
+      display: flex;
+      transition: all 0.3s ease;
+    }
+
+    .sidebar {
+      top: 0;
+      left: 0;
+      width: 80px;
+      height: 100vh;
+      background-color: #0e1a2b;
+      color: white;
+      transition: width 0.3s ease;
+      overflow: hidden;
+      flex-shrink: 0;
+      position: fixed;
+
+    }
+
+    .sidebar:hover {
+      width: 250px;
+    }
+
     .logo {
       display: flex;
       align-items: center;
@@ -91,7 +77,6 @@
       display: inline;
     }
 
-    /* Menu di sidebar */
     .menu-section {
       margin-top: 20px;
       padding-left: 15px;
@@ -140,7 +125,6 @@
       display: inline;
     }
 
-    /* Profil pengguna di sidebar */
     .profile {
       margin-top: auto;
       padding: 15px;
@@ -167,7 +151,7 @@
 
     .details .name {
       font-weight: bold;
-      font-size: 0.9rem;
+      font-size: 0.95rem;
     }
 
     .details .role {
@@ -192,8 +176,22 @@
       color: white;
       border-radius: 6px;
     }
+   .container {
+  padding: 20px;
+  transition: transform 0.3s ease, scale 0.3s ease;
+  flex-grow: 1;
+  transform-origin: top left;
+  transform: translateX(80px) scale(1); /* Posisi awal sesuai lebar sidebar tertutup */
+}
 
-    /* Kontainer fleksibel untuk konten */
+.sidebar:hover + .container {
+  transform: translateX(250px) scale(0.98);
+}
+    .wrapper {
+  display: flex;
+  transition: all 0.3s ease;
+}
+
     .flex-container {
       display: flex;
       gap: 20px;
@@ -201,16 +199,86 @@
       margin-top: 20px;
     }
 
-    .flex-container > div {
-      background: white;
-      border-radius: 8px;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-      flex: 1;
-      min-width: 300px;
+    .card {
+      border: 1px solid #ffffff;
       padding: 20px;
+      border-radius: 30px;
+      background-color: #f9f9f9;
+      flex: 1;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+
+    table td {
+      border: 1px solid #999;
+      padding: 5px;
     }
 
     h2, h3 {
+      color: #0e1a2b;
+    }
+
+    .input-group {
+      margin-bottom: 15px;
+    }
+
+    .input-group label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+
+    .input-group input, .input-group select {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .gender-options {
+      width: 60%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 10px;
+    }
+
+    .gender-option {
+      text-align: center;
+      cursor: pointer;
+      flex: 0 0 auto;
+    }
+
+    .gender-option input[type="radio"] {
+      display: none;
+    }
+
+    .gender-option img {
+      width: 80px;
+      height: 80px;
+      border: 3px solid transparent;
+      border-radius: 50%;
+      transition: 0.5s;
+    }
+
+    .gender-option img:hover {
+      border-color: #0e1a2b;
+      box-shadow: 0 0 10px rgba(52, 94, 55, 0.5);
+    }
+
+    .gender-option input[type="radio"]:checked + img {
+      border-color: #0e1a2b;
+      box-shadow: 0 0 10px rgba(52, 94, 55, 0.5);
+    }
+
+    .gender-option span {
+      display: block;
+      margin-top: 5px;
+      font-weight: bold;
       color: #0e1a2b;
     }
 
@@ -345,5 +413,23 @@ Kategori IMT:
       </ul>
     </section>
   </main>
+    <script>
+    const sidebar = document.querySelector('.sidebar');
+    const container = document.querySelector('.container');
+    const transitionDuration = 300; // Durasi transisi dalam ms
+
+    sidebar.addEventListener('mouseenter', () => {
+      container.style.transition = `transform ${transitionDuration}ms ease, margin-left ${transitionDuration}ms ease`;
+      container.style.marginLeft = '250px';
+      container.style.transform = 'scale(0.98)';
+    });
+
+    sidebar.addEventListener('mouseleave', () => {
+      container.style.transition = `transform ${transitionDuration}ms ease, margin-left ${transitionDuration}ms ease`;
+      container.style.marginLeft = '80px';
+      container.style.transform = 'scale(1)';
+    });
+  </script>
 </body>
+
 </html>
