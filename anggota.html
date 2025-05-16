@@ -1,379 +1,445 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tim Kami - Kalkulator Gizi</title>
-    <meta name="description" content="Kenali tim di balik Kalkulator Gizi yang membantu Anda mencapai kesehatan optimal." />
-    <link rel="icon" href="image/1.jpeg" type="image/jpeg" />
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet"/>
+    <title>Kalkulator Gizi</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined"
+      rel="stylesheet"
+    />
     <style>
-         * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+      body {
+        font-family: "Poppins", sans-serif;
+        background: #eef1f6;
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
 
       body {
         font-family: "Poppins", sans-serif;
-        margin: 0;
-        padding: 0;
-        background: linear-gradient(to right, #fefefe, #e6f2ff);
-      }
-   
-/* Wrapper utama */
-.wrapper {
-  display: flex;
-  width: 100%;
-  min-height: 100vh;
-}
-
-/* Sidebar */
-.sidebar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 80px;
-  height: 100vh;
-  background-color: #0e1a2b;
-  color: white;
-  transition: width 0.3s ease;
-  z-index: 1000; /* Pastikan sidebar berada di atas konten utama */
-  overflow: hidden;
-  flex-shrink: 0;
-}
-
-.sidebar:hover {
-  width: 250px;
-}
-
-/* Logo pada sidebar */
-.logo {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  padding: 20px;
-}
-
-.logo img {
-  width: 30px;
-}
-
-.logo-text {
-  font-size: 1.5rem;
-  font-weight: bold;
-  display: none;
-}
-
-.sidebar:hover .logo-text {
-  display: inline;
-}
-
-/* Menu di sidebar */
-.menu-section {
-  margin-top: 20px;
-  padding-left: 15px;
-}
-
-.section-title {
-  font-size: 0.75rem;
-  color: #aaa;
-  margin-bottom: 10px;
-  display: none;
-}
-
-.sidebar:hover .section-title {
-  display: block;
-}
-
-.menu-section ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.menu-section li {
-  display: flex;
-  align-items: center;
-  padding: 10px 15px;
-  gap: 15px;
-  cursor: pointer;
-  transition: background 0.2s ease;
-  border-radius: 6px;
-}
-
-.menu-section li:hover,
-.menu-section li.active {
-  background-color: #1c2b3d;
-}
-
-.menu-section .material-icons-outlined,
-.menu-section .material-icons {
-  font-size: 20px;
-}
-
-.text {
-  display: none;
-  white-space: nowrap;
-}
-
-.sidebar:hover .text {
-  display: inline;
-}
-
-/* Profil pengguna di sidebar */
-.profile {
-  margin-top: auto;
-  padding: 15px;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  background: #132235;
-  cursor: pointer;
-}
-
-.profile img {
-  border-radius: 50%;
-  width: 30px;
-  height: 30px;
-}
-
-.details {
-  display: none;
-}
-
-.sidebar:hover .details {
-  display: block;
-}
-
-.details .name {
-  font-weight: bold;
-  font-size: 0.9rem;
-}
-
-.details .role {
-  font-size: 0.7rem;
-  color: #aaa;
-}
-
-.sidebar a {
-  text-decoration: none;
-  color: inherit;
-  display: flex;
-  align-items: center;
-  gap: 15px;
-}
-
-.sidebar a:hover {
-  color: white;
-}
-
-.sidebar li.active a {
-  background-color: #1c2b3d;
-  color: white;
-  border-radius: 6px;
-}
-
-/* Konten utama */
-.container {
-  margin-left: 80px;
-  padding: 20px;
-  flex-grow: 1;
-  transition: margin-left 0.3s ease, transform 0.3s ease, scale 0.3s ease;
-  height: 100vh;
-  transform-origin: top left;
-  transform: scale(1);
-  width: auto;
-}
-
-.sidebar:hover + .container {
-  margin-left: 250px;
-  transform: scale(0.98);
-}
-
-/* Kontainer fleksibel untuk konten */
-.flex-container {
-  display: flex;
-  gap: 50px;
-  flex-wrap: wrap;
-  margin-top: 20px;
-}
-
-.flex-container > div {
-  background: white;
-  border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  flex: 1;
-  min-width: 300px;
-  padding: 20px;
-}
-
-h2, h3 {
-  color: #0e1a2b;
-}
-
-button {
-  background-color: #0e1a2b;
-  color: white;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-button:hover {
-  background-color: #1c2b3d;
-}
-
-.back-button {
-  display: block;
-  margin: 20px auto;
-  text-align: center;
-}
-
-.back-button a {
-  text-decoration: none;
-  color: white;
-  background-color: #0e1a2b;
-  padding: 10px 20px;
-  border-radius: 5px;
-  font-weight: bold;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.back-button a:hover {
-  background-color: #1c2b3d;
-}
-
-.back-button i {
-  font-size: 16px;
-}
-      
-      .team-card {
-        border-radius: 15px;
-        background: #ffffff;
-        text-align: center;
-        padding: 50px 10px;
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-        height: 100%;
-        gap: 20px;
+        background: #eef1f6;
       }
 
-      .team-card:hover {
-        transform: translateY(-8px);
-        box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1);
+      .wrapper {
+        display: flex;
+        transition: all 0.3s ease;
       }
 
-      .team-image img {
+      .sidebar {
+        top: 0;
+        left: 0;
+        width: 80px;
+        height: 100vh;
+        background-color: #0e1a2b;
+        color: white;
+        transition: width 0.3s ease;
+        overflow: hidden;
+        flex-shrink: 0;
+        position: fixed;
+      }
+
+      .sidebar:hover {
         width: 250px;
-        height: 320px;
-        object-fit: cover;
-        border-radius: 12px;
-        margin-bottom: 25px;
       }
 
-      .team-info h3 {
-        font-size: 18px;
-        font-weight: 600;
-        margin-bottom: 8px;
-        color: #333;
+      .logo {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 20px;
       }
+
+      .logo img {
+        width: 30px;
+      }
+
+      .logo-text {
+        font-size: 1.5rem;
+        font-weight: bold;
+        display: none;
+      }
+
+      .sidebar:hover .logo-text {
+        display: inline;
+      }
+
+      .menu-section {
+        margin-top: 20px;
+        padding-left: 15px;
+      }
+
       .section-title {
+        font-size: 0.75rem;
+        color: #aaa;
+        margin-bottom: 10px;
+        display: none;
+      }
+
+      .sidebar:hover .section-title {
+        display: block;
+      }
+
+      .menu-section ul {
+        list-style: none;
+      }
+
+      .menu-section li {
+        display: flex;
+        align-items: center;
+        padding: 10px 15px;
+        gap: 15px;
+        cursor: pointer;
+        transition: background 0.2s ease;
+        border-radius: 6px;
+      }
+
+      .menu-section li:hover,
+      .menu-section li.active {
+        background-color: #1c2b3d;
+      }
+
+      .menu-section .material-icons-outlined {
+        font-size: 20px;
+      }
+
+      .text {
+        display: none;
+        white-space: nowrap;
+      }
+
+      .sidebar:hover .text {
+        display: inline;
+      }
+
+      .profile {
+        margin-top: auto;
+        padding: 15px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        background: #132235;
+        cursor: pointer;
+      }
+
+      .profile img {
+        border-radius: 50%;
+        width: 30px;
+        height: 30px;
+      }
+
+      .details {
+        display: none;
+      }
+
+      .sidebar:hover .details {
+        display: block;
+      }
+
+      .details .name {
+        font-weight: bold;
+        font-size: 0.95rem;
+      }
+
+      .details .role {
+        font-size: 0.7rem;
+        color: #aaa;
+      }
+
+      .sidebar a {
+        text-decoration: none;
+        color: inherit;
+        display: flex;
+        align-items: center;
+        gap: 15px;
+      }
+
+      .sidebar a:hover {
+        color: white;
+      }
+
+      .sidebar li.active a {
+        background-color: #1c2b3d;
+        color: white;
+        border-radius: 6px;
+      }
+      .container {
+        margin-left: 80px; /* Default sidebar width */
+        padding: 20px;
+        transition: margin-left 0.3s ease, transform 0.3s ease, scale 0.3s ease; /* Tambahkan transform dan scale ke transisi */
+        flex-grow: 1; /* Main content should take remaining space */
+        height: 100vh; /* Ensure container takes full height */
+        transform-origin: top left; /* Agar scaling terjadi dari kiri atas */
+        transform: scale(1); /* Inisialisasi scale */
+      }
+
+      .sidebar:hover + .container {
+        margin-left: 250px; /* Expanded sidebar width */
+        transform: scale(0.98); /* Perkecil skala menjadi 90% */
+      }
+      .wrapper {
+        display: flex;
+        transition: all 0.3s ease;
+      }
+
+      .flex-container {
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+        margin-top: 20px;
+      }
+
+      .card {
+        border: 1px solid #ffffff;
+        padding: 20px;
+        border-radius: 30px;
+        background-color: #f9f9f9;
+        flex: 1;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 10px;
+      }
+
+      table td {
+        border: 1px solid #999;
+        padding: 5px;
+      }
+
+      h2,
+      h3 {
+        color: #0e1a2b;
+      }
+
+      .input-group {
+        margin-bottom: 15px;
+      }
+
+      .input-group label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+      }
+
+      .input-group input,
+      .input-group select {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+
+      .gender-options {
+        width: 60%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 10px;
+      }
+
+      .gender-option {
         text-align: center;
-        font-weight: 700;
-        font-size: 28px;
-        margin-top: 40px;
-        margin-bottom: 20px;
-        color: #00509e;
+        cursor: pointer;
+        flex: 0 0 auto;
+      }
+
+      .gender-option input[type="radio"] {
+        display: none;
+      }
+
+      .gender-option img {
+        width: 80px;
+        height: 80px;
+        border: 3px solid transparent;
+        border-radius: 50%;
+        transition: 0.5s;
+      }
+
+      .gender-option img:hover {
+        border-color: #0e1a2b;
+        box-shadow: 0 0 10px rgba(52, 94, 55, 0.5);
+      }
+
+      .gender-option input[type="radio"]:checked + img {
+        border-color: #0e1a2b;
+        box-shadow: 0 0 10px rgba(52, 94, 55, 0.5);
+      }
+
+      .gender-option span {
+        display: block;
+        margin-top: 5px;
+        font-weight: bold;
+        color: #0e1a2b;
+      }
+
+      button {
+        background-color: #0e1a2b;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      button:hover {
+        background-color: #1c2b3d;
+      }
+
+      .back-button {
+        display: block;
+        margin: 20px auto;
+        text-align: center;
+      }
+
+      .back-button a {
+        text-decoration: none;
+        color: white;
+        background-color: #0e1a2b;
+        padding: 10px 20px;
+        border-radius: 5px;
+        font-weight: bold;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .back-button a:hover {
+        background-color: #1c2b3d;
+      }
+
+      .back-button i {
+        font-size: 16px;
       }
     </style>
   </head>
   <body>
     <div class="wrapper">
-      <!-- Sidebar -->
       <div class="sidebar">
         <div class="logo">
-          <img src="image/1.jpeg" alt="logo">
+          <img src="image/1.jpeg" alt="logo" />
           <span class="logo-text">NutriCalc</span>
         </div>
         <div class="menu-section">
           <ul>
-            <li><a href="index.html"><span class="material-icons-outlined">dashboard</span><span class="text">Beranda</span></a></li>
-            <li><a href="materi.html"><span class="material-icons">description</span><span class="text">Materi</span></a></li>
-            <li><a href="anak.html"><span class="material-icons">calculate</span><span class="text">Kalkulator Anak</span></a></li>
-            <li><a href="dewasa.html"><span class="material-icons">calculate</span><span class="text">Kalkulator Dewasa</span></a></li>
-            <li class="active"><a href="anggota.html"><span class="material-icons-outlined">groups</span><span class="text">Anggota</span></a></li>
+            <li>
+              <a href="index.html"
+                ><span class="material-icons-outlined">dashboard</span
+                ><span class="text">Beranda</span></a
+              >
+            </li>
+            <li>
+              <a href="materi.html"
+                ><span class="material-icons">description</span
+                ><span class="text">Materi</span></a
+              >
+            </li>
+            <li>
+              <a href="anak.html"
+                ><span class="material-icons">calculate</span
+                ><span class="text">Kalkulator Anak</span></a
+              >
+            </li>
+            <li>
+              <a href="dewasa.html"
+                ><span class="material-icons">calculate</span
+                ><span class="text">Kalkulator Dewasa</span></a
+              >
+            </li>
+            <li class="active">
+              <a href="anggota.html"
+                ><span class="material-icons-outlined">groups</span
+                ><span class="text">Anggota</span></a
+              >
+            </li>
           </ul>
         </div>
       </div>
 
-      <div class="container my-5">
-        <div class="row g-5">
-          <h2 class="section-title">Tim di Balik Kalkulator Gizi</h2>
-          <!-- Ulangi elemen berikut untuk setiap anggota tim -->
-          <div class="col-md-4">
-            <div class="team-card">
-              <div class="team-image">
-                <img src="image/iky.jpg" alt="Shafa Rabbani Fityatul Mukarramah" />
-              </div>
-              <div class="team-info">
-                <h3>Shafa Rabbani Fityatul Mukarramah</h3>
-              </div>
+      <main class="container mx-auto">
+        <h1 class="text-4xl font-bold text-center mb-10">Anggota</h1>
+        <div class="flex items-center justify-center gap-5 flex-wrap pb-10">
+          <div class="team-card">
+            <div class="team-image">
+              <img
+                src="image/iky.jpg"
+                alt="Shafa Rabbani Fityatul Mukarramah"
+              />
+            </div>
+            <div class="team-info">
+              <h3>Shafa Rabbani Fityatul Mukarramah</h3>
             </div>
           </div>
 
-          <div class="col-md-4">
-            <div class="team-card">
-              <div class="team-image">
-                <img src="image/iky.jpg" alt="Sandria Nuriya" />
-              </div>
-              <div class="team-info">
-                <h3>Sandria Nuriya Az Zahra</h3>
-              </div>
+          <div class="team-card">
+            <div class="team-image">
+              <img src="image/iky.jpg" alt="Sandria Nuriya" />
+            </div>
+            <div class="team-info">
+              <h3>Sandria Nuriya Az Zahra</h3>
             </div>
           </div>
 
-          <div class="col-md-4">
-            <div class="team-card">
-              <div class="team-image">
-                <img src="image/iky.jpg" alt="Ristin Iman Andini" />
-              </div>
-              <div class="team-info">
-                <h3>Ristin Iman Andini</h3>
-              </div>
+          <div class="team-card">
+            <div class="team-image">
+              <img src="image/iky.jpg" alt="Ristin Iman Andini" />
+            </div>
+            <div class="team-info">
+              <h3>Ristin Iman Andini</h3>
             </div>
           </div>
 
-          <div class="col-md-4 offset-md-2">
-            <div class="team-card">
-              <div class="team-image">
-                <img src="image/iky.jpg" alt="Muhamad Rizky Pratama" />
-              </div>
-              <div class="team-info">
-                <h3>Muhamad Rizky Pratama</h3>
-              </div>
+          <div class="team-card">
+            <div class="team-image">
+              <img src="image/iky.jpg" alt="Muhamad Rizky Pratama" />
+            </div>
+            <div class="team-info">
+              <h3>Muhamad Rizky Pratama</h3>
             </div>
           </div>
 
-          <div class="col-md-4">
-            <div class="team-card">
-              <div class="team-image">
-                <img src="image/iky.jpg" alt="Muhammad Fawwazul Haq" />
-              </div>
-              <div class="team-info">
-                <h3>Muhammad Fawwazul Haq</h3>
-              </div>
+          <div class="team-card">
+            <div class="team-image">
+              <img src="image/iky.jpg" alt="Muhammad Fawwazul Haq" />
+            </div>
+            <div class="team-info">
+              <h3>Muhammad Fawwazul Haq</h3>
             </div>
           </div>
         </div>
-      </div>
+      </main>
     </div>
+    <script>
+      const sidebar = document.querySelector(".sidebar");
+      const container = document.querySelector(".container");
+
+      sidebar.addEventListener("mouseenter", () => {
+        container.style.marginLeft = "250px"; // Move the container when sidebar expands
+        container.style.transform = "scale(0.98)"; // Scale down the container to 90%
+      });
+
+      sidebar.addEventListener("mouseleave", () => {
+        container.style.marginLeft = "80px"; // Return the container to the default margin
+        container.style.transform = "scale(1)"; // Return the container to the default scale
+      });
+    </script>
   </body>
 </html>

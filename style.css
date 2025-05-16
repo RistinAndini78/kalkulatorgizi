@@ -246,7 +246,7 @@ button:hover {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     overflow: hidden;
     width: 100%;
-    max-width: 300px;
+    max-width: 400px;
     min-height: 450px;
     transition: transform 0.3s ease-in-out;
     display: flex;
@@ -342,12 +342,6 @@ button:hover {
 html, body {
     height: 100%;
     width: 100%;
-}
-
-.container {
-    min-height: 100%;
-    padding-bottom: 100px; /* Memberikan ruang di bagian bawah */
-    flex-grow: 1;
 }
 
 @media (max-width: 768px) {
