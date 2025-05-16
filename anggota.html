@@ -256,20 +256,14 @@ button:hover {
 }
       
       .team-card {
-        min-width: 220px;
-        max-width: 300px;
-        width: 100%;
-        margin-bottom: 20px;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
         border-radius: 15px;
         background: #ffffff;
         text-align: center;
-        padding: 25px 15px;
+        padding: 50px 10px;
         box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
         transition: transform 0.3s ease, box-shadow 0.3s ease;
         height: 100%;
+        gap: 20px;
       }
 
       .team-card:hover {
@@ -278,13 +272,11 @@ button:hover {
       }
 
       .team-image img {
-        width: 100%;
-        max-width: 180px;
-        height: 220px;
+        width: 250px;
+        height: 320px;
         object-fit: cover;
         border-radius: 12px;
-        margin: 0 auto 15px auto;
-        display: block;
+        margin-bottom: 25px;
       }
 
       .team-info h3 {
@@ -293,25 +285,6 @@ button:hover {
         margin-bottom: 8px;
         color: #333;
       }
-
-      .description {
-        font-size: 14px;
-        color: #666;
-        margin-bottom: 15px;
-        padding: 0 10px;
-      }
-
-      .social-links a {
-        margin: 0 8px;
-        color: #555;
-        font-size: 18px;
-        transition: color 0.3s ease;
-      }
-
-      .social-links a:hover {
-        color: #0077cc;
-      }
-
       .section-title {
         text-align: center;
         font-weight: 700;
@@ -320,221 +293,6 @@ button:hover {
         margin-bottom: 20px;
         color: #00509e;
       }
-
-      /* Media Queries */
-      @media screen and (max-width: 768px) {
-        .sidebar {
-          width: 60px;
-        }
-
-        .sidebar:hover {
-          width: 200px;
-        }
-
-        .container {
-          margin-left: 60px;
-        }
-
-        .sidebar:hover + .container {
-          margin-left: 200px;
-        }
-
-        .team-card {
-          min-width: 180px;
-          max-width: 250px;
-        }
-        .team-image img {
-          max-width: 140px;
-          height: 160px;
-        }
-      }
-
-      @media screen and (max-width: 480px) {
-        .sidebar {
-          width: 50px;
-        }
-
-        .sidebar:hover {
-          width: 180px;
-        }
-
-        .container {
-          margin-left: 50px;
-        }
-
-        .sidebar:hover + .container {
-          margin-left: 180px;
-        }
-
-        .team-card {
-          min-width: 140px;
-          max-width: 100%;
-        }
-        .team-image img {
-          max-width: 100px;
-          height: 120px;
-        }
-      }
-
-      /* Tambahan agar dua kartu terakhir tetap rata tengah jika jumlah anggota ganjil */
-      @media (min-width: 992px) {
-        .row.justify-content-center > .col-lg-3:nth-last-child(2):nth-child(odd),
-        .row.justify-content-center > .col-lg-3:last-child:nth-child(odd) {
-          margin-left: calc(16.66666667% + 12px); /* Offset satu kolom plus gap agar dua kartu di tengah */
-        }
-      }
-
-.anggota-container {
-  max-width: 1100px;
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 16px;
-  padding-right: 16px;
-}
-.anggota-row {
-  justify-content: center !important;
-}
-@media (max-width: 1200px) {
-  .anggota-container {
-    max-width: 98vw;
-  }
-}
-
-.team-card-minimal {
-  background: #fff;
-  border-radius: 16px;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.07);
-  padding: 28px 18px 18px 18px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  min-width: 180px;
-  max-width: 240px;
-  width: 100%;
-  margin-bottom: 20px;
-  transition: box-shadow 0.2s, transform 0.2s;
-}
-.team-card-minimal:hover {
-  box-shadow: 0 8px 24px rgba(0,0,0,0.13);
-  transform: translateY(-6px) scale(1.03);
-}
-.team-image-minimal img {
-  width: 100px;
-  height: 100px;
-  object-fit: cover;
-  border-radius: 50%;
-  margin-bottom: 16px;
-  border: 3px solid #e6e6e6;
-  background: #f8f8f8;
-}
-.team-info-minimal h3 {
-  font-size: 1.08rem;
-  font-weight: 600;
-  margin-bottom: 10px;
-  text-align: center;
-  color: #222;
-}
-.social-links {
-  display: flex;
-  gap: 16px;
-  justify-content: center;
-}
-.social-links a {
-  color: #555;
-  font-size: 1.3rem;
-  transition: color 0.2s;
-}
-.social-links a:hover {
-  color: #0077b5;
-}
-.anggota-modern-wrapper {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
-.anggota-title {
-  text-align: center;
-  font-size: 2.8rem;
-  font-weight: 700;
-  color: #222;
-  letter-spacing: -1px;
-}
-.anggota-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 36px 32px;
-  justify-items: center;
-}
-.anggota-card {
-  background: #fff;
-  border-radius: 18px;
-  box-shadow: 0 4px 18px rgba(0,0,0,0.08);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 0 0 24px 0;
-  width: 100%;
-  max-width: 320px;
-  transition: box-shadow 0.2s, transform 0.2s;
-}
-.anggota-card:hover {
-  box-shadow: 0 8px 32px rgba(0,0,0,0.13);
-  transform: translateY(-8px) scale(1.03);
-}
-.anggota-img-wrap {
-  width: 100%;
-  aspect-ratio: 1/1;
-  background: #f5f5f5;
-  border-radius: 16px 16px 0 0;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.anggota-img-wrap img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 16px 16px 0 0;
-}
-.anggota-nama {
-  font-size: 1.25rem;
-  font-weight: 600;
-  color: #181818;
-  margin: 18px 0 10px 0;
-  text-align: center;
-}
-.anggota-sosmed {
-  display: flex;
-  gap: 18px;
-  justify-content: center;
-}
-.anggota-sosmed a {
-  color: #222;
-  font-size: 1.35rem;
-  transition: color 0.2s, transform 0.2s;
-}
-.anggota-sosmed a:hover {
-  color: #0077b5;
-  transform: scale(1.18);
-}
-@media (max-width: 992px) {
-  .anggota-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-@media (max-width: 600px) {
-  .anggota-title {
-    font-size: 2rem;
-  }
-  .anggota-grid {
-    grid-template-columns: 1fr;
-    gap: 28px 0;
-  }
-  .anggota-card {
-    max-width: 95vw;
-  }
-}
     </style>
   </head>
   <body>
@@ -556,64 +314,62 @@ button:hover {
         </div>
       </div>
 
-    <div class="container-fluid anggota-container">
-      <h2 class="section-title">Tim Kami</h2>
-      <div class="anggota-modern-wrapper py-5">
-        <h1 class="anggota-title mb-5">Halaman Anggota</h1>
-        <div class="anggota-grid">
-          <div class="anggota-card">
-            <div class="anggota-img-wrap">
-              <img src="image/cewe.png" alt="Shafa Rabbani Fityatul Mukarramah" />
-            </div>
-            <div class="anggota-nama">Shafa Rabbani Fityatul Mukarramah</div>
-            <div class="anggota-sosmed">
-              <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
-              <a href="#" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-              <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
+      <div class="container my-5">
+        <div class="row g-5">
+          <h2 class="section-title">Tim di Balik Kalkulator Gizi</h2>
+          <!-- Ulangi elemen berikut untuk setiap anggota tim -->
+          <div class="col-md-4">
+            <div class="team-card">
+              <div class="team-image">
+                <img src="image/iky.jpg" alt="Shafa Rabbani Fityatul Mukarramah" />
+              </div>
+              <div class="team-info">
+                <h3>Shafa Rabbani Fityatul Mukarramah</h3>
+              </div>
             </div>
           </div>
-          <div class="anggota-card">
-            <div class="anggota-img-wrap">
-              <img src="image/cewe.png" alt="Sandria Nuriya Az Zahra" />
-            </div>
-            <div class="anggota-nama">Sandria Nuriya Az Zahra</div>
-            <div class="anggota-sosmed">
-              <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
-              <a href="#" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-              <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
-            </div>
-          </div>
-          <div class="anggota-card">
-            <div class="anggota-img-wrap">
-              <img src="image/iting.jpg" alt="Ristin Iman Andini" />
-            </div>
-            <div class="anggota-nama">Ristin Iman Andini</div>
-            <div class="anggota-sosmed">
-              <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
-              <a href="#" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-              <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
+
+          <div class="col-md-4">
+            <div class="team-card">
+              <div class="team-image">
+                <img src="image/iky.jpg" alt="Sandria Nuriya" />
+              </div>
+              <div class="team-info">
+                <h3>Sandria Nuriya Az Zahra</h3>
+              </div>
             </div>
           </div>
-          <div class="anggota-card">
-            <div class="anggota-img-wrap">
-              <img src="image/iky.jpg" alt="Muhamad Rizky Pratama" />
-            </div>
-            <div class="anggota-nama">Muhamad Rizky Pratama</div>
-            <div class="anggota-sosmed">
-              <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
-              <a href="#" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-              <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
+
+          <div class="col-md-4">
+            <div class="team-card">
+              <div class="team-image">
+                <img src="image/iky.jpg" alt="Ristin Iman Andini" />
+              </div>
+              <div class="team-info">
+                <h3>Ristin Iman Andini</h3>
+              </div>
             </div>
           </div>
-          <div class="anggota-card">
-            <div class="anggota-img-wrap">
-              <img src="image/cowo.png" alt="Muhammad Fawwazul Haq" />
+
+          <div class="col-md-4 offset-md-2">
+            <div class="team-card">
+              <div class="team-image">
+                <img src="image/iky.jpg" alt="Muhamad Rizky Pratama" />
+              </div>
+              <div class="team-info">
+                <h3>Muhamad Rizky Pratama</h3>
+              </div>
             </div>
-            <div class="anggota-nama">Muhammad Fawwazul Haq</div>
-            <div class="anggota-sosmed">
-              <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
-              <a href="#" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-              <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
+          </div>
+
+          <div class="col-md-4">
+            <div class="team-card">
+              <div class="team-image">
+                <img src="image/iky.jpg" alt="Muhammad Fawwazul Haq" />
+              </div>
+              <div class="team-info">
+                <h3>Muhammad Fawwazul Haq</h3>
+              </div>
             </div>
           </div>
         </div>
