@@ -194,6 +194,13 @@
         margin-left: 250px; /* Expanded sidebar width */
         transform: scale(0.98); /* Perkecil skala menjadi 90% */
       }
+      footer {
+  background-color: #f9f9f9; /* Warna latar belakang footer */
+  color: #777; /* Warna teks footer */
+  text-align: center;
+  padding: 10px;
+  font-size: 0.8rem;
+}
       .wrapper {
         display: flex;
         transition: all 0.3s ease;
@@ -451,7 +458,7 @@
         <div
           class="bg-white p-6 rounded-lg mt-12 shadow-md"
         >
-          <h3 class="text-xl font-semibold text-[#0e1a2b] mb-4">
+          <h3 class="text-xl font-semibold text-[#1c2b3d] mb-4">
             Kenapa Memilih Kalkulator Gizi Ini?
           </h3>
           <ul class="list-disc pl-6 text-gray-700">
@@ -465,14 +472,14 @@
         </div>
 
         <div class="bg-white p-6 rounded-lg mt-12 shadow-md">
-          <h3 class="text-xl font-semibold text-[#0e1a2b] mb-6">
+          <h3 class="text-xl font-semibold text-[#1c2b3d] mb-6">
             Pertanyaan Seputar Indeks Massa Tubuh (IMT)
           </h3>
 
           <div class="space-y-4">
             <button
               type="button"
-              class="w-full bg-[#5aa9ff] text-white font-bold rounded-full py-2 px-4 flex justify-between items-center faq-button"
+              class="w-full bg-[#0e1a2b] text-white font-bold rounded-full py-2 px-4 flex justify-between items-center faq-button"
               aria-expanded="false"
               aria-controls="faq1"
               id="faq1-button"
@@ -506,7 +513,7 @@
 
             <button
               type="button"
-              class="w-full bg-[#5aa9ff] text-white font-bold rounded-full py-2 px-4 flex justify-between items-center faq-button"
+              class="w-full bg-[#0e1a2b] text-white font-bold rounded-full py-2 px-4 flex justify-between items-center faq-button"
               aria-expanded="false"
               aria-controls="faq2"
               id="faq2-button"
@@ -532,7 +539,7 @@
 
             <button
               type="button"
-              class="w-full bg-[#5aa9ff] text-white font-bold rounded-full py-2 px-4 flex justify-between items-center faq-button"
+              class="w-full bg-[#0e1a2b] text-white font-bold rounded-full py-2 px-4 flex justify-between items-center faq-button"
               aria-expanded="false"
               aria-controls="faq3"
               id="faq3-button"
@@ -551,7 +558,7 @@
                 Berat badan ideal wanita dan pria berbeda karena jenis kelamin, usia, dan faktor genetik. Berikut adalah berat badan ideal wanita dan pria berdasarkan tinggi badan:
               </p>
               <div class="overflow-x-auto">
-                <table class="w-full border border-[#003a82] text-[12px] text-[#003a82] border-collapse">
+                <table class="w-full border border-[#003a82] max-w-[700px] text-[15px] text-[#003a82] border-collapse">
                   <thead>
                     <tr>
                       <th class="border border-[#003a82] px-2 py-1 font-extrabold   text-center">Tinggi Badan (cm)</th>
@@ -583,7 +590,7 @@
 
             <button
               type="button"
-              class="w-full bg-[#5aa9ff] text-white font-bold rounded-full py-2 px-4 flex justify-between items-center faq-button"
+              class="w-full bg-[#0e1a2b] text-white font-bold rounded-full py-2 px-4 flex justify-between items-center faq-button"
               aria-expanded="false"
               aria-controls="faq4"
               id="faq4-button"
@@ -608,7 +615,7 @@
 
             <button
               type="button"
-              class="w-full bg-[#5aa9ff] text-white font-bold rounded-full py-2 px-4 flex justify-between items-center faq-button"
+              class="w-full bg-[#0e1a2b] text-white font-bold rounded-full py-2 px-4 flex justify-between items-center faq-button"
               aria-expanded="false"
               aria-controls="faq5"
               id="faq5-button"
@@ -626,24 +633,21 @@
               <p class="mb-4 leading-relaxed">
                 Cara menghitung BMI sangatlah mudah. Anda hanya perlu membagi berat badan Anda (dalam kilogram) dengan kuadrat tinggi badan Anda (dalam meter). Rumusnya adalah:
               </p>
-              <p class="mb-4 text-center">
-                $\text{BMI} = \frac{\text{Berat Badan (kg)}}{(\text{Tinggi Badan (m)})^2}$
+              <p class="mb-4">
+                BMI = Berat Badan (kg) / (Tinggi Badan (m))<sup>2</sup>
               </p>
               <p class="mb-4 leading-relaxed">
-                Misalnya, jika berat badan Anda 60 kg dan tinggi badan Anda 1,65 meter, maka perhitungan BMI Anda adalah:
-              </p>
-              <p class="mb-4 text-center">
-                $\text{BMI} = \frac{60}{(1.65)^2} = \frac{60}{2.7225} \approx 22.04$
+                Misalnya, jika berat badan Anda 60 kg dan tinggi badan Anda 1,65 meter, maka perhitungan BMI Anda adalah: 60 kg / (1,65 m)<sup>2</sup> = 22
               </p>
               <p class="mb-4 leading-relaxed">
                 Ini berarti BMI Anda termasuk dalam kategori normal. Setelah mendapatkan hasil perhitungan BMI, Anda dapat membandingkannya dengan tabel klasifikasi BMI untuk mengetahui kategori berat badan Anda.
               </p>
-              <p class=" mr-2 italic">Pastikan untuk menggunakan satuan yang tepat (kilogram untuk berat badan dan meter untuk tinggi badan) agar perhitungan BMI akurat.</p>
+              <p class=" mr-2 italic text-[12 ]">Pastikan untuk menggunakan satuan yang tepat (kilogram untuk berat badan dan meter untuk tinggi badan) agar perhitungan BMI akurat.</p>
             </div>
 
             <button
               type="button"
-              class="w-full bg-[#5aa9ff] text-white font-bold rounded-full py-2 px-4 flex justify-between items-center faq-button"
+              class="w-full bg-[#0e1a2b] text-white font-bold rounded-full py-2 px-4 flex justify-between items-center faq-button"
               aria-expanded="false"
               aria-controls="faq6"
               id="faq6-button"
@@ -669,7 +673,7 @@
 
             <button
               type="button"
-              class="w-full bg-[#5aa9ff] text-white font-bold rounded-full py-2 px-4 flex justify-between items-center faq-button"
+              class="w-full bg-[#0e1a2b] text-white font-bold rounded-full py-2 px-4 flex justify-between items-center faq-button"
               aria-expanded="false"
               aria-controls="faq7"
               id="faq7-button"
@@ -691,11 +695,9 @@
                 Untuk tinggi badan 173 cm, rentang BMI normal umumnya berada di antara 18,5 hingga 24,9. Artinya, jika Anda memiliki tinggi 173 cm, berat badan ideal Anda berkisar antara:
               </p>
               <ol class="list-decimal list-inside mb-4">
-                <li>Berat badan terendah (BMI 18,5):
-                  $$18.5 = \frac{\text{Berat Badan}}{(1.73)^2} \implies \text{Berat Badan} = 18.5 \times 2.9929 \approx 55.37 \text{ kg}$$
+                <li>Berat badan terendah (BMI 18,5): Sekitar 52,8 kg
                 </li>
-                <li>Berat badan tertinggi (BMI 24,9):
-                  $$24.9 = \frac{\text{Berat Badan}}{(1.73)^2} \implies \text{Berat Badan} = 24.9 \times 2.9929 \approx 74.52 \text{ kg}$$
+                <li>Berat badan tertinggi (BMI 24,9): Sekitar 71,1 kg
                 </li>
               </ol>
               <p class="mb-4 leading-relaxed">
@@ -706,7 +708,7 @@
 
             <button
               type="button"
-              class="w-full bg-[#5aa9ff] text-white font-bold rounded-full py-2 px-4 flex justify-between items-center faq-button"
+              class="w-full bg-[#0e1a2b] text-white font-bold rounded-full py-2 px-4 flex justify-between items-center faq-button"
               aria-expanded="false"
               aria-controls="faq8"
               id="faq8-button"
@@ -739,6 +741,9 @@
         </div>
       </main>
     </div>
+    <footer class="text-center p-4 text-gray-500 text-sm">
+      &copy; 2025 NutriCalc. All rights reserved.
+    </footer>
     <script>
       const sidebar = document.querySelector(".sidebar");
       const container = document.querySelector(".container");
@@ -760,26 +765,35 @@
         faqButtons.forEach(button => {
           button.addEventListener('click', () => {
             const targetId = button.getAttribute('aria-controls');
-            const targetDiv = document.getElementById(targetId);
-            const isExpanded = button.getAttribute('aria-expanded') === 'true' || false;
-            const icon = button.querySelector('i');
+      const targetDiv = document.getElementById(targetId);
+      const isExpanded = button.getAttribute('aria-expanded') === 'true';
+      const icon = button.querySelector('i');
 
-            // Tutup semua jawaban dan reset semua tombol
-            faqAnswers.forEach(answer => {
-              answer.classList.remove('open');
-            });
-            faqButtons.forEach(btn => {
-              btn.setAttribute('aria-expanded', 'false');
-              const btnIcon = btn.querySelector('i');
-              btnIcon.classList.remove('fa-chevron-down');
-              btnIcon.classList.add('fa-chevron-right');
-            });
+      // Toggle jawaban
+      button.setAttribute('aria-expanded', !isExpanded);
+      targetDiv.classList.toggle('open');
+      icon.classList.toggle('fa-chevron-right');
+      icon.classList.toggle('fa-chevron-down');
 
-            // Buka jawaban yang diklik
-            button.setAttribute('aria-expanded', !isExpanded);
-            targetDiv.classList.toggle('open');
-            icon.classList.toggle('fa-chevron-right');
-            icon.classList.toggle('fa-chevron-down');
+
+            // console.log("BUTTON LOG: ", targetDiv, isExpanded);
+
+            // // Tutup semua jawaban dan reset semua tombol
+            // faqAnswers.forEach(answer => {
+            //   answer.classList.remove('open');
+            // });
+            // faqButtons.forEach(btn => {
+            //   btn.setAttribute('aria-expanded', 'false');
+            //   const btnIcon = btn.querySelector('i');
+            //   btnIcon.classList.remove('fa-chevron-down');
+            //   btnIcon.classList.add('fa-chevron-right');
+            // });
+
+            // // Buka jawaban yang diklik
+            // button.setAttribute('aria-expanded', !isExpanded);
+            // targetDiv.classList.toggle('open');
+            // icon.classList.toggle('fa-chevron-right');
+            // icon.classList.toggle('fa-chevron-down');
           });
         });
       });
