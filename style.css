@@ -246,8 +246,8 @@ button:hover {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     overflow: hidden;
     width: 100%;
-    max-width: 400px;
-    min-height: 450px;
+    max-width: 320px;
+    min-height: 400px;
     transition: transform 0.3s ease-in-out;
     display: flex;
     flex-direction: column;
@@ -284,7 +284,7 @@ button:hover {
     margin-top: 50px;
 }
 
-.team-info h3 {
+.team-info h4 {
     font-size: 1.5rem;
     margin: 15px 0;
 }
