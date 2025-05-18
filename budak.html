@@ -53,21 +53,25 @@
         }
 
         .logo {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            padding: 20px;
-        }
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 20px; /* Jarak dari tepi */
+}
 
-        .logo img {
-            width: 30px;
-        }
+.logo img {
+  width: 3rem; /* Sesuaikan dengan ukuran teks */
+  height: 3rem; /* Agar proporsi gambar tetap */
+}
 
         .logo-text {
-            font-size: 1.5rem;
-            font-weight: bold;
-            display: none;
-        }
+  font-size: 1.5rem; /* Sama dengan tinggi gambar */
+  font-weight: bold;
+  color: white;
+  margin: 0;
+  padding: 0;
+  display: none;
+}
 
         .sidebar:hover .logo-text {
             display: inline;
@@ -391,8 +395,8 @@
       <!-- Sidebar -->
       <div class="sidebar">
         <div class="logo">
-          <img src="image/1.jpeg" alt="logo" />
-          <span class="logo-text">NutriCalc</span>
+          <img src="image/logo.png" alt="logo" />
+          <h6 class="logo-text">NutriCalc</h6>
         </div>
         <div class="menu-section">
           <ul>
@@ -430,7 +434,7 @@
         </div>
       </div>
 
-    <div class="container mt-5">
+    <div class="container mt-8">
       <div class="row">
         <div class="col-md-12 text-center">
           <h1 class="display-4">Kalkulator Gizi Anak</h1>
@@ -440,7 +444,7 @@
 
       <div class="row mt-4">
         <div class="col-md-12">
-          <div class="card mb-4">
+          <div class="card mb-4 mx-auto pl-16">
             <div class="card-body">
               <h3 class="card-title">Keterangan Faktor Perhitungan</h3>
               <div class="row">

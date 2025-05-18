@@ -52,22 +52,26 @@
             width: 250px;
         }
 
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            padding: 20px;
-        }
+       .logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 20px; /* Jarak dari tepi */
+}
 
-        .logo img {
-            width: 30px;
-        }
+.logo img {
+  width: 3rem; /* Sesuaikan dengan ukuran teks */
+  height: 3rem; /* Agar proporsi gambar tetap */
+}
 
         .logo-text {
-            font-size: 1.5rem;
-            font-weight: bold;
-            display: none;
-        }
+  font-size: 1.5rem; /* Sama dengan tinggi gambar */
+  font-weight: bold;
+  color: white;
+  margin: 0;
+  padding: 0;
+  display: none;
+}
 
         .sidebar:hover .logo-text {
             display: inline;
@@ -391,8 +395,8 @@
       <!-- Sidebar -->
       <div class="sidebar">
         <div class="logo">
-          <img src="image/1.jpeg" alt="logo" />
-          <span class="logo-text">NutriCalc</span>
+          <img src="image/logo.png" alt="logo" />
+          <h6 class="logo-text">NutriCalc</h6>
         </div>
         <div class="menu-section">
           <ul>

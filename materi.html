@@ -73,13 +73,13 @@
   height: 3rem; /* Agar proporsi gambar tetap */
 }
 
-.logo-text {
-  font-family: "UnifrakturMaguntia", cursive; /* Blackletter font */
-  font-size: 2rem; /* Sama dengan tinggi gambar */
+        .logo-text {
+  font-size: 1.5rem; /* Sama dengan tinggi gambar */
   font-weight: bold;
   color: white;
   margin: 0;
   padding: 0;
+  display: none;
 }
       .sidebar:hover .logo-text {
         display: inline;
@@ -349,7 +349,7 @@
       <div class="sidebar">
         <div class="logo">
           <img src="image/logo.png" alt="logo"/>
-          <h5 class="logo-text">NutriCalc</h5>
+          <h6 class="logo-text">NutriCalc</h6>
         </div>
         <div class="menu-section">
           <ul>
@@ -405,15 +405,14 @@
               <i class="fas fa-calculator text-[#1c2b3d] text-lg"></i> Turunan
             </h2>
             <p class="text-gray-700 mb-6 text-base leading-relaxed">
-              Konsep turunan digunakan dalam perhitungan BMR (Basal Metabolic
-              Rate) untuk menentukan laju perubahan metabolisme terhadap
-              variabel seperti berat badan, tinggi badan, dan usia.
+              Dalam pemantauan pertumbuhan anak, kita dapat memperkirakan laju perubahan berat badan dari waktu ke waktu dengan menggunakan konsep turunan numerik. Metode ini berguna untuk mengetahui apakah berat badan anak mengalami peningkatan atau penurunan, dan seberapa cepat perubahan tersebut terjadi.
+
             </p>
             <div class="bg-[#1c2b3d] border border-[#1c66ed] rounded-md p-4 text-sm text-white whitespace-pre-wrap font-mono mt-auto text-justify">
-              <br>Persamaan Harris-Benedict: 
-              <br>• Laki-laki: BMR = 66.5 + (13.75 × berat) + (5.003 × tinggi) - (6.755 × usia) 
-              <br>• Perempuan: BMR = 655.1 + (9.563 × berat) + (1.850 × tinggi) - (4.676 × usia)</div>
-
+              <br>dW/dt ≈ (W(t<sup>2</sup>) - W(t<sup>1</sup>)) / (t<sup>2</sup> - t<sup>1</sup>)
+              <br>di mana :
+              <br><strong>• W(t<sup>2</sup>)</strong>: berat badan saat pengecekan terbaru,<br><strong>• W(t<sup>1</sup>)</strong>: berat badan sebelumnya,<br><strong>• t<sup>2</sup> - t<sup>1</sup></strong>: selisih waktu dalam bulan.
+                </div>
           </div>
 
           <div class="bg-white rounded-md p-8 flex-1 flex flex-col">
