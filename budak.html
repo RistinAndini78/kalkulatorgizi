@@ -1,18 +1,24 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Kalkulator Gizi Anak</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet"/>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet"/>
-    <link rel="stylesheet" href="style.css" />
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet"/>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet"/>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
-    <style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Kalkulator Gizi Dewasa</title>
+  <link rel="icon" href="A_2D_digital_illustration_features_a_flat_design_n.png" type="image/png">
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet"/>
+  <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <style  >
         * {
             margin: 0;
             padding: 0;
@@ -85,6 +91,7 @@
 
         .menu-section ul {
             list-style: none;
+            padding-left: 0rem;
         }
 
         .menu-section li {
@@ -191,100 +198,6 @@
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 20px;
             margin-top: 20px;
-        }
-
-        .info-card {
-            background-color: #2c82c9;
-            color: white;
-            padding: 20px;
-            border-radius: 15px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-        }
-
-        .info-card h2 {
-            color: white;
-            margin-bottom: 10px;
-            font-size: 1.5rem;
-        }
-
-        .info-card p {
-            font-size: 1rem;
-            margin-bottom: 5px;
-        }
-
-        .info-card strong {
-            font-weight: bold;
-        }
-
-        .bmi-gauge-container {
-            position: relative;
-            width: 150px;
-            height: 80px;
-            margin: 10px auto;
-        }
-
-        .bmi-gauge {
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(to right, #a9d18e 0%, #f9e79f 33%, #f2a365 66%, #e45e5e 100%);
-            border-radius: 50% 50% 0 0 / 100% 100% 0 0;
-            overflow: hidden;
-            position: relative;
-        }
-
-        .bmi-indicator {
-            position: absolute;
-            left: 50%;
-            bottom: 5px;
-            width: 0;
-            height: 0;
-            border-left: 10px solid transparent;
-            border-right: 10px solid transparent;
-            border-bottom: 20px solid white;
-            transform: translateX(-50%) rotate(120deg); /* Initial position */
-        }
-
-        .bmi-value {
-            font-size: 1.5rem;
-            font-weight: bold;
-            margin-top: 10px;
-        }
-
-        .normal-range {
-            font-size: 0.7rem;
-            margin-top: 5px;
-        }
-
-        .weight-info-card {
-            background-color: #f9f9f9;
-            color: #333;
-            padding: 20px;
-            border-radius: 15px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-        }
-
-        .weight-info-card h2 {
-            color: #2c82c9;
-            margin-bottom: 10px;
-            font-size: 1.5rem;
-        }
-
-        .weight-info-card p {
-            font-size: 1rem;
-            margin-bottom: 8px;
-        }
-
-        .weight-scale-icon {
-            font-size: 3em;
-            color: #2c82c9;
-            margin-bottom: 10px;
         }
 
         .flex-container {
@@ -474,396 +387,276 @@
     </style>
 </head>
 <body>
-    <div class="wrapper">
-        <div class="sidebar">
-            <div class="logo">
-                <img src="image/1.jpeg" alt="logo">
-                <span class="logo-text">NutriCalc</span>
-            </div>
-            <div class="menu-section">
-                <ul>
-                    <li><a href="index.html"><span class="material-icons-outlined">dashboard</span><span class="text">Beranda</span></a></li>
-                    <li><a href="materi.html"><span class="material-icons">description</span><span class="text">Materi</span></a></li>
-                    <li class="active"><a href="anak.html"><span class="material-icons">calculate</span><span class="text">Kalkulator Anak</span></a></li>
-                    <li><a href="dewasa.html"><span class="material-icons">calculate</span><span class="text">Kalkulator Dewasa</span></a></li>
-                    <li><a href="anggota.html"><span class="material-icons-outlined">groups</span><span class="text">Anggota</span></a></li>
-                </ul>
-            </div>
+        <div class="wrapper">
+      <!-- Sidebar -->
+      <div class="sidebar">
+        <div class="logo">
+          <img src="image/1.jpeg" alt="logo" />
+          <span class="logo-text">NutriCalc</span>
         </div>
-
-        <div id="kalkulator" class="container">
-            <h2>Kalkulator Gizi Anak</h2>
-
-            <div class="flex-container">
-                <div class="card">
-                    <form id="nutritionForm">
-                        <div class="input-group">
-                           <label for="name">Nama Anak:</label>
-                            <input type="text" id="name" name="name" placeholder="Nama Anak">
-                        </div>
-                        <div class="input-group">
-                            <label for="birthDate">Tanggal Lahir:</label>
-                            <input type="date" id="birthDate" name="birthDate">
-                        </div>
-                        <div class="input-group">
-                            <label for="measurementDate">Tanggal Pengukuran:</label>
-                            <input type="date" id="measurementDate" name="measurementDate">
-                        </div>
-                        <div class="input-group">
-                            <label for="weight">Berat Badan :</label>
-                            <input type="number" id="weight" name="weight" placeholder="Berat Badan (kg)">
-                        </div>
-                        <div id="previousMeasurements">
-                            <div class="input-group previous-measurement">
-                                <label for="previousMeasurementDate_0">Tanggal Pengukuran Sebelumnya:</label>
-                                <input type="date" id="previousMeasurementDate_0" name="previousMeasurementDate[]">
-                            </div>
-                            <div class="input-group previous-measurement">
-                                <label for="previousWeight_0">Berat Badan Sebelumnya :</label>
-                                <input type="number" id="previousWeight_0" name="previousWeight[]" placeholder="Berat Badan Sebelumnya (kg)">
-                            </div>
-                        </div>
-                        <button type="button" onclick="addPreviousMeasurement()">Tambah Pengukuran Sebelumnya</button>
-                    </form>
-                </div>
-
-                <div class="card">
-                    <div class="input-group">
-                            <label for="height">Tinggi Badan :</label>
-                            <input type="number" id="height" name="height" placeholder="Tinggi Badan (cm)">
-                    </div>
-                        <div class="input-group">
-                            <label>Jenis Kelamin:</label>
-                            <div class="gender-options">
-                                <label class="gender-option">
-                                    <input type="radio" name="gender" value="male" required>
-                                    <img src="image/anakL.png" alt="Laki-laki">
-                                    <span>Laki-laki</span>
-                                </label>
-                                <label class="gender-option">
-                                    <input type="radio" name="gender" value="female">
-                                    <img src="image/anakP.png" alt="Perempuan">
-                                    <span>Perempuan</span>
-                                </label>
-                            </div>
-                        </div>
-                        <div class="input-group">
-                            <label for="activityFactor">Faktor Aktivitas:</label>
-                            <select id="activityFactor" name="activityFactor">
-                                <option value="">-- Pilih Faktor Aktivitas --</option>
-                                <option value="1.1">Istirahat di Tempat Tidur (1.1)</option>
-                                <option value="1.375">Aktivitas Ringan (1.375)</option>
-                                <option value="1.55">Aktivitas Sedang (1.55)</option>
-                                <option value="1.725">Aktivitas Berat (1.725)</option>
-                            </select>
-                        </div>
-                        <div class="input-group">
-                            <label for="stressFactor">Faktor Pertumbuhan:</label>
-                            <select id="stressFactor" name="stressFactor">
-                                <option value="">-- Pilih Faktor Pertumbuhan --</option>
-                                <option value="1.0">Pertumbuhan Normal (1.0)</option>
-                                <option value="1.1">Pertumbuhan Cepat (1.1)</option>
-                                <option value="1.2">Pemulihan (1.2)</option>
-                                <option value="1.3">Kondisi Khusus (1.3)</option>
-                            </select>
-                        </div>
-                </div>
-                    <button type="button" onclick="calculateResults()">Hitung</button>
-
-            </div>
-
-            <div class="card" id="resultsCard" style="display: none; margin-top: 20px;">
-                <div id="results"></div>
-                <div class="calculator-grid">
-                <div class="info-card">
-                    <img src="image/standing-human-body-silhouette.png" alt="Berat Badan Normal" style="width: 250px; height: auto; margin-bottom: 10px;">
-                    <h2>Berat Badan Kamu</h2>
-                    <p><strong>Normal</strong></p>
-                    <p>Total Energi yang Kamu Butuhkan:</p>
-                    <p><strong><span id="totalEnergyResult">0</span> kkal</strong></p>
-                    <div class="info-card-macros">
-                        <div class="macro-item">
-                            <strong>KH</strong>
-                            <span id="carbsResult">0</span> gram
-                        </div>
-                        <div class="macro-item">
-                            <strong>P</strong>
-                            <span id="proteinResult">0</span> gram
-                        </div>
-                        <div class="macro-item">
-                            <strong>L</strong>
-                            <span id="fatsResult">0</span> gram
-                        </div>
-                    </div>
-                    <p>Usia</p>
-                    <p><strong>Normal</strong></p>
-                </div>
-                
-                <div class="weight-info-card">
-                    <span class="material-icons">fitness_center</span>
-                    <h2>Berat Badan Kamu Saat Ini:</h2>
-                    <p><strong id="currentWeightResult">0</strong> kg</p>
-                    <p>Kamu Sebaiknya Memiliki Berat Badan:</p>
-                    <p><strong id="idealWeightResult">0</strong> kg</p>
-                    <p><small>*berdasarkan tinggi badan kamu <span id="inputHeightValue">0</span>cm</small></p>
-                    <p>Kamu Kekurangan Berat Badan:</p>
-                    <p><strong id="weightDifferenceResult">0</strong> kg</p>
-                </div>
-
-                    <div class="info-card">
-                        <h2>Hasil IMT Kamu:</h2>
-                        <div class="bmi-gauge-container">
-                            <div class="bmi-gauge">
-                                <div class="bmi-indicator" id="bmiIndicator"></div>
-                            </div>
-                        </div>
-                        <p class="bmi-value"><strong id="bmiResult">0.00</strong></p>
-                        <p class="normal-range">*Batas Normal IMT: 18.5 - 25.0</p>
-                    </div>
-
-                </div>
-                <p><strong>Catatan:</strong> Hasil perhitungan ini hanya sebuah data yang digunakan sebagai informasi mengenai status gizi anak dan mungkin perlu disesuaikan dengan kondisi spesifik anak. Konsultasikan lebih lanjut kepada tenaga medis profesional.</p>
-
-            </div>
-            <div class="back-button">
-                <a href="index.html"><i class="fas fa-arrow-left"></i> Kembali</a>
-            </div>
+        <div class="menu-section">
+          <ul>
+            <li>
+              <a href="index.html"
+                ><span class="material-icons-outlined">dashboard</span
+                ><span class="text">Beranda</span></a
+              >
+            </li>
+            <li>
+              <a href="materi.html"
+                ><span class="material-icons">description</span
+                ><span class="text">Materi</span></a
+              >
+            </li>
+            <li class="active">
+              <a href="budak.html"
+                ><span class="material-icons">calculate</span
+                ><span class="text">Kalkulator Anak</span></a
+              >
+            </li>
+            <li >
+              <a href="kolot.html"
+                ><span class="material-icons">calculate</span
+                ><span class="text">Kalkulator Dewasa</span></a
+              >
+            </li>
+            <li>
+              <a href="anggota.html"
+                ><span class="material-icons-outlined">groups</span
+                ><span class="text">Anggota</span></a
+              >
+            </li>
+          </ul>
         </div>
+      </div>
+
+    <div class="container mt-5">
+      <div class="row">
+        <div class="col-md-12 text-center">
+          <h1 class="display-4">Kalkulator Gizi Anak</h1>
+          <p class="lead">Hitung kebutuhan gizi anak Anda dengan akurat</p>
+        </div>
+      </div>
+
+      <div class="row mt-4">
+        <div class="col-md-12">
+          <div class="card mb-4">
+            <div class="card-body">
+              <h3 class="card-title">Keterangan Faktor Perhitungan</h3>
+              <div class="row">
+                <div class="col-md-6">
+                  <h5>Faktor Aktivitas Anak</h5>
+                  <ul class="list-group list-group-flush">
+                    <li class="list-group-item">
+                      <strong>1.2 - Aktivitas Minimal</strong><br />
+                      <small class="text-muted"
+                        >Anak lebih banyak duduk, bermain pasif, atau menonton
+                        TV</small
+                      >
+                    </li>
+                    <li class="list-group-item">
+                      <strong>1.375 - Aktivitas Ringan</strong><br />
+                      <small class="text-muted"
+                        >Bermain ringan, berjalan-jalan, atau aktivitas fisik
+                        ringan 1-3 hari/minggu</small
+                      >
+                    </li>
+                    <li class="list-group-item">
+                      <strong>1.55 - Aktivitas Sedang</strong><br />
+                      <small class="text-muted"
+                        >Bermain aktif, bersepeda, atau olahraga ringan 3-5
+                        hari/minggu</small
+                      >
+                    </li>
+                    <li class="list-group-item">
+                      <strong>1.725 - Aktivitas Tinggi</strong><br />
+                      <small class="text-muted"
+                        >Bermain sangat aktif, olahraga teratur, atau aktivitas
+                        fisik intens 6-7 hari/minggu</small
+                      >
+                    </li>
+                    <li class="list-group-item">
+                      <strong>1.9 - Aktivitas Sangat Tinggi</strong><br />
+                      <small class="text-muted"
+                        >Aktivitas fisik sangat intens, olahraga kompetitif,
+                        atau latihan khusus setiap hari</small
+                      >
+                    </li>
+                  </ul>
+                </div>
+                <div class="col-md-6">
+                  <h5>Faktor Pertumbuhan</h5>
+                  <ul class="list-group list-group-flush">
+                    <li class="list-group-item">
+                      <strong>1.0 - Pertumbuhan Normal</strong><br />
+                      <small class="text-muted"
+                        >Anak tumbuh sesuai kurva pertumbuhan normal</small
+                      >
+                    </li>
+                    <li class="list-group-item">
+                      <strong>1.1 - Pertumbuhan Cepat</strong><br />
+                      <small class="text-muted"
+                        >Anak dalam masa pertumbuhan cepat (growth spurt)</small
+                      >
+                    </li>
+                    <li class="list-group-item">
+                      <strong>1.2 - Pemulihan</strong><br />
+                      <small class="text-muted"
+                        >Anak dalam masa pemulihan setelah sakit</small
+                      >
+                    </li>
+                    <li class="list-group-item">
+                      <strong>1.3 - Kondisi Khusus</strong><br />
+                      <small class="text-muted"
+                        >Anak dengan kondisi medis tertentu yang membutuhkan
+                        energi ekstra</small
+                      >
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="mt-3">
+                <p class="text-muted small">
+                  <i class="fas fa-info-circle me-1"></i>
+                  Faktor aktivitas dan pertumbuhan digunakan untuk mengoreksi
+                  kebutuhan kalori dasar anak. Semakin tinggi aktivitas dan
+                  kebutuhan pertumbuhan, semakin tinggi kebutuhan kalori harian.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row mt-4">
+        <div class="col-md-6">
+          <div class="card">
+            <div class="card-body">
+              <h3 class="card-title">Data Anak</h3>
+              <form id="childCalculatorForm">
+                <div class="mb-3">
+                  <label for="childName" class="form-label">Nama Anak</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="childName"
+                    required
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="childBirthDate" class="form-label"
+                    >Tanggal Lahir</label
+                  >
+                  <input
+                    type="date"
+                    class="form-control"
+                    id="childBirthDate"
+                    required
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="childCheckDate" class="form-label"
+                    >Tanggal Pengecekan</label
+                  >
+                  <input
+                    type="date"
+                    class="form-control"
+                    id="childCheckDate"
+                    required
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="childGender" class="form-label"
+                    >Jenis Kelamin</label
+                  >
+                  <select class="form-select" id="childGender" required>
+                    <option value="">Pilih jenis kelamin</option>
+                    <option value="male">Laki-laki</option>
+                    <option value="female">Perempuan</option>
+                  </select>
+                </div>
+                <div class="mb-3">
+                  <label for="childWeight" class="form-label"
+                    >Berat Badan (kg)</label
+                  >
+                  <input
+                    type="number"
+                    class="form-control"
+                    id="childWeight"
+                    required
+                    min="2"
+                    max="100"
+                    step="0.1"
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="childHeight" class="form-label"
+                    >Tinggi Badan (cm)</label
+                  >
+                  <input
+                    type="number"
+                    class="form-control"
+                    id="childHeight"
+                    required
+                    min="45"
+                    max="200"
+                    step="0.1"
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="childActivity" class="form-label"
+                    >Faktor Aktivitas</label
+                  >
+                  <select class="form-select" id="childActivity" required>
+                    <option value="">Pilih tingkat aktivitas</option>
+                    <option value="1.2">1.2 - Aktivitas Minimal</option>
+                    <option value="1.375">1.375 - Aktivitas Ringan</option>
+                    <option value="1.55">1.55 - Aktivitas Sedang</option>
+                    <option value="1.725">1.725 - Aktivitas Tinggi</option>
+                    <option value="1.9">1.9 - Aktivitas Sangat Tinggi</option>
+                  </select>
+                </div>
+                <div class="mb-3">
+                  <label for="childGrowth" class="form-label"
+                    >Faktor Pertumbuhan</label
+                  >
+                  <select class="form-select" id="childGrowth" required>
+                    <option value="">Pilih faktor pertumbuhan</option>
+                    <option value="1.0">1.0 - Pertumbuhan Normal</option>
+                    <option value="1.1">1.1 - Pertumbuhan Cepat</option>
+                    <option value="1.2">1.2 - Pemulihan</option>
+                    <option value="1.3">1.3 - Kondisi Khusus</option>
+                  </select>
+                </div>
+                <div class="d-grid gap-2">
+                  <button type="submit" class="btn btn-success">
+                    <i class="fas fa-calculator me-2"></i>Hitung Kebutuhan Gizi
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="card">
+            <div class="card-body">
+              <h3 class="card-title">Hasil Perhitungan</h3>
+              <div id="childResult" class="text-center">
+                <p class="text-muted">
+                  Masukkan data anak Anda untuk melihat hasil perhitungan
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="text-center p-4 text-black text-sm">
+              &copy; 2025 NutriCalc. All rights reserved.
+        </footer>
+      </div>
     </div>
 
-    <script>
-      let count = 1;
-function addPreviousMeasurement() {
-    const container = document.getElementById("previousMeasurements");
-    const dateGroup = document.createElement("div");
-    dateGroup.className = "input-group previous-measurement";
-    dateGroup.innerHTML = `
-        <label for="previousMeasurementDate_${count}">Tanggal Pengukuran Sebelumnya:</label>
-        <input type="date" id="previousMeasurementDate_${count}" name="previousMeasurementDate[]">
-    `;
 
-    const weightGroup = document.createElement("div");
-    weightGroup.className = "input-group previous-measurement";
-    weightGroup.innerHTML = `
-        <label for="previousWeight_${count}">Berat Badan Sebelumnya:</label>
-        <input type="number" id="previousWeight_${count}" name="previousWeight[]" placeholder="Berat Badan Sebelumnya (kg)">
-    `;
-
-    container.appendChild(dateGroup);
-    container.appendChild(weightGroup);
-    count++;
-}
-
-      function calculateResults() {
-            alert("Mari Kita Lihat Hasilnya, Klik OK");
-
-            const form = document.getElementById('nutritionForm');
-            const formData = new FormData(form);
-
-            const name = formData.get('name'); // Ambil nilai nama
-
-            const birthDate = new Date(formData.get('birthDate'));
-            const measurementDate = new Date(formData.get('measurementDate'));
-            const ageInYears = measurementDate.getFullYear() - birthDate.getFullYear();
-            const ageInMonths = ageInYears * 12 + (measurementDate.getMonth() - birthDate.getMonth());
-
-            const weight = parseFloat(formData.get('weight'));
-            const heightInCm = parseFloat(formData.get('height'));
-            const heightInMeter = heightInCm / 100;
-            const activityFactor = parseFloat(formData.get('activityFactor'));
-            const stressFactor = parseFloat(formData.get('stressFactor'));
-            const gender = formData.get('gender');
-
-            // ========================= PERHITUNGAN USIA =========================
-            const ageResult = `${ageInYears} tahun ${measurementDate.getMonth() - birthDate.getMonth()} bulan`;
-
-            // ========================= PERHITUNGAN TINGGI BADAN =========================
-            const heightResult = heightInCm;
-
-            // ========================= PERHITUNGAN BERAT BADAN SEKARANG =========================
-            const currentWeightResult = weight;
-
-            // ========================= PERHITUNGAN BERAT BADAN IDEAL (Contoh Rumus Sederhana) =========================
-            let idealWeight;
-            if (ageInYears >= 5 && ageInYears <= 10) {
-                idealWeight = ageInYears * 2 + 8; // Rumus rough untuk anak 5-10 tahun
-            } else if (ageInYears >= 11 && ageInYears <= 18) {
-                idealWeight = (heightInCm - 100) * 0.9; // Pendekatan Broca untuk remaja
-            } else {
-                idealWeight = (heightInCm - 100) * 0.9; // Menggunakan rumus dewasa sebagai default jika usia di luar rentang
-            }
-            const idealWeightResult = idealWeight;
-
-            // ========================= PERHITUNGAN KEKURANGAN/KELEBIHAN BERAT BADAN =========================
-            const weightDifference = currentWeightResult - idealWeightResult;
-            const weightDifferenceResult = weightDifference;
-
-            // ========================= PERHITUNGAN INDEX MASSA TUBUH (IMT) =========================
-            const imt = weight / (heightInMeter * heightInMeter);
-            const imtResult = imt;
-            const imtCategory = imt < 18.5 ? 'Underweight' :
-                                        imt < 24.9 ? 'Normal' :
-                                        imt < 29.9 ? 'Overweight' : 'Obesity';
-
-            // ========================= PERHITUNGAN TOTAL ENERGI YANG DIBUTUHKAN (Menggunakan Estimasi BMR dengan Koreksi Aktivitas dan Pertumbuhan) =========================
-            // Menggunakan formula Schofield untuk BMR (salah satu yang umum digunakan untuk anak dan remaja)
-            let bmr;
-            if (gender === 'male') {
-                if (ageInYears >= 3 && ageInYears < 10) {
-                    bmr = 19.6 * weight + 135;
-                } else if (ageInYears >= 10 && ageInYears < 18) {
-                    bmr = 16.3 * weight + 582;
-                } else {
-                    bmr = 13.5 * weight + 649; // Estimasi untuk usia di luar rentang
-                }
-            } else { // female
-                if (ageInYears >= 3 && ageInYears < 10) {
-                    bmr = 17.7 * weight + 495;
-                } else if (ageInYears >= 10 && ageInYears < 18) {
-                    bmr = 13.3 * weight + 692;
-                } else {
-                    bmr = 9.7 * weight + 586; // Estimasi untuk usia di luar rentang
-                }
-            }
-            const totalEnergy = bmr * activityFactor * stressFactor;
-            const totalEnergyResult = totalEnergy.toFixed(2);
-
-            // ========================= PERHITUNGAN KARBOHIDRAT =========================
-            const carbsPercentage = 0.55; // Contoh persentase karbohidrat dari total energi
-            const carbsCalories = totalEnergy * carbsPercentage;
-            const carbsResult = (carbsCalories / 4).toFixed(1); // 4 kkal per gram karbohidrat
-
-            // ========================= PERHITUNGAN PROTEIN =========================
-            // Rekomendasi protein per kg berat badan (bervariasi tergantung usia dan kondisi)
-            let proteinRecommendation;
-            if (ageInYears >= 1 && ageInYears <= 3) {
-                proteinRecommendation = 1.05;
-            } else if (ageInYears >= 4 && ageInYears <= 13) {
-                proteinRecommendation = 0.95;
-            } else if (ageInYears >= 14 && ageInYears <= 18) {
-                proteinRecommendation = 0.85;
-            } else {
-                proteinRecommendation = 0.8; // Estimasi dewasa
-            }
-            const proteinResult = (weight * proteinRecommendation).toFixed(1);
-
-            // ========================= PERHITUNGAN LEMAK =========================
-            const fatsPercentage = 0.30; // Contoh persentase lemak dari total energi
-            const fatsCalories = totalEnergy * fatsPercentage;
-            const fatsResult = (fatsCalories / 9).toFixed(1); // 9 kkal per gram lemak
-
-            // ========================= PERHITUNGAN LAJU PERTAMBAHAN BERAT BADAN (Jika ada data pengukuran sebelumnya) =========================
-            let weightChangeRate = null;
-            const previousMeasurementDates = Array.from(formData.getAll('previousMeasurementDate[]')).map(date => new Date(date));
-            const previousWeights = Array.from(formData.getAll('previousWeight[]')).map(w => parseFloat(w));
-
-            if (previousWeights.length > 0 && previousMeasurementDates.length === previousWeights.length) {
-                // Ambil pengukuran terakhir sebelumnya
-                const lastPreviousDate = previousMeasurementDates[0];
-                const lastPreviousWeight = previousWeights[0];
-
-                if (!isNaN(lastPreviousWeight) && lastPreviousDate instanceof Date && !isNaN(lastPreviousDate)) {
-                    const timeDifferenceInDays = (measurementDate - lastPreviousDate) / (1000 * 60 * 60 * 24);
-                    if (timeDifferenceInDays > 0) {
-                        const weightDifferenceRate = (currentWeightResult - lastPreviousWeight) / timeDifferenceInDays; // kg per hari
-                        weightChangeRate = weightDifferenceRate.toFixed(2);
-                    }
-                }
-            }
-            let weightChangeRateInfo = weightChangeRate !== null ? `<p><strong>Laju Pertambahan Berat Badan:</strong> ${weightChangeRate} kg/hari</p>` : '';
-
-            // Update tampilan kartu informasi
-            document.getElementById('totalEnergyResult').textContent = totalEnergyResult;
-            document.getElementById('bmiResult').textContent = imtResult.toFixed(2);
-            document.getElementById('currentWeightResult').textContent = currentWeightResult.toFixed(1);
-            document.getElementById('idealWeightResult').textContent = idealWeightResult.toFixed(1);
-            document.getElementById('weightDifferenceResult').textContent = weightDifferenceResult.toFixed(1);
-            document.getElementById('inputHeightValue').textContent = heightResult;
-            document.getElementById('proteinResult').textContent = proteinResult;
-            document.getElementById('carbsResult').textContent = carbsResult;
-            document.getElementById('fatsResult').textContent = fatsResult;
-
-            // Atur posisi indikator BMI pada gauge (contoh sederhana)
-            const bmiIndicator = document.getElementById('bmiIndicator');
-            let rotation = 120 + (imtResult - 10) * 10; // Skala kasar
-            rotation = Math.max(60, Math.min(240, rotation)); // Batasi rotasi
-            bmiIndicator.style.transform = `translateX(-50%) rotate(${rotation}deg)`;
-
-            const resultsDiv = document.getElementById('results');
-        resultsDiv.innerHTML = `
-            <div style="margin-bottom: 10px; background-color: #white; padding: 10px; border-radius: 8px;">
-                <h2>Halo, ${name}!</h2>
-                <p><strong>Usia:</strong> ${ageResult}</p>
-                <p><strong>Tinggi Badan:</strong> ${heightResult} cm</p>
-                <p><strong>Berat Badan Saat Ini:</strong> ${currentWeightResult.toFixed(1)} kg</p>
-                <p><strong>Berat Badan Ideal (Estimasi):</strong> ${idealWeightResult.toFixed(1)} kg</p>
-                <p><strong>Perbedaan Berat Badan (Saat Ini - Ideal):</strong> ${weightDifferenceResult.toFixed(1)} kg</p>
-                <p><strong>Indeks Massa Tubuh (IMT):</strong> ${imtResult.toFixed(2)} (${imtCategory})</p>
-                <p><strong>Total Energi yang Dibutuhkan (Estimasi):</strong> ${totalEnergyResult} kkal</p>
-                <p><strong>Perkiraan Kebutuhan Makronutrien:</strong></p>
-                <ul>
-                    <li>Karbohidrat: ${carbsResult} gram</li>
-                    <li>Protein: ${proteinResult} gram</li>
-                    <li>Lemak: ${fatsResult} gram</li>
-                </ul>
-                ${weightChangeRateInfo}
-            </div>
-        `;
-
-            const resultsCard = document.getElementById('resultsCard');
-            resultsCard.style.display = 'block';
-            resultsCard.scrollIntoView({ behavior: 'smooth' });
-      }
-
-    // ========================= FUNGSI UNTUK AKUMULASI KALORI (MEMERLUKAN INPUT DATA HARIAN) =========================
-    // Fungsi ini memerlukan data asupan kalori harian dan pengeluaran kalori harian
-    // yang tidak ada dalam formulir saat ini.
-    // Anda perlu menambahkan input untuk data tersebut dan memanggil fungsi ini
-    // dengan data yang sesuai.
-    function calculateCalorieAccumulation(dailyIntake, dailyBurned) {
-        let accumulatedCalories = 0;
-        for (let i = 0; i < dailyIntake.length; i++) {
-            accumulatedCalories += (dailyIntake[i] - dailyBurned[i]);
-        }
-        return accumulatedCalories;
-    }
-
-    // ========================= FUNGSI UNTUK GRAFIK PERBANDINGAN KONSUMSI VS PEMBAKARAN (MEMERLUKAN LIBRARY GRAFIK) =========================
-    // Untuk membuat grafik, Anda memerlukan library seperti Chart.js atau yang lainnya.
-    // Fungsi ini akan menerima data konsumsi dan pembakaran harian dan menyiapkan data
-    // untuk digambar menggunakan library grafik tersebut.
-    function generateConsumptionBurnedChart(dailyIntake, dailyBurned, labels) {
-        // Contoh struktur data untuk Chart.js
-        const data = {
-            labels: labels,
-            datasets: [
-                {
-                    label: 'Kalori Masuk',
-                    data: dailyIntake,
-                    backgroundColor: 'rgba(75, 192, 192, 0.2)',
-                    borderColor: 'rgba(75, 192, 192, 1)',
-                    borderWidth: 1
-                },
-                {
-                    label: 'Kalori Terbakar',
-                    data: dailyBurned,
-                    backgroundColor: 'rgba(255, 99, 132, 0.2)',
-                    borderColor: 'rgba(255, 99, 132, 1)',
-                    borderWidth: 1
-                }
-            ]
-        };
-
-        // Konfigurasi grafik (opsional)
-        const config = {
-            type: 'bar',
-            data: data,
-            // options: {}
-        };
-
-        // Membuat grafik (pastikan ada elemen canvas dengan id 'calorieChart' di HTML)
-        // const calorieChart = new Chart(document.getElementById('calorieChart'), config);
-    }
-    </script>
-</body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+  </body>
 </html>

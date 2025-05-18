@@ -186,19 +186,19 @@
         border-radius: 6px;
       }
       .container {
-        margin-left: 80px; /* Default sidebar width */
-        padding: 20px;
+            margin-left: 80px; /* Default sidebar width */
+            padding: 20px;
         transition: margin-left 0.3s ease, transform 0.3s ease, scale 0.3s ease; /* Tambahkan transform dan scale ke transisi */
         flex-grow: 1; /* Main content should take remaining space */
         height: 100vh; /* Ensure container takes full height */
         transform-origin: top left; /* Agar scaling terjadi dari kiri atas */
         transform: scale(1); /* Inisialisasi scale */
-      }
+        }
 
-      .sidebar:hover + .container {
-        margin-left: 250px; /* Expanded sidebar width */
+        .sidebar:hover + .container {
+            margin-left: 250px; /* Expanded sidebar width */
         transform: scale(0.98); /* Perkecil skala menjadi 90% */
-      }
+        }
       .wrapper {
         display: flex;
         transition: all 0.3s ease;
@@ -232,67 +232,6 @@
 
       h2,
       h3 {
-        color: #0e1a2b;
-      }
-
-      .input-group {
-        margin-bottom: 15px;
-      }
-
-      .input-group label {
-        display: block;
-        margin-bottom: 5px;
-        font-weight: bold;
-      }
-
-      .input-group input,
-      .input-group select {
-        width: 100%;
-        padding: 10px;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-      }
-
-      .gender-options {
-        width: 60%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-top: 10px;
-      }
-
-      .gender-option {
-        text-align: center;
-        cursor: pointer;
-        flex: 0 0 auto;
-      }
-
-      .gender-option input[type="radio"] {
-        display: none;
-      }
-
-      .gender-option img {
-        width: 80px;
-        height: 80px;
-        border: 3px solid transparent;
-        border-radius: 50%;
-        transition: 0.5s;
-      }
-
-      .gender-option img:hover {
-        border-color: #0e1a2b;
-        box-shadow: 0 0 10px rgba(52, 94, 55, 0.5);
-      }
-
-      .gender-option input[type="radio"]:checked + img {
-        border-color: #0e1a2b;
-        box-shadow: 0 0 10px rgba(52, 94, 55, 0.5);
-      }
-
-      .gender-option span {
-        display: block;
-        margin-top: 5px;
-        font-weight: bold;
         color: #0e1a2b;
       }
 
@@ -367,13 +306,13 @@
               >
             </li>
             <li>
-              <a href="anak.html"
+              <a href="budak.html"
                 ><span class="material-icons">calculate</span
                 ><span class="text">Kalkulator Anak</span></a
               >
             </li>
             <li>
-              <a href="dewasa.html"
+              <a href="kolot.html"
                 ><span class="material-icons">calculate</span
                 ><span class="text">Kalkulator Dewasa</span></a
               >

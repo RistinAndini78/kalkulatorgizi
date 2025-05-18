@@ -5,13 +5,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Kalkulator Gizi Dewasa</title>
   <link rel="icon" href="A_2D_digital_illustration_features_a_flat_design_n.png" type="image/png">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="styles.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet"/>
+  <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
   <style  >
- * {
+        * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
@@ -83,6 +91,7 @@
 
         .menu-section ul {
             list-style: none;
+            padding-left: 0rem;
         }
 
         .menu-section li {
@@ -189,100 +198,6 @@
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 20px;
             margin-top: 20px;
-        }
-
-        .info-card {
-            background-color: #2c82c9;
-            color: white;
-            padding: 20px;
-            border-radius: 15px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-        }
-
-        .info-card h2 {
-            color: white;
-            margin-bottom: 10px;
-            font-size: 1.5rem;
-        }
-
-        .info-card p {
-            font-size: 1rem;
-            margin-bottom: 5px;
-        }
-
-        .info-card strong {
-            font-weight: bold;
-        }
-
-        .bmi-gauge-container {
-            position: relative;
-            width: 150px;
-            height: 80px;
-            margin: 10px auto;
-        }
-
-        .bmi-gauge {
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(to right, #a9d18e 0%, #f9e79f 33%, #f2a365 66%, #e45e5e 100%);
-            border-radius: 50% 50% 0 0 / 100% 100% 0 0;
-            overflow: hidden;
-            position: relative;
-        }
-
-        .bmi-indicator {
-            position: absolute;
-            left: 50%;
-            bottom: 5px;
-            width: 0;
-            height: 0;
-            border-left: 10px solid transparent;
-            border-right: 10px solid transparent;
-            border-bottom: 20px solid white;
-            transform: translateX(-50%) rotate(120deg); /* Initial position */
-        }
-
-        .bmi-value {
-            font-size: 1.5rem;
-            font-weight: bold;
-            margin-top: 10px;
-        }
-
-        .normal-range {
-            font-size: 0.7rem;
-            margin-top: 5px;
-        }
-
-        .weight-info-card {
-            background-color: #f9f9f9;
-            color: #333;
-            padding: 20px;
-            border-radius: 15px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-        }
-
-        .weight-info-card h2 {
-            color: #2c82c9;
-            margin-bottom: 10px;
-            font-size: 1.5rem;
-        }
-
-        .weight-info-card p {
-            font-size: 1rem;
-            margin-bottom: 8px;
-        }
-
-        .weight-scale-icon {
-            font-size: 3em;
-            color: #2c82c9;
-            margin-bottom: 10px;
         }
 
         .flex-container {
@@ -472,211 +387,304 @@
   </style>
 </head>
 <body>
-  <div class="wrapper">
-    <!-- Sidebar -->
-    <div class="sidebar">
-      <div class="logo">
-        <img src="image/1.jpeg" alt="logo">
-        <span class="logo-text">NutriCalc</span>
+        <div class="wrapper">
+      <!-- Sidebar -->
+      <div class="sidebar">
+        <div class="logo">
+          <img src="image/1.jpeg" alt="logo" />
+          <span class="logo-text">NutriCalc</span>
+        </div>
+        <div class="menu-section">
+          <ul>
+            <li>
+              <a href="index.html"
+                ><span class="material-icons-outlined">dashboard</span
+                ><span class="text">Beranda</span></a
+              >
+            </li>
+            <li>
+              <a href="materi.html"
+                ><span class="material-icons">description</span
+                ><span class="text">Materi</span></a
+              >
+            </li>
+            <li>
+              <a href="budak.html"
+                ><span class="material-icons">calculate</span
+                ><span class="text">Kalkulator Anak</span></a
+              >
+            </li>
+            <li class="active">
+              <a href="kolot.html"
+                ><span class="material-icons">calculate</span
+                ><span class="text">Kalkulator Dewasa</span></a
+              >
+            </li>
+            <li>
+              <a href="anggota.html"
+                ><span class="material-icons-outlined">groups</span
+                ><span class="text">Anggota</span></a
+              >
+            </li>
+          </ul>
+        </div>
       </div>
-      <div class="menu-section">
-        
-        <ul>
-          <li><a href="index.html"><span class="material-icons-outlined">dashboard</span><span class="text">Beranda</span></a></li>
-          <li><a href="materi.html"><span class="material-icons">description</span><span class="text">Materi</span></a></li>
-          <li><a href="anak.html"><span class="material-icons">calculate</span><span class="text">Kalkulator Anak</span></a></li>
-          <li  class="active"><a href="dewasa.html"><span class="material-icons">calculate</span><span class="text">Kalkulator Dewasa</span></a></li>
-          <li><a href="anggota.html"><span class="material-icons-outlined">groups</span><span class="text">Anggota</span></a></li>
-        </ul>
-      </div>
-    </div>
 
-  <div id="kalkulator" class="container">
-    <h2>Kalkulator Gizi Dewasa</h2>
-    <div class="flex-container">
-      <div class="card">
-        <form id="nutritionForm">
-          <div class="input-group">
-            <label for="birthDate">Tanggal Lahir:</label>
-            <input type="date" id="birthDate" name="birthDate" required>
-          </div>
-          <div class="input-group">
-            <label for="measurementDate">Tanggal Pengukuran:</label>
-            <input type="date" id="measurementDate" name="measurementDate" required>
-          </div>
-          <div class="input-group">
-            <label>Jenis Kelamin:</label>
-            <div class="gender-options">
-              <label class="gender-option">
-                <input type="radio" name="gender" value="male" required>
-                <img src="image/male.png" alt="Laki-laki">
-                <span>Laki-laki</span>
-              </label>
-              <label class="gender-option">
-                <input type="radio" name="gender" value="female">
-                <img src="image/female.png" alt="Perempuan">
-                <span>Perempuan</span>
-              </label>
+    <div class="container mt-5">
+      <div class="row">
+        <div class="col-md-12 text-center">
+          <h1 class="display-4">Kalkulator Gizi Dewasa</h1>
+          <p class="lead">Hitung kebutuhan gizi Anda dengan akurat</p>
+        </div>
+      </div>
+
+      <div class="row mt-4">
+        <div class="col-md-12">
+          <div class="card mb-4">
+            <div class="card-body">
+              <h3 class="card-title">Keterangan Faktor Perhitungan</h3>
+              <div class="row">
+                <div class="col-md-6">
+                  <h5>Faktor Aktivitas</h5>
+                  <ul class="list-group list-group-flush">
+                    <li class="list-group-item">
+                      <strong>1.2 - Sangat Sedikit Aktivitas</strong><br />
+                      <small class="text-muted"
+                        >Tidak berolahraga, aktivitas sehari-hari minimal</small
+                      >
+                    </li>
+                    <li class="list-group-item">
+                      <strong>1.375 - Sedikit Aktivitas</strong><br />
+                      <small class="text-muted"
+                        >Olahraga ringan 1-3 hari/minggu (jalan kaki, bersepeda
+                        santai)</small
+                      >
+                    </li>
+                    <li class="list-group-item">
+                      <strong>1.55 - Aktivitas Sedang</strong><br />
+                      <small class="text-muted"
+                        >Olahraga sedang 3-5 hari/minggu (jogging, renang,
+                        senam)</small
+                      >
+                    </li>
+                    <li class="list-group-item">
+                      <strong>1.725 - Aktivitas Tinggi</strong><br />
+                      <small class="text-muted"
+                        >Olahraga berat 6-7 hari/minggu (angkat beban, HIIT,
+                        lari)</small
+                      >
+                    </li>
+                    <li class="list-group-item">
+                      <strong>1.9 - Aktivitas Sangat Tinggi</strong><br />
+                      <small class="text-muted"
+                        >Olahraga berat setiap hari atau pekerjaan fisik
+                        berat</small
+                      >
+                    </li>
+                  </ul>
+                </div>
+                <div class="col-md-6">
+                  <h5>Faktor Stres</h5>
+                  <ul class="list-group list-group-flush">
+                    <li class="list-group-item">
+                      <strong>1.0 - Tidak ada stres</strong><br />
+                      <small class="text-muted"
+                        >Kondisi normal, tidak ada tekanan fisik atau
+                        mental</small
+                      >
+                    </li>
+                    <li class="list-group-item">
+                      <strong>1.1 - Stres ringan</strong><br />
+                      <small class="text-muted"
+                        >Sedang belajar/mengerjakan tugas, sedikit tekanan
+                        mental</small
+                      >
+                    </li>
+                    <li class="list-group-item">
+                      <strong>1.2 - Stres sedang</strong><br />
+                      <small class="text-muted"
+                        >Sedang sakit ringan atau dalam masa pemulihan</small
+                      >
+                    </li>
+                    <li class="list-group-item">
+                      <strong>1.3 - Stres berat</strong><br />
+                      <small class="text-muted"
+                        >Sedang sakit berat atau mengalami trauma</small
+                      >
+                    </li>
+                    <li class="list-group-item">
+                      <strong>1.4 - Stres sangat berat</strong><br />
+                      <small class="text-muted"
+                        >Kondisi kritis, luka bakar, atau pasca operasi</small
+                      >
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="mt-3">
+                <p class="text-muted small">
+                  <i class="fas fa-info-circle me-1"></i>
+                  Faktor aktivitas dan stres digunakan untuk mengoreksi
+                  kebutuhan kalori dasar (BMR) menjadi Total Energy Expenditure
+                  (TEE). Semakin tinggi aktivitas dan stres, semakin tinggi
+                  kebutuhan kalori harian.
+                </p>
+              </div>
             </div>
           </div>
-          <div class="input-group">
-            <label for="weight">Berat Badan (kg):</label>
-            <input type="number" id="weight" name="weight" placeholder="Berat Badan (kg)" required>
-          </div>
-          <div class="input-group">
-            <label for="height">Tinggi Badan (cm):</label>
-            <input type="number" id="height" name="height" placeholder="Tinggi Badan (cm)" required>
-          </div>
-          <div class="input-group">
-            <label for="activityFactor">Faktor Aktivitas:</label>
-            <select id="activityFactor" name="activityFactor" required>
-              <option value="">-- Pilih Aktivitas --</option>
-              <option value="1.1">Istirahat di Tempat Tidur (1,1)</option>
-              <option value="1.2">Dapat Bergerak Terbatas (1,2)</option>
-              <option value="1.3">Bangun dari Tempat Tidur (1,3)</option>
-              <option value="1.55">Aktivitas Sedang (1,55)</option>
-              <option value="1.75">Aktivitas Berat (1,75)</option>
-            </select>
-          </div>
-          <div class="input-group">
-            <label for="stressFactor">Faktor Stres:</label>
-            <select id="stressFactor" name="stressFactor" required>
-              <option value="">-- Pilih Faktor Stres --</option>
-              <option value="1.0">Status Gizi Normal (1,0)</option>
-              <option value="1.1">Stres Ringan (1,1)</option>
-              <option value="1.2">Stres Sedang (1,2)</option>
-              <option value="1.3">Stres Berat (1,3)</option>
-              <option value="1.4">Stres Sangat Berat (1,4)</option>
-            </select>
-          </div>
-          <button type="button" onclick="calculateResults()">Hitung</button>
-        </form>
+        </div>
       </div>
 
-      <div class="card">
-        <h3>Faktor Aktivitas</h3>
-        <table>
-          <tr><td>Istirahat di Tempat Tidur</td><td>1,1</td></tr>
-          <tr><td>Dapat bergerak terbatas</td><td>1,2</td></tr>
-          <tr><td>Bangun dari Tempat Tidur</td><td>1,3</td></tr>
-          <tr><td>Aktivitas Sedang</td><td>1,55</td></tr>
-          <tr><td>Aktivitas Berat</td><td>1,75</td></tr>
-        </table>
-        <h3 style="margin-top: 20px;">Faktor Stres</h3>
-        <table>
-          <tr><td>Status gizi normal</td><td>1,0</td></tr>
-          <tr><td>Stres ringan</td><td>1,1</td></tr>
-          <tr><td>Stres sedang</td><td>1,2</td></tr>
-          <tr><td>Stres berat</td><td>1,3</td></tr>
-          <tr><td>Stres sangat berat</td><td>1,4</td></tr>
-        </table>
+      <div class="row mt-5">
+        <div class="col-md-6">
+          <div class="card">
+            <div class="card-body">
+              <h3 class="card-title">Data Diri</h3>
+              <form id="calculatorForm">
+                <div class="mb-3">
+                  <label for="name" class="form-label">Nama Lengkap</label>
+                  <input type="text" class="form-control" id="name" required />
+                </div>
+                <div class="mb-3">
+                  <label for="birthDate" class="form-label"
+                    >Tanggal Lahir</label
+                  >
+                  <input
+                    type="date"
+                    class="form-control"
+                    id="birthDate"
+                    required
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="checkDate" class="form-label"
+                    >Tanggal Pengecekan</label
+                  >
+                  <input
+                    type="date"
+                    class="form-control"
+                    id="checkDate"
+                    required
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="gender" class="form-label">Jenis Kelamin</label>
+                  <select class="form-select" id="gender" required>
+                    <option value="">Pilih jenis kelamin</option>
+                    <option value="male">Laki-laki</option>
+                    <option value="female">Perempuan</option>
+                  </select>
+                </div>
+                <div class="mb-3">
+                  <label for="age" class="form-label">Usia (tahun)</label>
+                  <input
+                    type="number"
+                    class="form-control"
+                    id="age"
+                    required
+                    min="18"
+                    max="100"
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="weight" class="form-label"
+                    >Berat Badan (kg)</label
+                  >
+                  <input
+                    type="number"
+                    class="form-control"
+                    id="weight"
+                    required
+                    min="30"
+                    max="200"
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="height" class="form-label"
+                    >Tinggi Badan (cm)</label
+                  >
+                  <input
+                    type="number"
+                    class="form-control"
+                    id="height"
+                    required
+                    min="100"
+                    max="250"
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="activity" class="form-label"
+                    >Faktor Aktivitas</label
+                  >
+                  <select class="form-select" id="activity" required>
+                    <option value="">Pilih tingkat aktivitas</option>
+                    <option value="1.2">
+                      1.2 - Sangat Sedikit Aktivitas (Tidak berolahraga)
+                    </option>
+                    <option value="1.375">
+                      1.375 - Sedikit Aktivitas (Olahraga ringan 1-3
+                      hari/minggu)
+                    </option>
+                    <option value="1.55">
+                      1.55 - Aktivitas Sedang (Olahraga sedang 3-5 hari/minggu)
+                    </option>
+                    <option value="1.725">
+                      1.725 - Aktivitas Tinggi (Olahraga berat 6-7 hari/minggu)
+                    </option>
+                    <option value="1.9">
+                      1.9 - Aktivitas Sangat Tinggi (Olahraga berat setiap hari
+                      atau pekerjaan fisik)
+                    </option>
+                  </select>
+                </div>
+                <div class="mb-3">
+                  <label for="stress" class="form-label">Faktor Stres</label>
+                  <select class="form-select" id="stress" required>
+                    <option value="">Pilih tingkat stres</option>
+                    <option value="1.0">
+                      1.0 - Tidak ada stres (Kondisi normal)
+                    </option>
+                    <option value="1.1">
+                      1.1 - Stres ringan (Sedang belajar/mengerjakan tugas)
+                    </option>
+                    <option value="1.2">
+                      1.2 - Stres sedang (Sedang sakit ringan atau pemulihan)
+                    </option>
+                    <option value="1.3">
+                      1.3 - Stres berat (Sedang sakit berat atau trauma)
+                    </option>
+                    <option value="1.4">
+                      1.4 - Stres sangat berat (Kondisi kritis atau luka bakar)
+                    </option>
+                  </select>
+                </div>
+                <div class="d-grid gap-2">
+                  <button type="submit" class="btn btn-success">
+                    <i class="fas fa-calculator me-2"></i>Hitung Kebutuhan Gizi
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="card">
+            <div class="card-body">
+              <h3 class="card-title">Hasil Perhitungan</h3>
+              <div id="result" class="text-center">
+                <p class="text-muted">
+                  Masukkan data diri Anda untuk melihat hasil perhitungan
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="text-center p-4 text-black text-sm">
+              &copy; 2025 NutriCalc. All rights reserved.
+        </footer>
       </div>
     </div>
-
-    <div class="card" id="resultsCard" style="display: none; margin-top: 20px;">
-      <h2>Hasil Perhitungan</h2>
-      <div id="results"></div>
-      <canvas id="nutritionChart" width="200px" height="200px" style="margin-top: 20px;"></canvas>
-    </div>
-
-    <div class="back-button">
-        <a href="index.html"><i class="fas fa-arrow-left"></i> Kembali</a>
-    </div>
-  </div>
-
-  <script>
-    function calculateResults() {
-      alert("Mari Kita Lihat Hasilnya, Klik OK");
-
-      const form = document.getElementById('nutritionForm');
-      const formData = new FormData(form);
-
-      const birthDate = new Date(formData.get('birthDate'));
-      const measurementDate = new Date(formData.get('measurementDate'));
-      const age = measurementDate.getFullYear() - birthDate.getFullYear();
-      const currentDate = new Date();
-      const ageInYears = currentDate.getFullYear() - birthDate.getFullYear();
-      const weight = parseFloat(formData.get('weight'));
-      const height = parseFloat(formData.get('height')) / 100;
-      const activityFactor = parseFloat(formData.get('activityFactor'));
-      const stressFactor = parseFloat(formData.get('stressFactor'));
-      const gender = formData.get('gender');
-
-      const imt = weight / (height * height);
-      const imtCategory =
-        imt < 18.5 ? 'Kurus' :
-        imt < 25   ? 'Normal' :
-        imt < 30   ? 'Kelebihan Berat Badan' : 'Obesitas';
-
-      function hitungBBI(height, gender) {
-        const cmHeight = height * 100;
-        const base = cmHeight - 100;
-        const persen = gender === 'male' ? 0.10 : 0.15;
-        return base - base * persen;
-      }
-
-      const bbi = hitungBBI(height, gender);
-      const bmr = gender === 'male'
-        ? 88.362 + 13.397 * weight + 4.799 * height * 100 - 5.677 * age
-        : 447.593 + 9.247 * weight + 3.098 * height * 100 - 4.330 * age;
-
-      const totalEnergy = bmr * activityFactor * stressFactor;
-      const protein = (0.15 * totalEnergy) / 4;
-      const carbs = (0.55 * totalEnergy) / 4;
-      const fats = (0.3 * totalEnergy) / 9;
-
-      const resultsCard = document.getElementById('resultsCard');
-      const resultsDiv = document.getElementById('results');
-      resultsDiv.innerHTML = `
-        <div style="margin-bottom: 10px; background-color: #eee; padding: 10px; border-radius: 8px;">
-          <p><strong>Usia:</strong> ${ageInYears} tahun</p>
-          <h3>Status Gizi</h3>
-          <p><strong>IMT:</strong> ${imt.toFixed(2)} (${imtCategory})</p>
-          <p><strong>BBI:</strong> ${bbi.toFixed(2)} kg</p>
-        </div>
-        <div style="margin-bottom: 10px; background-color: #fff3cd; padding: 10px; border-radius: 8px;">
-          <h3>Kebutuhan Energi</h3>
-          <p><strong>Energi (E):</strong> ${totalEnergy.toFixed(2)} kkal</p>
-        </div>
-        <div style="display: flex; flex-wrap: wrap; gap: 10px;">
-          <div style="flex: 1; background-color: #d1ecf1; padding: 10px; border-radius: 8px;">
-            <strong>Karbohidrat (KH):</strong> ${carbs.toFixed(2)} gram
-          </div>
-          <div style="flex: 1; background-color: #d4edda; padding: 10px; border-radius: 8px;">
-            <strong>Protein (P):</strong> ${protein.toFixed(2)} gram
-          </div>
-          <div style="flex: 1; background-color: #f8d7da; padding: 10px; border-radius: 8px;">
-            <strong>Lemak (L):</strong> ${fats.toFixed(2)} gram
-          </div>
-        </div>
-      `;
-
-      resultsCard.style.display = 'block';
-      resultsCard.scrollIntoView({ behavior: 'smooth' });
-
-      // Pie chart
-      if (window.myChart) window.myChart.destroy();
-      const ctx = document.getElementById('nutritionChart').getContext('2d');
-      window.myChart = new Chart(ctx, {
-        type: 'pie',
-        data: {
-          labels: ['Karbohidrat', 'Protein', 'Lemak'],
-          datasets: [{
-            data: [carbs.toFixed(2), protein.toFixed(2), fats.toFixed(2)],
-            backgroundColor: ['#17a2b8', '#28a745', '#dc3545'],
-            borderColor: ['#117a8b', '#1c7430', '#bd2130'],
-            borderWidth: 1
-          }]
-        },
-        options: {
-          responsive: true,
-          plugins: {
-            legend: { position: 'bottom' },
-            title: { display: true, text: 'Distribusi Kebutuhan Zat Gizi Harian' }
-          }
-        }
-      });
-    }
-  </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>

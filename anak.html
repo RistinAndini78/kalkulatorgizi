@@ -673,6 +673,16 @@
         function addPreviousMeasurement() {
             const container = document.getElementById("previousMeasurements");
             const newIndex = container.querySelectorAll('.previous-measurement').length;
+        }
+      let count = 1;
+function addPreviousMeasurement() {
+    const container = document.getElementById("previousMeasurements");
+    const dateGroup = document.createElement("div");
+    dateGroup.className = "input-group previous-measurement";
+        dateGroup.innerHTML = `
+        <label for="previousMeasurementDate_${count}">Tanggal Pengukuran Sebelumnya:</label>
+        <input type="date" id="previousMeasurementDate_${count}" name="previousMeasurementDate[]">
+    `;
 
             const measurementDiv = document.createElement('div');
             measurementDiv.classList.add('input-group', 'previous-measurement');
@@ -713,7 +723,7 @@
                 const ageInYears = ageInMonths / 12;
 
                 // Hitung BMR untuk anak (menggunakan persamaan yang dimodifikasi)
-                let bmr;
+                let  ;
                 if (ageInMonths < 12) {
                     // Untuk bayi < 1 tahun
                     bmr = weight * 0.5 + 3;
@@ -774,6 +784,14 @@
                 // Hitung kebutuhan protein (1.5-2g per kg berat badan untuk anak)
                 const proteinMin = weight * 1.5;
                 const proteinMax = weight * 2;
+            // Perkiraan kebutuhan energi (contoh sederhana, perlu formula yang lebih akurat untuk anak-anak)
+            const bmr = gender === 'male'
+                ? 88.362 + (13.397 * weight) + (4.799 * heightInMeter) - (5.677 * ageInYears)
+                : 447.593 + (9.247 * weight) + (3.098 * heightInMeter) - (4.330 * ageInYears);
+            const totalEnergy = bmr * activityFactor * stressFactor;
+            const protein = (0.15 * totalEnergy) / 4;
+            const carbs = (0.55 * totalEnergy) / 4;
+            const fats = (0.3 * totalEnergy) / 9;
 
                 // Hitung kebutuhan lemak (25-35% dari total kalori untuk anak)
                 const fatMin = (tee * 0.25) / 9;
