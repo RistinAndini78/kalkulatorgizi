@@ -22,6 +22,7 @@
       href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined"
       rel="stylesheet"
     />
+    <link href="https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&display=swap" rel="stylesheet"/>
     <style>
       body {
         font-family: "Poppins", sans-serif;
@@ -61,21 +62,25 @@
       }
 
       .logo {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        padding: 20px;
-      }
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 20px; /* Jarak dari tepi */
+}
 
-      .logo img {
-        width: 30px;
-      }
+.logo img {
+  width: 3rem; /* Sesuaikan dengan ukuran teks */
+  height: 3rem; /* Agar proporsi gambar tetap */
+}
 
-      .logo-text {
-        font-size: 1.5rem;
-        font-weight: bold;
-        display: none;
-      }
+.logo-text {
+  font-family: "UnifrakturMaguntia", cursive; /* Blackletter font */
+  font-size: 2rem; /* Sama dengan tinggi gambar */
+  font-weight: bold;
+  color: white;
+  margin: 0;
+  padding: 0;
+}
 
       .sidebar:hover .logo-text {
         display: inline;
@@ -351,8 +356,8 @@
     <div class="wrapper">
       <div class="sidebar">
         <div class="logo">
-          <img src="image/1.jpeg" alt="logo" />
-          <span class="logo-text">NutriCalc</span>
+          <img src="image/logo.png" alt="logo">
+          <h5 class="logo-text">NutriCalc</h5>
         </div>
         <div class="menu-section">
           <ul>
@@ -512,7 +517,7 @@
                 <li>BMI 35,0 - 39,9: obesitas tingkat II</li>
                 <li>BMI ≥ 40,0: obesitas tingkat III</li>
               </ol>
-              <p class=" mr-2 italic">Penting untuk dicatat bahwa BMI adalah alat skrining dan bukan diagnosis. Seorang profesional kesehatan dapat melakukan evaluasi lebih lanjut jika diperlukan.</p>
+              <p class=" mr-2 text-[12px] italic">Penting untuk dicatat bahwa BMI adalah alat skrining dan bukan diagnosis. Seorang profesional kesehatan dapat melakukan evaluasi lebih lanjut jika diperlukan.</p>
             </div>
 
             <button
@@ -544,7 +549,7 @@
                 Mass Index). BMI adalah ukuran yang digunakan untuk menilai berat
                 badan seseorang berdasarkan tinggi dan berat badan.
               </p>
-              <p class=" mr-2 italic">Selain menggunakan BMI, ada juga rumus lain yang bisa digunakan untuk memperkirakan berat badan ideal, seperti rumus Broca dan rumus Lorentz. Namun, rumus BMI adalah yang paling umum digunakan.</p>
+              <p class=" mr-2 text-[12px] italic">Selain menggunakan BMI, ada juga rumus lain yang bisa digunakan untuk memperkirakan berat badan ideal, seperti rumus Broca dan rumus Lorentz. Namun, rumus BMI adalah yang paling umum digunakan.</p>
             </div>
 
             <button
@@ -598,7 +603,7 @@
                 untuk melihat angka BMI (body mass index) atau indeks massa
                 tubuh dan jumlah kalori yang Anda butuhkan.
               </p>
-              <p class="mt-2   leading-relaxed">
+              <p class="mt-2 text-[12px] italic leading-relaxed">
                 Sebagai catatan, meski berat badan ideal wanita dan pria berbeda,
                 kalkulator BMI atau IMT wanita dan pria tidaklah berbeda. Jadi,
                 Anda bisa menggunakan kalkulator IMT online yang ada pada
@@ -678,7 +683,7 @@
                 dengan tabel klasifikasi BMI untuk mengetahui kategori berat
                 badan Anda.
               </p>
-              <p class=" mr-2 italic text-[12 ]">Pastikan untuk menggunakan satuan yang tepat (kilogram untuk berat badan dan meter untuk tinggi badan) agar perhitungan BMI akurat.</p>
+              <p class=" mr-2 italic text-[12px]">Pastikan untuk menggunakan satuan yang tepat (kilogram untuk berat badan dan meter untuk tinggi badan) agar perhitungan BMI akurat.</p>
             </div>
 
             <button
@@ -713,7 +718,7 @@
                 perubahan gaya hidup yang lebih sehat, seperti mengatur pola
                 makan dan meningkatkan aktivitas fisik.
               </p>
-              <p class=" mr-2 italic">Kalkulator BMI juga dapat digunakan untuk memantau perubahan berat badan dari waktu ke waktu dan mengevaluasi efektivitas program penurunan atau penambahan berat badan.</p>
+              <p class=" mr-2 text-[12px] italic">Kalkulator BMI juga dapat digunakan untuk memantau perubahan berat badan dari waktu ke waktu dan mengevaluasi efektivitas program penurunan atau penambahan berat badan.</p>
             </div>
 
             <button
@@ -755,7 +760,7 @@
                 berdasarkan rentang BMI normal adalah sekitar
                 <strong>55,4 kg hingga 74,5 kg</strong>.
               </p>
-              <p class=" mr-2 italic">Penting untuk diingat bahwa ini hanyalah perkiraan. Faktor individu seperti komposisi tubuh dan tingkat aktivitas fisik juga perlu dipertimbangkan.</p>
+              <p class=" mr-2 text-[12px] italic">Penting untuk diingat bahwa ini hanyalah perkiraan. Faktor individu seperti komposisi tubuh dan tingkat aktivitas fisik juga perlu dipertimbangkan.</p>
             </div>
 
             <button
@@ -791,7 +796,7 @@
                 Jika Anda memiliki BMI 27, berdasarkan kategori di atas, Anda
                 termasuk dalam kategori <strong>kelebihan berat badan</strong>.
               </p>
-              <p class=" mr-2 italic">Kelebihan berat badan dapat meningkatkan risiko berbagai masalah kesehatan. Oleh karena itu, disarankan untuk berkonsultasi dengan dokter atau ahli gizi untuk mendapatkan saran yang tepat mengenai pengelolaan berat badan dan gaya hidup sehat.</p>
+              <p class=" mr-2 text-[12px] italic">Kelebihan berat badan dapat meningkatkan risiko berbagai masalah kesehatan. Oleh karena itu, disarankan untuk berkonsultasi dengan dokter atau ahli gizi untuk mendapatkan saran yang tepat mengenai pengelolaan berat badan dan gaya hidup sehat.</p>
             </div>
           </div>
         </div>

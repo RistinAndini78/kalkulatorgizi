@@ -10,7 +10,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet"/>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet"/>
-
+<link href="https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&display=swap" rel="stylesheet"/>
     <style>
         * {
             margin: 0;
@@ -46,21 +46,25 @@
         }
 
         .logo {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            padding: 20px;
-        }
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 20px; /* Jarak dari tepi */
+}
 
-        .logo img {
-            width: 30px;
-        }
+.logo img {
+  width: 3rem; /* Sesuaikan dengan ukuran teks */
+  height: 3rem; /* Agar proporsi gambar tetap */
+}
 
-        .logo-text {
-            font-size: 1.5rem;
-            font-weight: bold;
-            display: none;
-        }
+.logo-text {
+  font-family: "UnifrakturMaguntia", cursive; /* Blackletter font */
+  font-size: 2rem; /* Sama dengan tinggi gambar */
+  font-weight: bold;
+  color: white;
+  margin: 0;
+  padding: 0;
+}
 
         .sidebar:hover .logo-text {
             display: inline;
@@ -485,8 +489,8 @@
     <div class="wrapper">
         <div class="sidebar">
             <div class="logo">
-                <img src="image/1.jpeg" alt="logo">
-                <span class="logo-text">NutriCalc</span>
+                <img src="image/logo.png" alt="logo">
+                <h5 class="logo-text">NutriCalc</h5>
             </div>
             <div class="menu-section">
                 <ul>
