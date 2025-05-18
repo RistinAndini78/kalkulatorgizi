@@ -1,138 +1,160 @@
 <!DOCTYPE html>
 <html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Kalkulator Gizi Anak</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-    <link rel="icon" href="A_2D_digital_illustration_features_a_flat_design_n.png" type="image/png">
-    <link rel="stylesheet" href="style.css">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="icon"
+      href="A_2D_digital_illustration_features_a_flat_design_n.png"
+      type="image/png"
+    />
+    <link rel="stylesheet" href="style.css" />
     <!-- Link to Google Fonts for Poppins -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        body {
-            font-family: 'Poppins', sans-serif;
-            margin: 0;
-            padding: 0;
-        }
+      body {
+        font-family: "Poppins", sans-serif;
+        margin: 0;
+        padding: 0;
+      }
 
-        /* Navbar */
-.navbar {
-    display: flex;
-    justify-content: center;
-    background-color: #345e37;
-    padding: 10px 20px;
-    border-radius: 50px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    margin: 20px auto;
-    width: 50%; /* Lebar navbar */
-}
+      /* Navbar */
+      .navbar {
+        display: flex;
+        justify-content: center;
+        background-color: #345e37;
+        padding: 10px 20px;
+        border-radius: 50px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        margin: 20px auto;
+        width: 50%; /* Lebar navbar */
+      }
 
-/* Navbar container */
-.nav-container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    max-width: 750px;
-}
+      /* Navbar container */
+      .nav-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        max-width: 750px;
+      }
 
-/* Logo styling */
-.logo {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
+      /* Logo styling */
+      .logo {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
 
-.logo img {
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-}
+      .logo img {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+      }
 
-.logo span {
-    font-size: 16px;
-    font-weight: bold;
-    color: #ffffff;
-}
+      .logo span {
+        font-size: 16px;
+        font-weight: bold;
+        color: #ffffff;
+      }
 
-/* Navigation links */
-.nav-links {
-    display: flex;
-    gap: 20px;
-}
+      /* Navigation links */
+      .nav-links {
+        display: flex;
+        gap: 20px;
+      }
 
-.nav-item {
-    text-decoration: none;
-    font-size: 14px;
-    font-weight: 500;
-    color: #ffffff;
-    padding: 5px 15px;
-    border-radius: 30px;
-    transition: background-color 0.3s ease, color 0.3s ease;
-    background-color: #fff;
-    color: #345e37;
-}
+      .nav-item {
+        text-decoration: none;
+        font-size: 14px;
+        font-weight: 500;
+        color: #ffffff;
+        padding: 5px 15px;
+        border-radius: 30px;
+        transition: background-color 0.3s ease, color 0.3s ease;
+        background-color: #fff;
+        color: #345e37;
+      }
 
-.nav-item:hover {
-    background-color: #2b4d2e;
-    color: #ffffff;
-}
+      .nav-item:hover {
+        background-color: #2b4d2e;
+        color: #ffffff;
+      }
 
-.nav-item.active {
-    background-color: #2b4d2e;
-    color: #ffffff;
-    font-weight: bold;
-}
-
+      .nav-item.active {
+        background-color: #2b4d2e;
+        color: #ffffff;
+        font-weight: bold;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <div class="navbar">
-        <div class="nav-container">
-            <div class="logo">
-                <img src="image/1.jpeg" alt="Logo">
-                <span>Catchy </span>
-            </div>
-            <div class="nav-links">
-                <a href="index.html" class="nav-item font-bold">Beranda</a>
-                <a href="kalkulator.html" class="nav-item font-bold">Kalkulator</a>
-                <a href="anggota.html" class="nav-item font-bold">Anggota</a>
-
-            </div>
+      <div class="nav-container">
+        <div class="logo">
+          <img src="image/1.jpeg" alt="Logo" />
+          <span>Catchy </span>
         </div>
+        <div class="nav-links">
+          <a href="index.html" class="nav-item font-bold">Beranda</a>
+          <a href="kalkulator.html" class="nav-item font-bold">Kalkulator</a>
+          <a href="anggota.html" class="nav-item font-bold">Anggota</a>
+        </div>
+      </div>
     </div>
 
     <!-- Container -->
-<div class="max-w-6xl mx-auto p-6 mt-10 bg-white rounded-2xl shadow-lg">
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-      
-      <!-- Kartu Anak -->
-      <div class="p-6 bg-white border border-green-200 rounded-xl shadow text-center hover:shadow-md transition">
-        <i class="fas fa-child text-4xl text-[#345e37]"></i>
-        <h3 class="mt-4 text-lg font-semibold">Kalkulator Gizi Anak</h3>
-        <p class="text-sm text-gray-600 mt-2">Hitung kebutuhan gizi anak Anda dengan mempertimbangkan usia, tinggi badan, dan aktivitas fisik yang tepat .</p>
-        <button onclick="location.href='anak.html'" class="mt-2 px-2 py-2 bg-[#345e37] text-white rounded hover:bg-[#2d2d2d]">
-          Mulai Hitung
-        </button>
-      </div>
-  
-      <!-- Kartu Dewasa -->
-      <div class="p-6 bg-white border border-green-200 rounded-xl shadow text-center hover:shadow-md transition">
-        <i class="fas fa-user text-4xl text-[#345e37]"></i>
-        <h3 class="mt-4 text-lg font-semibold">Kalkulator Gizi Dewasa</h3>
-        <p class="text-sm text-gray-600 mt-2">Hitung kebutuhan gizi dewasa berdasarkan BMR, IMT, dan tingkat aktivitas.</p>
-        <button onclick="location.href='dewasa.html'" class="mt-4 px-4 py-2 bg-[#345e37] text-white rounded hover:bg-[#2d2d2d]">
-          Mulai Hitung
-        </button>
-      </div>
-  
-    </div>
-  </div>
-  
-</body>
+    <div class="max-w-6xl mx-auto p-6 mt-10 bg-white rounded-2xl shadow-lg">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <!-- Kartu Anak -->
+        <div
+          class="p-6 bg-white border border-green-200 rounded-xl shadow text-center hover:shadow-md transition"
+        >
+          <i class="fas fa-child text-4xl text-[#345e37]"></i>
+          <h3 class="mt-4 text-lg font-semibold">Kalkulator Gizi Anak</h3>
+          <p class="text-sm text-gray-600 mt-2">
+            Hitung kebutuhan gizi anak Anda dengan mempertimbangkan usia, tinggi
+            badan, dan aktivitas fisik yang tepat .
+          </p>
+          <button
+            onclick="location.href='anak.html'"
+            class="mt-2 px-2 py-2 bg-[#345e37] text-white rounded hover:bg-[#2d2d2d]"
+          >
+            Mulai Hitung
+          </button>
+        </div>
 
-       
+        <!-- Kartu Dewasa -->
+        <div
+          class="p-6 bg-white border border-green-200 rounded-xl shadow text-center hover:shadow-md transition"
+        >
+          <i class="fas fa-user text-4xl text-[#345e37]"></i>
+          <h3 class="mt-4 text-lg font-semibold">Kalkulator Gizi Dewasa</h3>
+          <p class="text-sm text-gray-600 mt-2">
+            Hitung kebutuhan gizi dewasa berdasarkan BMR, IMT, dan tingkat
+            aktivitas.
+          </p>
+          <button
+            onclick="location.href='dewasa.html'"
+            class="mt-4 px-4 py-2 bg-[#345e37] text-white rounded hover:bg-[#2d2d2d]"
+          >
+            Mulai Hitung
+          </button>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>
