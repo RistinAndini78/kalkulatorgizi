@@ -7,6 +7,11 @@ function calculateBMR(weight, height, age, gender) {
     return 655.1 + 9.563 * weight + 1.85 * height - 4.676 * age;
   }
 }
+function hitungBBI(height, gender) {
+          const base = height - 100;
+          const persen = gender === "male" ? 0.1 : 0.15;
+          return base - base * persen;
+        }
 
 // Fungsi untuk menghitung IMT
 function calculateBMI(weight, height) {
@@ -58,6 +63,17 @@ document.addEventListener("DOMContentLoaded", function () {
     const height = parseFloat(document.getElementById("height").value);
     const activity = parseFloat(document.getElementById("activity").value);
     const stress = parseFloat(document.getElementById("stress").value);
+    const prevWeight = parseFloat(document.getElementById("childPrevWeight").value);
+    const prevDate = new Date(document.getElementById("childPrevCheckDate").value);
+
+    // Hitung selisih waktu dalam bulan
+    const deltaTime = (checkDate - prevDate) / (30.44 * 24 * 60 * 60 * 1000); // waktu dalam bulan
+
+    // Hitung laju perubahan berat badan (turunan eksplisit)
+    let weightChangeRate = (weight - prevWeight) / deltaTime; // kg per bulan
+
+
+    const bbi = hitungBBI(height, gender);
 
     // Hitung IMT (Indeks Massa Tubuh)
     const heightInMeters = height / 100;
@@ -123,8 +139,24 @@ document.addEventListener("DOMContentLoaded", function () {
         <p><strong>Tanggal Lahir:</strong> ${formatDate(birthDate)}</p>
         <p><strong>Tanggal Pengecekan:</strong> ${formatDate(checkDate)}</p>
         <p><strong>Usia:</strong> ${age} tahun</p>
+        <p><strong>Berat badan:</strong> ${weight} kg</p>
+        <p><strong>Tinggi badan:</strong> ${height} kg</p>
         <hr>
+        <h5>Perubahan Berat Badan:</h5>
+        <p><strong>Berat Sebelumnya:</strong> ${prevWeight} kg</p>
+        <p><strong>Tanggal Sebelumnya:</strong> ${formatDate(prevDate)}</p>
+        <p><strong>Laju Perubahan Berat Badan (dW/dt):</strong> ${weightChangeRate.toFixed(2)} kg/bulan</p>
+        <div class="alert alert-info mt-2">
+          <small>
+            <strong>Interpretasi:</strong><br>
+            - Nilai positif: berat badan bertambah<br>
+            - Nilai negatif: berat badan menurun<br>
+            - Semakin besar nilainya, semakin cepat perubahan terjadi
+          </small>
+        </div>
+          <hr>
         <h5>Status Gizi:</h5>
+        <p><strong>BBI (Berat Badan Ideal):</strong> ${bbi.toFixed(2)}</p>
         <p><strong>IMT (Indeks Massa Tubuh):</strong> ${bmi.toFixed(2)}</p>
         <p><strong>Status Gizi:</strong> <span class="${statusClass}">${nutritionalStatus}</span></p>
         <div class="alert alert-info mt-2">
@@ -170,11 +202,19 @@ document
     const name = document.getElementById("childName").value;
     const birthDate = new Date(document.getElementById("childBirthDate").value);
     const checkDate = new Date(document.getElementById("childCheckDate").value);
-    const gender = document.getElementById("childGender").value;
+    const gender = document.querySelector('input[name="gender"]:checked')?.value;
     const weight = parseFloat(document.getElementById("childWeight").value);
     const height = parseFloat(document.getElementById("childHeight").value);
     const activity = parseFloat(document.getElementById("childActivity").value);
     const growth = parseFloat(document.getElementById("childGrowth").value);
+    const prevWeight = parseFloat(document.getElementById("childPrevWeight").value);
+    const prevDate = new Date(document.getElementById("childPrevCheckDate").value);
+
+    // Hitung selisih waktu dalam bulan
+    const deltaTime = (checkDate - prevDate) / (30.44 * 24 * 60 * 60 * 1000); // waktu dalam bulan
+
+    // Hitung laju perubahan berat badan (turunan eksplisit)
+    let weightChangeRate = (weight - prevWeight) / deltaTime; // kg per bulan
 
     // Hitung usia dalam bulan
     const ageInMonths = Math.floor(
@@ -182,15 +222,51 @@ document
     );
     const ageInYears = ageInMonths / 12;
 
-    // Hitung BMR untuk anak (menggunakan persamaan yang dimodifikasi)
-    let bmr;
-    if (ageInMonths < 12) {
-      // Untuk bayi < 1 tahun
-      bmr = weight * 0.5 + 3;
-    } else {
-      // Untuk anak > 1 tahun
-      bmr = weight * 0.5 + height * 0.1 + 1;
+    // Hitung bbi
+    function hitungBBI(ageInMonths, height) {
+      let bbi = 0;
+
+        if (ageInMonths <= 12) {
+          // Bayi (0–12 bulan)
+          bbi = (ageInMonths / 2) + 4;
+        } else if (ageInYears > 1 && ageInYears <= 10) {
+          // Anak (1–10 tahun)
+          bbi = (ageInYears * 2) + 8;
+        } else {
+          // Remaja dan Dewasa (>10 tahun)
+          const tinggiMinus100 = height - 100;
+          bbi = tinggiMinus100 - (0.1 * tinggiMinus100);
+        }
+
+      return bbi;
     }
+    const bbi = hitungBBI(ageInMonths, height);
+
+
+
+    // Hitung BMR untuk anak (menggunakan persamaan yang dimodifikasi)
+    function calculateChildBMR(weight, ageInYears, gender) {
+      if (gender === "male") {
+        if (ageInYears < 3) {
+          return 60.9 * weight - 54;
+        } else if (ageInYears < 10) {
+          return 22.7 * weight + 495;
+        } else if (ageInYears < 18) {
+          return 17.5 * weight + 651;
+        }
+      } else {
+        if (ageInYears < 3) {
+          return 61.0 * weight - 51;
+        } else if (ageInYears < 10) {
+          return 22.5 * weight + 499;
+        } else if (ageInYears < 18) {
+          return 12.2 * weight + 746;
+        }
+      }
+      return 0; // fallback
+    }
+    const bmr = calculateChildBMR(weight, ageInYears, gender);
+
 
     // Hitung IMT (Indeks Massa Tubuh)
     const heightInMeters = height / 100;
@@ -205,13 +281,13 @@ document
       if (bmi < 14) {
         nutritionalStatus = "Gizi Buruk";
         statusClass = "text-danger";
-      } else if (bmi >= 14 && bmi < 18) {
+      } else if (bmi >= 14 && bmi < 15.5) {
         nutritionalStatus = "Gizi Kurang";
         statusClass = "text-warning";
-      } else if (bmi >= 18 && bmi < 25) {
+      } else if (bmi >= 15.5 && bmi < 18) {
         nutritionalStatus = "Gizi Baik";
         statusClass = "text-success";
-      } else if (bmi >= 25 && bmi < 30) {
+      } else if (bmi >= 18 && bmi < 19) {
         nutritionalStatus = "Gizi Lebih";
         statusClass = "text-warning";
       } else {
@@ -220,16 +296,16 @@ document
       }
     } else {
       // Status gizi untuk anak di atas 5 tahun
-      if (bmi < 15) {
+      if (bmi < 14.5) {
         nutritionalStatus = "Gizi Buruk";
         statusClass = "text-danger";
-      } else if (bmi >= 15 && bmi < 18.5) {
+      } else if (bmi >= 14,5 && bmi < 17) {
         nutritionalStatus = "Gizi Kurang";
         statusClass = "text-warning";
-      } else if (bmi >= 18.5 && bmi < 25) {
+      } else if (bmi >= 17 && bmi < 20) {
         nutritionalStatus = "Gizi Baik";
         statusClass = "text-success";
-      } else if (bmi >= 25 && bmi < 30) {
+      } else if (bmi >= 20 && bmi < 25) {
         nutritionalStatus = "Gizi Lebih";
         statusClass = "text-warning";
       } else {
@@ -272,21 +348,35 @@ document
       <p><strong>Nama Anak:</strong> ${name}</p>
       <p><strong>Tanggal Lahir:</strong> ${formatDate(birthDate)}</p>
       <p><strong>Tanggal Pengecekan:</strong> ${formatDate(checkDate)}</p>
-      <p><strong>Usia:</strong> ${ageInMonths} bulan (${ageInYears.toFixed(
-      1
-    )} tahun)</p>
+      <p><strong>Usia:</strong> ${ageInYears.toFixed(1)} tahun (${ageInMonths} bulan)</p>
+      <p><strong>Berat badan:</strong> ${weight} kg</p>
+      <p><strong>Tinggi badan:</strong> ${height} kg</p>
+      <hr>
+      <h5>Perubahan Berat Badan:</h5>
+      <p><strong>Berat Sebelumnya:</strong> ${prevWeight} kg</p>
+      <p><strong>Tanggal Sebelumnya:</strong> ${formatDate(prevDate)}</p>
+      <p><strong>Laju Perubahan Berat Badan (dW/dt):</strong> ${weightChangeRate.toFixed(2)} kg/bulan</p>
+      <div class="alert alert-info mt-2">
+        <small>
+          <strong>Interpretasi:</strong><br>
+          - Nilai positif: berat badan bertambah<br>
+          - Nilai negatif: berat badan menurun<br>
+          - Semakin besar nilainya, semakin cepat perubahan terjadi
+        </small>
+      </div>
       <hr>
       <h5>Status Gizi:</h5>
+      <p><strong>BBI (Berat Bdan Ideal):</strong> ${bbi.toFixed(2)}</p>
       <p><strong>IMT (Indeks Massa Tubuh):</strong> ${bmi.toFixed(2)}</p>
       <p><strong>Status Gizi:</strong> <span class="${statusClass}">${nutritionalStatus}</span></p>
       <div class="alert alert-info mt-2">
         <small>
           <strong>Keterangan Status Gizi:</strong><br>
-          - Gizi Buruk: IMT < ${ageInYears < 5 ? "14" : "15"}<br>
-          - Gizi Kurang: IMT ${ageInYears < 5 ? "14 - 17.9" : "15 - 18.4"}<br>
-          - Gizi Baik: IMT ${ageInYears < 5 ? "18 - 24.9" : "18.5 - 24.9"}<br>
-          - Gizi Lebih: IMT 25 - 29.9<br>
-          - Obesitas: IMT ≥ 30
+          - Gizi Buruk: IMT ${ageInYears < 5 ? "14" : "14.5"}<br>
+          - Gizi Kurang: IMT ${ageInYears < 5 ? "14 - 15.5" : "14.5 - 17"}<br>
+          - Gizi Baik: IMT ${ageInYears < 5 ? "15.5 - 18" : "17 - 20"}<br>
+          - Gizi Lebih: IMT ${ageInYears < 5 ? "18 - 20" : "20 - 25"}<br>
+          - Obesitas: IMT ${ageInYears < 5 ? ">20" : ">25"}
         </small>
       </div>
       <hr>
