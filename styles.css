@@ -165,6 +165,26 @@ body {
   bottom: 0;
 }
 
+.gender-options .gender-option {
+    cursor: pointer;
+    border: 2px solid transparent;
+    padding: 5px;
+    border-radius: 8px;
+    transition: border 0.2s ease;
+  }
+
+  .gender-options .gender-option input:checked + img {
+    border: 2px solid #1c66ed;
+    border-radius: 8px;
+  }
+
+  .gender-img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    margin-bottom: 5px;
+  }
+
 @media (max-width: 991.98px) {
   .navbar {
     width: 90%;
@@ -204,6 +224,25 @@ body {
   }
 }
 
+.gender-options .gender-option {
+    cursor: pointer;
+    border: 2px solid transparent;
+    padding: 5px;
+    border-radius: 8px;
+    transition: border 0.2s ease;
+  }
+
+  .gender-options .gender-option input:checked + img {
+    border: 2px solid #1c66ed;
+    border-radius: 8px;
+  }
+
+  .gender-img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    margin-bottom: 5px;
+  }
 @media (max-width: 767.98px) {
   .navbar {
     width: 98%;
@@ -363,6 +402,25 @@ footer {
   background-color: white;
 }
 
+.gender-options .gender-option {
+    cursor: pointer;
+    border: 2px solid transparent;
+    padding: 5px;
+    border-radius: 8px;
+    transition: border 0.2s ease;
+  }
+
+  .gender-options .gender-option input:checked + img {
+    border: 2px solid #1c66ed;
+    border-radius: 8px;
+  }
+
+  .gender-img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    margin-bottom: 5px;
+  }
 /* Animations */
 @keyframes fadeIn {
   from {
