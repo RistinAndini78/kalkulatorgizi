@@ -58,19 +58,17 @@ document.addEventListener("DOMContentLoaded", function () {
     const birthDate = new Date(document.getElementById("birthDate").value);
     const checkDate = new Date(document.getElementById("checkDate").value);
     const gender = document.querySelector('input[name="gender"]:checked')?.value;
-    const age = parseFloat(document.getElementById("age").value);
     const weight = parseFloat(document.getElementById("weight").value);
     const height = parseFloat(document.getElementById("height").value);
     const activity = parseFloat(document.getElementById("activity").value);
     const stress = parseFloat(document.getElementById("stress").value);
-    const prevWeight = parseFloat(document.getElementById("childPrevWeight").value);
-    const prevDate = new Date(document.getElementById("childPrevCheckDate").value);
+    
 
-    // Hitung selisih waktu dalam bulan
-    const deltaTime = (checkDate - prevDate) / (30.44 * 24 * 60 * 60 * 1000); // waktu dalam bulan
+    const ageInMonths = Math.floor(
+      (checkDate - birthDate) / (30.44 * 24 * 60 * 60 * 1000)
+    );
+    const age = ageInMonths / 12;    // Hitung selisih waktu dalam bulan
 
-    // Hitung laju perubahan berat badan (turunan eksplisit)
-    let weightChangeRate = (weight - prevWeight) / deltaTime; // kg per bulan
 
 
     const bbi = hitungBBI(height, gender);
@@ -142,19 +140,6 @@ document.addEventListener("DOMContentLoaded", function () {
         <p><strong>Berat badan:</strong> ${weight} kg</p>
         <p><strong>Tinggi badan:</strong> ${height} kg</p>
         <hr>
-        <h5>Perubahan Berat Badan:</h5>
-        <p><strong>Berat Sebelumnya:</strong> ${prevWeight} kg</p>
-        <p><strong>Tanggal Sebelumnya:</strong> ${formatDate(prevDate)}</p>
-        <p><strong>Laju Perubahan Berat Badan (dW/dt):</strong> ${weightChangeRate.toFixed(2)} kg/bulan</p>
-        <div class="alert alert-info mt-2">
-          <small>
-            <strong>Interpretasi:</strong><br>
-            - Nilai positif: berat badan bertambah<br>
-            - Nilai negatif: berat badan menurun<br>
-            - Semakin besar nilainya, semakin cepat perubahan terjadi
-          </small>
-        </div>
-          <hr>
         <h5>Status Gizi:</h5>
         <p><strong>BBI (Berat Badan Ideal):</strong> ${bbi.toFixed(2)}</p>
         <p><strong>IMT (Indeks Massa Tubuh):</strong> ${bmi.toFixed(2)}</p>
