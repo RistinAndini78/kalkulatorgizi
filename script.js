@@ -138,7 +138,7 @@ document.addEventListener("DOMContentLoaded", function () {
         <p><strong>Tanggal Pengecekan:</strong> ${formatDate(checkDate)}</p>
         <p><strong>Usia:</strong> ${age.toFixed(1)} tahun</p>
         <p><strong>Berat badan:</strong> ${weight} kg</p>
-        <p><strong>Tinggi badan:</strong> ${height} kg</p>
+        <p><strong>Tinggi badan:</strong> ${height} cm</p>
         <hr>
         <h5>Status Gizi:</h5>
         <p><strong>BBI (Berat Badan Ideal):</strong> ${bbi.toFixed(2)}</p>
@@ -335,7 +335,7 @@ document
       <p><strong>Tanggal Pengecekan:</strong> ${formatDate(checkDate)}</p>
       <p><strong>Usia:</strong> ${ageInYears.toFixed(1)} tahun (${ageInMonths} bulan)</p>
       <p><strong>Berat badan:</strong> ${weight} kg</p>
-      <p><strong>Tinggi badan:</strong> ${height} kg</p>
+      <p><strong>Tinggi badan:</strong> ${height} cm</p>
       <hr>
       <h5>Perubahan Berat Badan:</h5>
       <p><strong>Berat Sebelumnya:</strong> ${prevWeight} kg</p>
