@@ -136,7 +136,7 @@ document.addEventListener("DOMContentLoaded", function () {
         <p><strong>Nama:</strong> ${name}</p>
         <p><strong>Tanggal Lahir:</strong> ${formatDate(birthDate)}</p>
         <p><strong>Tanggal Pengecekan:</strong> ${formatDate(checkDate)}</p>
-        <p><strong>Usia:</strong> ${age} tahun</p>
+        <p><strong>Usia:</strong> ${age.toFixed(1)} tahun</p>
         <p><strong>Berat badan:</strong> ${weight} kg</p>
         <p><strong>Tinggi badan:</strong> ${height} kg</p>
         <hr>
