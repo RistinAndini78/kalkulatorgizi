@@ -41,6 +41,8 @@
       body {
         font-family: "Poppins", sans-serif;
         background: #eef1f6;
+        justify-content: center;
+            background: linear-gradient(135deg, #f0f9ff 0%, #e1f1ff 100%); /* Contoh gradien */
       }
 
       .wrapper {
@@ -458,10 +460,10 @@
         </div>
       </div>
 
-      <div class="container mt-5">
+      <div class="container mt-2">
         <div class="row">
           <div class="col-md-12 text-center">
-            <h1 class="display-4">Kalkulator Gizi Dewasa</h1>
+            <h5 class="display-4">Kalkulator Gizi Dewasa</h5>
             <p class="lead">Hitung kebutuhan gizi Anda dengan akurat</p>
           </div>
         </div>
@@ -474,7 +476,7 @@
               <form id="calculatorForm">
                 <div class="mb-3">
                   <label for="name" class="form-label">Nama Lengkap</label>
-                  <input type="text" class="form-control" id="name" required />
+                  <input type="text" class="form-control" id="name" placeholder="Nama Lengkap" required />
                 </div>
                 <div class="mb-3">
                   <label for="birthDate" class="form-label"
@@ -548,21 +550,19 @@
                   <select class="form-select" id="activity" required>
                     <option value="">Pilih tingkat aktivitas</option>
                     <option value="1.2">
-                      1.2 - Sangat Sedikit Aktivitas (Tidak berolahraga)
+                      1.2 - Sangat Sedikit Aktivitas
                     </option>
                     <option value="1.375">
-                      1.375 - Sedikit Aktivitas (Olahraga ringan 1-3
-                      hari/minggu)
+                      1.375 - Sedikit Aktivitas
                     </option>
                     <option value="1.55">
-                      1.55 - Aktivitas Sedang (Olahraga sedang 3-5 hari/minggu)
+                      1.55 - Aktivitas Sedang 
                     </option>
                     <option value="1.725">
-                      1.725 - Aktivitas Tinggi (Olahraga berat 6-7 hari/minggu)
+                      1.725 - Aktivitas Tinggi 
                     </option>
                     <option value="1.9">
-                      1.9 - Aktivitas Sangat Tinggi (Olahraga berat setiap hari
-                      atau pekerjaan fisik)
+                      1.9 - Aktivitas Sangat Tinggi 
                     </option>
                   </select>
                 </div>
@@ -571,19 +571,19 @@
                   <select class="form-select" id="stress" required>
                     <option value="">Pilih tingkat stres</option>
                     <option value="1.0">
-                      1.0 - Tidak ada stres (Kondisi normal)
+                      1.0 - Tidak ada stres 
                     </option>
                     <option value="1.1">
-                      1.1 - Stres ringan (Sedang belajar/mengerjakan tugas)
+                      1.1 - Stres ringan 
                     </option>
                     <option value="1.2">
-                      1.2 - Stres sedang (Sedang sakit ringan atau pemulihan)
+                      1.2 - Stres sedang 
                     </option>
                     <option value="1.3">
-                      1.3 - Stres berat (Sedang sakit berat atau trauma)
+                      1.3 - Stres berat 
                     </option>
                     <option value="1.4">
-                      1.4 - Stres sangat berat (Kondisi kritis atau luka bakar)
+                      1.4 - Stres sangat berat 
                     </option>
                   </select>
                 </div>
@@ -623,24 +623,24 @@
                       <div class="accordion-body">
                         <ul class="list-group list-group-flush">
                           <li class="list-group-item">
-                            <strong>Istirahat di Tempat Tidur</strong><br />
-                            <small class="text-muted">1,1</small>
+                            <strong>1.2 - Sangat Sedikit Aktivitas</strong><br />
+                            <small class="text-muted">Tidak berolahraga, aktivitas sehari-hari minimal</small>
                           </li>
                           <li class="list-group-item">
-                            <strong>Dapat bergerak terbatas</strong><br />
-                            <small class="text-muted">1,2</small>
+                            <strong>1.375 - Sedikit Aktivitas</strong><br />
+                            <small class="text-muted">Olahraga ringan 1-3 hari/minggu (jalan kaki, bersepeda santai)</small>
                           </li>
                           <li class="list-group-item">
-                            <strong>Bangun dari Tempat Tidur</strong><br />
-                            <small class="text-muted">1,3</small>
+                            <strong>1.55 - Aktivitas Sedang</strong><br />
+                            <small class="text-muted">Olahraga sedang 3-5 hari/minggu (jogging, renang, senam)</small>
                           </li>
                           <li class="list-group-item">
-                            <strong>Aktivitas Sedang</strong><br />
-                            <small class="text-muted">1,55</small>
+                            <strong>1.725 - Aktivitas Tinggi</strong><br />
+                            <small class="text-muted">Olahraga berat 6-7 hari/minggu (angkat beban, HIIT, lari)</small>
                           </li>
                           <li class="list-group-item">
-                            <strong>Aktivitas Berat</strong><br />
-                            <small class="text-muted">1,75</small>
+                            <strong>1.9 - Aktivitas Sangat Tinggi</strong><br />
+                            <small class="text-muted">Olahraga berat setiap hari atau pekerjaan fisik berat</small>
                           </li>
                         </ul>
                       </div>
@@ -668,24 +668,24 @@
                       <div class="accordion-body">
                         <ul class="list-group list-group-flush">
                           <li class="list-group-item">
-                            <strong>Status gizi normal</strong><br />
-                            <small class="text-muted">1,0</small>
+                            <strong>1.0 - Tidak ada stres</strong><br />
+                            <small class="text-muted">Kondisi normal, tidak ada tekanan fisik atau mental</small>
                           </li>
                           <li class="list-group-item">
-                            <strong>Stres ringan</strong><br />
-                            <small class="text-muted">1,1</small>
+                            <strong>1.1 - Stres ringan</strong><br />
+                            <small class="text-muted">Sedang belajar/mengerjakan tugas, sedikit tekanan mental</small>
                           </li>
                           <li class="list-group-item">
-                            <strong>Stres sedang</strong><br />
-                            <small class="text-muted">1,2</small>
+                            <strong>1.2 - Stres sedang</strong><br />
+                            <small class="text-muted">Sedang sakit ringan atau dalam masa pemulihan</small>
                           </li>
                           <li class="list-group-item">
-                            <strong>Stres berat</strong><br />
-                            <small class="text-muted">1,3</small>
+                            <strong>1.3 - Stres berat</strong><br />
+                            <small class="text-muted">Sedang sakit berat atau mengalami trauma</small>
                           </li>
                           <li class="list-group-item">
-                            <strong>Stres sangat berat</strong><br />
-                            <small class="text-muted">1,4</small>
+                            <strong>1.4 - Stres sangat berat</strong><br />
+                            <small class="text-muted">Kondisi kritis, luka bakar, atau pasca operasi</small>
                           </li>
                         </ul>
                       </div>
@@ -855,7 +855,7 @@ document.addEventListener("DOMContentLoaded", function () {
         <p><strong>Nama:</strong> ${name}</p>
         <p><strong>Tanggal Lahir:</strong> ${formatDate(birthDate)}</p>
         <p><strong>Tanggal Pengecekan:</strong> ${formatDate(checkDate)}</p>
-        <p><strong>Usia:</strong> ${age} tahun</p>
+        <p><strong>Usia:</strong> ${age.toFixed(1)} tahun</p>
         <p><strong>Berat badan:</strong> ${weight} kg</p>
         <p><strong>Tinggi badan:</strong> ${height} kg</p>
         <hr>
