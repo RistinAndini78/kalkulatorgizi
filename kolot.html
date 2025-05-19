@@ -268,11 +268,11 @@
       }
 
       .gender-options {
-        width: 70%;
+        width: 60%;
         display: flex;
-        justify-content: space-around;
+        justify-content: center;
         align-items: center;
-        margin-top: 15px;
+        margin-top: 10px;
       }
 
       .gender-option {
@@ -286,9 +286,9 @@
       }
 
       .gender-option img {
-        width: 90px;
-        height: 90px;
-        border: 4px solid transparent;
+        width: 80px;
+        height: 80px;
+        border: 3px solid transparent;
         border-radius: 50%;
         transition: 0.5s;
       }
@@ -416,6 +416,7 @@
   </head>
   <body>
     <div class="wrapper">
+      <!-- Sidebar -->
       <div class="sidebar">
         <div class="logo">
           <img src="image/logo.png" alt="logo" />
@@ -457,156 +458,144 @@
         </div>
       </div>
 
-      <div class="container mt-2">
+      <div class="container mt-5">
         <div class="row">
           <div class="col-md-12 text-center">
             <h1 class="display-4">Kalkulator Gizi Dewasa</h1>
             <p class="lead">Hitung kebutuhan gizi Anda dengan akurat</p>
           </div>
         </div>
-
-        <div class="row">
+          <div></div>
+        <div class="row mt-4">
           <div class="col-md-6">
-            <div class="card mb-4">
-              <div class="card-body">
-                <h3 class="card-title">Data Dewasa</h3>
-                <form id="nutritionForm">
-                  <div class="mb-3">
-                    <label for="fullName" class="form-label">Nama Lengkap:</label>
-                    <input
-                      type="text"
-                      class="form-control"
-                      id="fullName"
-                      name="fullName"
-                      placeholder="Masukkan Nama Lengkap Anda"
-                      required
-                    />
-                  </div>
-                  <div class="mb-3">
-                    <label for="birthDate" class="form-label">Tanggal Lahir:</label>
-                    <input
-                      type="date"
-                      class="form-control"
-                      id="birthDate"
-                      name="birthDate"
-                      required
-                    />
-                  </div>
-                  <div class="mb-3">
-                    <label for="measurementDate" class="form-label"
-                      >Tanggal Pengukuran:</label
-                    >
-                    <input
-                      type="date"
-                      class="form-control"
-                      id="measurementDate"
-                      name="measurementDate"
-                      required
-                    />
-                  </div>
-                  <div class="mb-3">
-                    <label class="form-label d-block mb-2">Jenis Kelamin:</label>
-                    <div class="d-flex gap-3 gender-options">
-                      <label class="gender-option d-flex flex-column align-items-center">
-                        <input
-                          type="radio"
-                          name="gender"
-                          value="male"
-                          required
-                          style="display: none"
-                        />
-                        <img
-                          src="image/male.png"
-                          alt="Laki-laki"
-                          class="gender-img"
-                        />
-                        <span>Laki-laki</span>
-                      </label>
-                      <label class="gender-option d-flex flex-column align-items-center">
-                        <input
-                          type="radio"
-                          name="gender"
-                          value="female"
-                          style="display: none"
-                        />
-                        <img
-                          src="image/female.png"
-                          alt="Perempuan"
-                          class="gender-img"
-                        />
-                        <span>Perempuan</span>
-                      </label>
-                    </div>
-                  </div>
-                  <div class="mb-3">
-                    <label for="weight" class="form-label">Berat Badan (kg):</label>
-                    <input
-                      type="number"
-                      class="form-control"
-                      id="weight"
-                      name="weight"
-                      placeholder="Berat Badan (kg)"
-                      required
-                    />
-                  </div>
-                  <div class="mb-3">
-                    <label for="height" class="form-label">Tinggi Badan (cm):</label>
-                    <input
-                      type="number"
-                      class="form-control"
-                      id="height"
-                      name="height"
-                      placeholder="Tinggi Badan (cm)"
-                      required
-                    />
-                  </div>
-                  <div class="mb-3"><label for="activityFactor" class="form-label"
-                      >Faktor Aktivitas:</label
-                    >
-                    <select
-                      class="form-select"
-                      id="activityFactor"
-                      name="activityFactor"
-                      required
-                    >
-                      <option value="">-- Pilih Aktivitas --</option>
-                      <option value="1.1">Istirahat di Tempat Tidur (1,1)</option>
-                      <option value="1.2">Dapat Bergerak Terbatas (1,2)</option>
-                      <option value="1.3">Bangun dari Tempat Tidur (1,3)</option>
-                      <option value="1.55">Aktivitas Sedang (1,55)</option>
-                      <option value="1.75">Aktivitas Berat (1,75)</option>
-                    </select>
-                  </div>
-                  <div class="mb-3">
-                    <label for="stressFactor" class="form-label"
-                      >Faktor Stres:</label
-                    >
-                    <select
-                      class="form-select"
-                      id="stressFactor"
-                      name="stressFactor"
-                      required
-                    >
-                      <option value="">-- Pilih Faktor Stres --</option>
-                      <option value="1.0">Status Gizi Normal (1,0)</option>
-                      <option value="1.1">Stres Ringan (1,1)</option>
-                      <option value="1.2">Stres Sedang (1,2)</option>
-                      <option value="1.3">Stres Berat (1,3)</option>
-                      <option value="1.4">Stres Sangat Berat (1,4)</option>
-                    </select>
-                  </div>
-                  <button
-                    type="button"
-                    class="btn btn-success"
-                    onclick="calculateResults()"
-                    style="background-color: #0e1a2b; border-color: #0e1a2b;"
+          <div class="card">
+            <div class="card-body">
+              <h3 class="card-title">Data Diri</h3>
+              <form id="calculatorForm">
+                <div class="mb-3">
+                  <label for="name" class="form-label">Nama Lengkap</label>
+                  <input type="text" class="form-control" id="name" required />
+                </div>
+                <div class="mb-3">
+                  <label for="birthDate" class="form-label"
+                    >Tanggal Lahir</label
                   >
-                    Hitung
+                  <input
+                    type="date"
+                    class="form-control"
+                    id="birthDate"
+                    required
+                  />
+                </div>
+                <div class="mb-3">
+                  <label class="form-label d-block mb-2">Jenis Kelamin:</label>
+                  <div class="d-flex gap-3 gender-options">
+                    <label class="gender-option d-flex flex-column align-items-center">
+                      <input type="radio" name="gender" value="male" required style="display: none;">
+                      <img src="image/male.png" alt="Laki-laki" class="gender-img">
+                      <span>Laki-laki</span>
+                    </label>
+                    <label class="gender-option d-flex flex-column align-items-center">
+                      <input type="radio" name="gender" value="female" style="display: none;">
+                      <img src="image/female.png" alt="Perempuan" class="gender-img">
+                      <span>Perempuan</span>
+                    </label>
+                  </div>
+                </div>
+                
+                <div class="mb-3">
+                  <label for="checkDate" class="form-label"
+                    >Tanggal Pengecekan</label
+                  >
+                  <input
+                    type="date"
+                    class="form-control"
+                    id="checkDate"
+                    required
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="weight" class="form-label"
+                    >Berat Badan (kg)</label
+                  >
+                  <input
+                    type="number"
+                    class="form-control"
+                    id="weight"
+                    required
+                    min="30"
+                    max="200"
+                  />
+                </div>
+                
+                <div class="mb-3">
+                  <label for="height" class="form-label"
+                    >Tinggi Badan (cm)</label
+                  >
+                  <input
+                    type="number"
+                    class="form-control"
+                    id="height"
+                    required
+                    min="100"
+                    max="250"
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="activity" class="form-label"
+                    >Faktor Aktivitas</label
+                  >
+                  <select class="form-select" id="activity" required>
+                    <option value="">Pilih tingkat aktivitas</option>
+                    <option value="1.2">
+                      1.2 - Sangat Sedikit Aktivitas (Tidak berolahraga)
+                    </option>
+                    <option value="1.375">
+                      1.375 - Sedikit Aktivitas (Olahraga ringan 1-3
+                      hari/minggu)
+                    </option>
+                    <option value="1.55">
+                      1.55 - Aktivitas Sedang (Olahraga sedang 3-5 hari/minggu)
+                    </option>
+                    <option value="1.725">
+                      1.725 - Aktivitas Tinggi (Olahraga berat 6-7 hari/minggu)
+                    </option>
+                    <option value="1.9">
+                      1.9 - Aktivitas Sangat Tinggi (Olahraga berat setiap hari
+                      atau pekerjaan fisik)
+                    </option>
+                  </select>
+                </div>
+                <div class="mb-3">
+                  <label for="stress" class="form-label">Faktor Stres</label>
+                  <select class="form-select" id="stress" required>
+                    <option value="">Pilih tingkat stres</option>
+                    <option value="1.0">
+                      1.0 - Tidak ada stres (Kondisi normal)
+                    </option>
+                    <option value="1.1">
+                      1.1 - Stres ringan (Sedang belajar/mengerjakan tugas)
+                    </option>
+                    <option value="1.2">
+                      1.2 - Stres sedang (Sedang sakit ringan atau pemulihan)
+                    </option>
+                    <option value="1.3">
+                      1.3 - Stres berat (Sedang sakit berat atau trauma)
+                    </option>
+                    <option value="1.4">
+                      1.4 - Stres sangat berat (Kondisi kritis atau luka bakar)
+                    </option>
+                  </select>
+                </div>
+                <div class="d-grid gap-2">
+                  <button type="submit" class="btn btn-success">
+                    <i class="fas fa-calculator me-2"></i>Hitung Kebutuhan Gizi
                   </button>
-                </form>
-              </div>
+                </div>
+              </form>
             </div>
           </div>
+        </div>
           <div class="col-md-6">
             <div class="card mb-4">
               <div class="card-body">
@@ -708,33 +697,204 @@
           </div>
         </div>
 
-        <div class="row mt-4">
-          <div class="col-md-12">
-            <div class="card">
-              <div class="card-body">
-                <h3 class="card-title">Hasil Perhitungan</h3>
-                <div id="results" class="text-center">
-                  <p class="text-muted">
-                    Masukkan data untuk melihat hasil perhitungan
-                  </p>
-                </div>
-                <canvas
-                  id="nutritionChart"
-                  width="200px"
-                  height="200px"
-                  style="margin-top: 20px"
-                ></canvas>
+      <div class="row mt-5">
+        
+        <div class="col-md-12">
+          <div class="card">
+            <div class="card-body">
+              <h3 class="card-title">Hasil Perhitungan</h3>
+              <div id="result" class="text-center">
+                <p class="text-muted">
+                  Masukkan data diri Anda untuk melihat hasil perhitungan
+                </p>
               </div>
             </div>
           </div>
         </div>
+        <footer class="text-center p-4 text-black text-sm">
+          &copy; 2025 NutriCalc. All rights reserved.
+        </footer>
       </div>
     </div>
-    <footer class="text-center p-4 text-black text-sm">
-      &copy; 2025 NutriCalc. All rights reserved.
-    </footer>
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="script.js"></script>
+    <script>// Fungsi untuk menghitung BMR menggunakan persamaan Harris-Benedict
+function calculateBMR(weight, height, age, gender) {
+  // Persamaan Harris-Benedict
+  if (gender === "male") {
+    return 66.5 + 13.75 * weight + 5.003 * height - 6.755 * age;
+  } else {
+    return 655.1 + 9.563 * weight + 1.85 * height - 4.676 * age;
+  }
+}
+function hitungBBI(height, gender) {
+          const base = height - 100;
+          const persen = gender === "male" ? 0.1 : 0.15;
+          return base - base * persen;
+        }
+
+// Fungsi untuk menghitung IMT
+function calculateBMI(weight, height) {
+  // Konversi tinggi dari cm ke m
+  const heightInMeters = height / 100;
+  // IMT = berat (kg) / (tinggi (m))^2
+  return weight / (heightInMeters * heightInMeters);
+}
+
+// Fungsi untuk menghitung kebutuhan kalori total
+function calculateTotalCalories(bmr, activityFactor, stressFactor) {
+  return bmr * activityFactor * stressFactor;
+}
+
+// Fungsi untuk menghitung kebutuhan protein
+function calculateProteinNeeds(weight) {
+  // 0.8-1.2 gram protein per kg berat badan
+  return weight * 1.2;
+}
+
+// Fungsi untuk menghitung kebutuhan lemak
+function calculateFatNeeds(totalCalories) {
+  // 20-35% dari total kalori
+  return (totalCalories * 0.25) / 9; // 9 kalori per gram lemak
+}
+
+// Fungsi untuk menghitung kebutuhan karbohidrat
+function calculateCarbNeeds(totalCalories, proteinGrams, fatGrams) {
+  // Sisa kalori setelah protein dan lemak
+  const remainingCalories = totalCalories - proteinGrams * 4 - fatGrams * 9;
+  return remainingCalories / 4; // 4 kalori per gram karbohidrat
+}
+
+// Event listener untuk form kalkulator dewasa
+document.addEventListener("DOMContentLoaded", function () {
+  const calculatorForm = document.getElementById("calculatorForm");
+  const resultDiv = document.getElementById("result");
+
+  calculatorForm.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    // Ambil nilai dari form
+    const name = document.getElementById("name").value;
+    const birthDate = new Date(document.getElementById("birthDate").value);
+    const checkDate = new Date(document.getElementById("checkDate").value);
+    const gender = document.querySelector('input[name="gender"]:checked')?.value;
+    const weight = parseFloat(document.getElementById("weight").value);
+    const height = parseFloat(document.getElementById("height").value);
+    const activity = parseFloat(document.getElementById("activity").value);
+    const stress = parseFloat(document.getElementById("stress").value);
+    
+
+    const ageInMonths = Math.floor(
+      (checkDate - birthDate) / (30.44 * 24 * 60 * 60 * 1000)
+    );
+    const age = ageInMonths / 12;    // Hitung selisih waktu dalam bulan
+
+
+
+    const bbi = hitungBBI(height, gender);
+
+    // Hitung IMT (Indeks Massa Tubuh)
+    const heightInMeters = height / 100;
+    const bmi = weight / (heightInMeters * heightInMeters);
+
+    // Tentukan status gizi berdasarkan IMT
+    let nutritionalStatus = "";
+    let statusClass = "";
+    if (bmi < 18.5) {
+      nutritionalStatus = "Kurus";
+      statusClass = "text-warning";
+    } else if (bmi >= 18.5 && bmi < 25) {
+      nutritionalStatus = "Normal";
+      statusClass = "text-success";
+    } else if (bmi >= 25 && bmi < 30) {
+      nutritionalStatus = "Gemuk";
+      statusClass = "text-warning";
+    } else {
+      nutritionalStatus = "Obesitas";
+      statusClass = "text-danger";
+    }
+
+    // Hitung BMR (Basal Metabolic Rate)
+    let bmr;
+    if (gender === "male") {
+      bmr = 66 + 13.7 * weight + 5 * height - 6.8 * age;
+    } else {
+      bmr = 655 + 9.6 * weight + 1.8 * height - 4.7 * age;
+    }
+
+    // Hitung Total Energy Expenditure (TEE)
+    const tee = bmr * activity * stress;
+
+    // Hitung kebutuhan protein (1.2-1.5g per kg berat badan)
+    const proteinMin = weight * 1.2;
+    const proteinMax = weight * 1.5;
+    const proteinCalories = ((proteinMin + proteinMax) / 2) * 4; // 4 kalori per gram protein
+
+    // Hitung kebutuhan lemak (20-35% dari total kalori)
+    const fatMin = (tee * 0.2) / 9; // 9 kalori per gram lemak
+    const fatMax = (tee * 0.35) / 9;
+
+    // Hitung kebutuhan karbohidrat (sisa kalori)
+    const carbCalories = tee - proteinCalories - ((fatMin + fatMax) / 2) * 9;
+    const carbGrams = carbCalories / 4; // 4 kalori per gram karbohidrat
+
+    // Format tanggal
+    const formatDate = (date) => {
+      return date.toLocaleDateString("id-ID", {
+        weekday: "long",
+        year: "numeric",
+        month: "long",
+        day: "numeric",
+      });
+    };
+
+    // Tampilkan hasil
+    resultDiv.innerHTML = `
+      <div class="alert alert-success">
+        <h4>Hasil Perhitungan Kebutuhan Gizi</h4>
+        <hr>
+        <p><strong>Nama:</strong> ${name}</p>
+        <p><strong>Tanggal Lahir:</strong> ${formatDate(birthDate)}</p>
+        <p><strong>Tanggal Pengecekan:</strong> ${formatDate(checkDate)}</p>
+        <p><strong>Usia:</strong> ${age} tahun</p>
+        <p><strong>Berat badan:</strong> ${weight} kg</p>
+        <p><strong>Tinggi badan:</strong> ${height} kg</p>
+        <hr>
+        <h5>Status Gizi:</h5>
+        <p><strong>BBI (Berat Badan Ideal):</strong> ${bbi.toFixed(2)}</p>
+        <p><strong>IMT (Indeks Massa Tubuh):</strong> ${bmi.toFixed(2)}</p>
+        <p><strong>Status Gizi:</strong> <span class="${statusClass}">${nutritionalStatus}</span></p>
+        <div class="alert alert-info mt-2">
+          <small>
+            <strong>Keterangan Status Gizi:</strong><br>
+            - Kurus: IMT < 18.5<br>
+            - Normal: IMT 18.5 - 24.9<br>
+            - Gemuk: IMT 25 - 29.9<br>
+            - Obesitas: IMT ≥ 30
+          </small>
+        </div>
+        <hr>
+        <h5>Kebutuhan Energi:</h5>
+        <p><strong>BMR (Basal Metabolic Rate):</strong> ${bmr.toFixed(
+          2
+        )} kalori/hari</p>
+        <p><strong>Total Kebutuhan Kalori (TEE):</strong> ${tee.toFixed(
+          2
+        )} kalori/hari</p>
+        <hr>
+        <h5>Kebutuhan Makronutrien:</h5>
+        <p><strong>Protein:</strong> ${proteinMin.toFixed(
+          1
+        )} - ${proteinMax.toFixed(1)} gram/hari</p>
+        <p><strong>Lemak:</strong> ${fatMin.toFixed(1)} - ${fatMax.toFixed(
+      1
+    )} gram/hari</p>
+        <p><strong>Karbohidrat:</strong> ${carbGrams.toFixed(1)} gram/hari</p>
+        <hr>
+        <p class="text-muted small">* Perhitungan ini menggunakan rumus Harris-Benedict dan faktor koreksi aktivitas serta stres</p>
+      </div>
+    `;
+  });
+});
+</script>
   </body>
 </html>
