@@ -31,7 +31,7 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
     />
-    <style>
+  <style>
       * {
         margin: 0;
         padding: 0;
@@ -468,7 +468,7 @@
 
         <div class="row mt-4">
           <div class="col-md-12">
-            <div class="card mb-4">
+            <div class="card mb-4 mx-auto pl-16">
               <div class="card-body">
                 <h3 class="card-title">Keterangan Faktor Perhitungan</h3>
                 <div class="row">
@@ -563,8 +563,6 @@
             </div>
           </div>
         </div>
-
-<<<<<<< HEAD
       <div class="row mt-5">
         <div class="col-md-6">
           <div class="card">
@@ -601,17 +599,7 @@
                     </label>
                   </div>
                 </div>
-                <div class="mb-3">
-                  <label for="age" class="form-label">Usia (tahun)</label>
-                  <input
-                  type="number"
-                  class="form-control"
-                  id="age"
-                  required
-                  min="18"
-                  max="100"
-                  />
-                </div>
+                
                 <div class="mb-3">
                   <label for="checkDate" class="form-label"
                     >Tanggal Pengecekan</label
@@ -635,14 +623,6 @@
                     min="30"
                     max="200"
                   />
-                </div>
-                <div class="mb-3">
-                  <label for="childPrevCheckDate" class="form-label">Tanggal Pengukuran Sebelumnya:</label>
-                  <input type="date" class="form-control" id="childPrevCheckDate" required />
-                </div>
-                <div class="mb-3">
-                  <label for="childPrevWeight" class="form-label">Berat Badan Sebelumnya (kg):</label>
-                  <input type="number" class="form-control" id="childPrevWeight" required min="2" max="100" step="0.1" placeholder="Berat badan sebelum"/>
                 </div>
                 <div class="mb-3">
                   <label for="height" class="form-label"
@@ -720,191 +700,7 @@
                 <p class="text-muted">
                   Masukkan data diri Anda untuk melihat hasil perhitungan
                 </p>
-=======
-        <div class="row mt-5">
-          <div class="col-md-6">
-            <div class="card">
-              <div class="card-body">
-                <h3 class="card-title">Data Diri</h3>
-                <form id="calculatorForm">
-                  <div class="mb-3">
-                    <label for="name" class="form-label">Nama Lengkap</label>
-                    <input
-                      type="text"
-                      class="form-control"
-                      id="name"
-                      required
-                    />
-                  </div>
-                  <div class="mb-3">
-                    <label for="birthDate" class="form-label"
-                      >Tanggal Lahir</label
-                    >
-                    <input
-                      type="date"
-                      class="form-control"
-                      id="birthDate"
-                      required
-                    />
-                  </div>
-                  <div class="mb-3">
-                    <label for="gender" class="form-label">Jenis Kelamin</label>
-                    <select class="form-select" id="gender" required>
-                      <option value="">Pilih jenis kelamin</option>
-                      <option value="male">Laki-laki</option>
-                      <option value="female">Perempuan</option>
-                    </select>
-                  </div>
-                  <div class="mb-3">
-                    <label for="age" class="form-label">Usia (tahun)</label>
-                    <input
-                      type="number"
-                      class="form-control"
-                      id="age"
-                      required
-                      min="18"
-                      max="100"
-                    />
-                  </div>
-                  <div class="mb-3">
-                    <label for="checkDate" class="form-label"
-                      >Tanggal Pengecekan</label
-                    >
-                    <input
-                      type="date"
-                      class="form-control"
-                      id="checkDate"
-                      required
-                    />
-                  </div>
-                  <div class="mb-3">
-                    <label for="weight" class="form-label"
-                      >Berat Badan (kg)</label
-                    >
-                    <input
-                      type="number"
-                      class="form-control"
-                      id="weight"
-                      required
-                      min="30"
-                      max="200"
-                    />
-                  </div>
-                  <div class="mb-3">
-                    <label for="childPrevCheckDate" class="form-label"
-                      >Tanggal Pengukuran Sebelumnya:</label
-                    >
-                    <input
-                      type="date"
-                      class="form-control"
-                      id="childPrevCheckDate"
-                      required
-                    />
-                  </div>
-                  <div class="mb-3">
-                    <label for="childPrevWeight" class="form-label"
-                      >Berat Badan Sebelumnya (kg):</label
-                    >
-                    <input
-                      type="number"
-                      class="form-control"
-                      id="childPrevWeight"
-                      required
-                      min="2"
-                      max="100"
-                      step="0.1"
-                      placeholder="Berat badan sebelum"
-                    />
-                  </div>
-                  <div class="mb-3">
-                    <label for="height" class="form-label"
-                      >Tinggi Badan (cm)</label
-                    >
-                    <input
-                      type="number"
-                      class="form-control"
-                      id="height"
-                      required
-                      min="100"
-                      max="250"
-                    />
-                  </div>
-                  <div class="mb-3">
-                    <label for="activity" class="form-label"
-                      >Faktor Aktivitas</label
-                    >
-                    <select class="form-select" id="activity" required>
-                      <option value="">Pilih tingkat aktivitas</option>
-                      <option value="1.2">
-                        1.2 - Sangat Sedikit Aktivitas (Tidak berolahraga)
-                      </option>
-                      <option value="1.375">
-                        1.375 - Sedikit Aktivitas (Olahraga ringan 1-3
-                        hari/minggu)
-                      </option>
-                      <option value="1.55">
-                        1.55 - Aktivitas Sedang (Olahraga sedang 3-5
-                        hari/minggu)
-                      </option>
-                      <option value="1.725">
-                        1.725 - Aktivitas Tinggi (Olahraga berat 6-7
-                        hari/minggu)
-                      </option>
-                      <option value="1.9">
-                        1.9 - Aktivitas Sangat Tinggi (Olahraga berat setiap
-                        hari atau pekerjaan fisik)
-                      </option>
-                    </select>
-                  </div>
-                  <div class="mb-3">
-                    <label for="stress" class="form-label">Faktor Stres</label>
-                    <select class="form-select" id="stress" required>
-                      <option value="">Pilih tingkat stres</option>
-                      <option value="1.0">
-                        1.0 - Tidak ada stres (Kondisi normal)
-                      </option>
-                      <option value="1.1">
-                        1.1 - Stres ringan (Sedang belajar/mengerjakan tugas)
-                      </option>
-                      <option value="1.2">
-                        1.2 - Stres sedang (Sedang sakit ringan atau pemulihan)
-                      </option>
-                      <option value="1.3">
-                        1.3 - Stres berat (Sedang sakit berat atau trauma)
-                      </option>
-                      <option value="1.4">
-                        1.4 - Stres sangat berat (Kondisi kritis atau luka
-                        bakar)
-                      </option>
-                    </select>
-                  </div>
-                  <div class="d-grid gap-2">
-                    <button type="submit" class="btn btn-success">
-                      <i class="fas fa-calculator me-2"></i>Hitung Kebutuhan
-                      Gizi
-                    </button>
-                  </div>
-                </form>
->>>>>>> 7de940d794789e95a6669fef9f05ade9c2ee5bbf
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6">
-            <div class="card">
-              <div class="card-body">
-                <h3 class="card-title">Hasil Perhitungan</h3>
-                <div id="result" class="text-center">
-                  <p class="text-muted">
-                    Masukkan data diri Anda untuk melihat hasil perhitungan
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <footer class="text-center p-4 text-black text-sm">
-            &copy; 2025 NutriCalc. All rights reserved.
-          </footer>
-        </div>
+
       </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
