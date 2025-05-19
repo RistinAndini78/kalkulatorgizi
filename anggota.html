@@ -215,6 +215,31 @@
         background-color: #f9f9f9;
         flex: 1;
       }
+      .team-card {
+  width: 500px; /* Ukuran tetap agar 3 muat di baris pertama */
+  border-radius: 20px;
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease;
+  padding: 20px;
+}
+
+.team-card:hover {
+  transform: translateY(-5px);
+}
+
+.team-image img {
+  width: 300px;
+  height: 350px;
+  object-fit: cover;
+}
+
+.team-info {
+  padding: 15px;
+}
+
 
       table {
         width: 100%;
@@ -319,7 +344,7 @@
         </div>
       </div>
 
-      <main class="container mx-auto">
+      <main class="container">
         <h1 class="text-4xl font-bold text-center mb-10">Anggota</h1>
         <div class="flex items-center justify-center gap-5 flex-wrap pb-10">
           <div class="team-card">
