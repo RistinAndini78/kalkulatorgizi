@@ -1,623 +1,504 @@
-<!DOCTYPE html>
-<html lang="id">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tim Kami - Kalkulator Gizi</title>
-    <meta name="description" content="Kenali tim di balik Kalkulator Gizi yang membantu Anda mencapai kesehatan optimal." />
-    <link rel="icon" href="image/1.jpeg" type="image/jpeg" />
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet"/>
-    <style>
-         * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+
+<!doctype html>
+<html class="no-js" lang="id">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+                <title>Kalkulator BMI Indeks Massa Tubuh Frisian Flag | Frisian Flag Indonesia</title>
+                        <meta name="description" content="Hitung Indeks Massa Tubuh (BMI) Anda dengan kalkulator Frisian Flag. Dapatkan informasi akurat tentang berat badan ideal dan hitung kalori pada makanan Anda.">
+                <meta name="keywords" content="">
+        <meta name="facebook-domain-verification" content="t2ubto7jn7dd9h6si4fk19a8gd88ks" />
+        <meta name="facebook-domain-verification" content="74hs9dbda87d9cawoguzz2w7pjviwl" />
+        <meta name="ahrefs-site-verification" content="112d70195f4804d5ec8b0a26f6808e96afa04708dac83c5ded305ccf923cb44e">
+        <meta name="google-site-verification" content="qnqaV55XXdslBouNjUvZgqubrSB52UnN6ED0gLeWKT0" />
+        
+        
+        <meta name="author" content="Frisian Flag Indonesia">
+                 	<meta content="index,follow" name="googlebot">
+        	<meta name="robots" content="index, follow">
+                 <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta property="fb:app_id" content="872847836388420" />
+        <meta property="og:url"           content="https://www.frisianflag.com/kalkulator-massa-tubuh" />
+        <meta property="og:type"          content="website" />
+        <meta property="og:title"         content="Kalkulator BMI Indeks Massa Tubuh Frisian Flag" />
+                        <meta property="og:description"   content="" />
+        <meta name="twitter:title"        content="Kalkulator BMI Indeks Massa Tubuh Frisian Flag">
+        <meta name="twitter:description"  content="">
+                 <meta property="og:image"         content="//frisianflag.com/themes/rainlab-bonjour/assets/img/share-facebook.jpg"/>
+         
+                
+        <link href="https://code.jquery.com" rel="dns-prefetch" />
+        <link href="https://cdnjs.cloudflare.com" rel="dns-prefetch" />
+        <link href="https://cdn.jsdelivr.net" rel="dns-prefetch" />
+        <link rel="preconnect" href="https://d5r0s9boode1v.cloudfront.net" crossorigin>
+        
+        
+                    <link rel="canonical" href="https://www.frisianflag.com/kalkulator-massa-tubuh">
+                
+               <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5c35734915acab41" async></script>
+        
+	
+        <!-- FAVICONS -->
+        <link rel="apple-touch-icon" sizes="180x180" href="https://d5r0s9boode1v.cloudfront.net/themes/rainlab-bonjour/assets/favicon/apple-touch-icon.png">
+        <link rel="icon" loading="lazy" type="image/png" href="https://d5r0s9boode1v.cloudfront.net/themes/rainlab-bonjour/assets/favicon/favicon-32x32.png" sizes="32x32">
+        <link rel="icon" type="image/png" href="https://d5r0s9boode1v.cloudfront.net/themes/rainlab-bonjour/assets/favicon/favicon-16x16.png" sizes="16x16">
+        <link rel="manifest" href="https://d5r0s9boode1v.cloudfront.net/themes/rainlab-bonjour/assets/favicon/manifest.json">
+        <link rel="mask-icon" href="https://d5r0s9boode1v.cloudfront.net/themes/rainlab-bonjour/assets/favicon/safari-pinned-tab.svg" color="#5bbad5">
+        <meta name="theme-color" content="#ffffff">
+        
+        
+                                    <link rel="preload" href="https://d5r0s9boode1v.cloudfront.net/themes/rainlab-bonjour/assets/libs/cookie/cookieconsent.min.css" media="screen"  type="text/css" as="style">
+                        <!-- <link rel="stylesheet" href="https://d5r0s9boode1v.cloudfront.net/themes/rainlab-bonjour/assets/css/app.css?v=1.1.0"> -->
+            <link rel="preload" href="https://d5r0s9boode1v.cloudfront.net/themes/rainlab-bonjour/assets/css/app.css?v=1.1.0" as="style" onload="this.onload=null;this.rel='stylesheet'">
+            <noscript><link rel="stylesheet" href="https://d5r0s9boode1v.cloudfront.net/themes/rainlab-bonjour/assets/css/app.css?v=1.1.0"></noscript>
+
+            <link rel="preload" href="https://d5r0s9boode1v.cloudfront.net/themes/rainlab-bonjour/assets/fancybox/helpers/jquery.fancybox-buttons.css" type="text/css" media="screen" as="style">
+            
+            <link rel="preload" href="https://d5r0s9boode1v.cloudfront.net/themes/rainlab-bonjour/assets/fancybox/helpers/jquery.fancybox-thumbs.css" type="text/css" media="screen" as="style">
+            <link rel="preload" href="https://d5r0s9boode1v.cloudfront.net/themes/rainlab-bonjour/assets/fancybox/jquery.fancybox.css" type="text/css" media="screen" as="style">        
+            
+            
+            <link rel="preload" href="https://d5r0s9boode1v.cloudfront.net/themes/rainlab-bonjour/assets/css/style.css?v=22" as="style" onload="this.onload=null;this.rel='stylesheet'">
+            <noscript><link rel="stylesheet" href="https://d5r0s9boode1v.cloudfront.net/themes/rainlab-bonjour/assets/css/style.css?v=22"></noscript>
+<style>
+.mti-calculator {
+  /* Gaya untuk container kalkulator */
 }
 
-      body {
-        font-family: "Poppins", sans-serif;
-        margin: 0;
-        padding: 0;
-        background: linear-gradient(to right, #fefefe, #e6f2ff);
-      }
-   
-/* Wrapper utama */
-.wrapper {
-  display: flex;
-  width: 100%;
-  min-height: 100vh;
-}
-
-/* Sidebar */
-.sidebar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 80px;
-  height: 100vh;
-  background-color: #0e1a2b;
-  color: white;
-  transition: width 0.3s ease;
-  z-index: 1000; /* Pastikan sidebar berada di atas konten utama */
-  overflow: hidden;
-  flex-shrink: 0;
-}
-
-.sidebar:hover {
-  width: 250px;
-}
-
-/* Logo pada sidebar */
-.logo {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  padding: 20px;
-}
-
-.logo img {
-  width: 30px;
-}
-
-.logo-text {
-  font-size: 1.5rem;
-  font-weight: bold;
-  display: none;
-}
-
-.sidebar:hover .logo-text {
-  display: inline;
-}
-
-/* Menu di sidebar */
-.menu-section {
-  margin-top: 20px;
-  padding-left: 15px;
-}
-
-.section-title {
-  font-size: 0.75rem;
-  color: #aaa;
-  margin-bottom: 10px;
-  display: none;
-}
-
-.sidebar:hover .section-title {
-  display: block;
-}
-
-.menu-section ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.menu-section li {
-  display: flex;
-  align-items: center;
-  padding: 10px 15px;
-  gap: 15px;
-  cursor: pointer;
-  transition: background 0.2s ease;
-  border-radius: 6px;
-}
-
-.menu-section li:hover,
-.menu-section li.active {
-  background-color: #1c2b3d;
-}
-
-.menu-section .material-icons-outlined,
-.menu-section .material-icons {
-  font-size: 20px;
-}
-
-.text {
-  display: none;
-  white-space: nowrap;
-}
-
-.sidebar:hover .text {
-  display: inline;
-}
-
-/* Profil pengguna di sidebar */
-.profile {
-  margin-top: auto;
-  padding: 15px;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  background: #132235;
-  cursor: pointer;
-}
-
-.profile img {
-  border-radius: 50%;
-  width: 30px;
-  height: 30px;
-}
-
-.details {
-  display: none;
-}
-
-.sidebar:hover .details {
-  display: block;
-}
-
-.details .name {
-  font-weight: bold;
-  font-size: 0.9rem;
-}
-
-.details .role {
-  font-size: 0.7rem;
-  color: #aaa;
-}
-
-.sidebar a {
-  text-decoration: none;
-  color: inherit;
-  display: flex;
-  align-items: center;
-  gap: 15px;
-}
-
-.sidebar a:hover {
-  color: white;
-}
-
-.sidebar li.active a {
-  background-color: #1c2b3d;
-  color: white;
-  border-radius: 6px;
-}
-
-/* Konten utama */
 .container {
-  margin-left: 80px;
-  padding: 20px;
-  flex-grow: 1;
-  transition: margin-left 0.3s ease, transform 0.3s ease, scale 0.3s ease;
-  height: 100vh;
-  transform-origin: top left;
-  transform: scale(1);
-  width: auto;
+  /* Gaya untuk container utama */
+  width: 90%;
+  max-width: 600px;
+  margin: 0 auto;
 }
 
-.sidebar:hover + .container {
-  margin-left: 250px;
-  transform: scale(0.98);
+.imt {
+  /* Gaya untuk form IMT */
 }
 
-/* Kontainer fleksibel untuk konten */
-.flex-container {
-  display: flex;
-  gap: 20px;
-  flex-wrap: wrap;
-  margin-top: 20px;
+.wrapper-select-1 {
+  /* Gaya untuk wrapper input pertama */
 }
 
-.flex-container > div {
-  background: white;
-  border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  flex: 1;
-  min-width: 300px;
-  padding: 20px;
+.range-wrap {
+  /* Gaya untuk wrapper range input */
+  position: relative;
+  margin-bottom: 20px;
 }
 
-h2, h3 {
-  color: #0e1a2b;
-}
-
-button {
-  background-color: #0e1a2b;
-  color: white;
-  padding: 10px 20px;
-  border: none;
+.range {
+  /* Gaya untuk input range */
+  width: 100%;
+  -webkit-appearance: none;
+  height: 10px;
   border-radius: 5px;
+  background: #d3d3d3;
+  outline: none;
+}
+
+.bubble {
+  /* Gaya untuk bubble nilai range */
+  position: absolute;
+  bottom: 1.2em;
+  background: #0d62a7;
+  color: white;
+  padding: 4px 12px;
+  border-radius: 4px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.wrapper-select-2 {
+  /* Gaya untuk wrapper input kedua */
+}
+
+.jk-wrapper {
+  /* Gaya untuk wrapper jenis kelamin */
+  display: flex;
+}
+
+.wrapper-img {
+  /* Gaya untuk wrapper gambar jenis kelamin */
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.wrapper-img.active {
+  /* Gaya untuk gambar jenis kelamin yang aktif */
+  border: 2px solid #0d62a7;
+}
+
+#slider {
+  /* Gaya untuk slider aktivitas */
+  position: relative;
+  overflow: hidden;
+}
+
+.dp-wrap {
+  /* Gaya untuk wrapper slider */
+}
+
+.modal-wrapper {
+  /* Gaya untuk modal wrapper */
+}
+
+.modal-mobile {
+  /* Gaya untuk modal mobile */
+}
+
+.close {
+  /* Gaya untuk tombol tutup modal */
+}
+
+.content {
+  /* Gaya untuk konten modal */
+}
+
+#dp-slider {
+  /* Gaya untuk container item slider */
+  display: flex;
+  transition: left 0.5s ease-out;
+  position: relative;
+}
+
+.dp_item {
+  /* Gaya untuk setiap item slider */
+  flex: 0 0 auto;
+}
+
+.dp-content {
+  /* Gaya untuk konten dalam item slider */
+}
+
+.wrap-img {
+  /* Gaya untuk wrapper gambar */
+}
+
+.wrap-text {
+  /* Gaya untuk wrapper teks */
+}
+
+.open-modal {
+  /* Gaya untuk tombol buka modal */
+}
+
+.modal-section {
+  /* Gaya untuk bagian modal */
+}
+
+#dp-next,
+#dp-prev {
+  /* Gaya untuk tombol navigasi slider */
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
   cursor: pointer;
 }
 
-button:hover {
-  background-color: #1c2b3d;
-}
-
-.back-button {
-  display: block;
-  margin: 20px auto;
+#dp-dots {
+  /* Gaya untuk container titik navigasi slider */
   text-align: center;
+  margin-top: 10px;
 }
 
-.back-button a {
-  text-decoration: none;
+#dp-dots li {
+  /* Gaya untuk setiap titik navigasi slider */
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #ccc;
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+#dp-dots li.active {
+  /* Gaya untuk titik navigasi slider yang aktif */
+  background-color: #0d62a7;
+}
+
+.submit {
+  /* Gaya untuk container tombol submit */
+}
+
+#calculate-btn {
+  /* Gaya untuk tombol hitung */
+  background-color: #0d62a7;
   color: white;
-  background-color: #0e1a2b;
   padding: 10px 20px;
   border-radius: 5px;
-  font-weight: bold;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
+  border: none;
+  cursor: pointer;
 }
+</style>
 
-.back-button a:hover {
-  background-color: #1c2b3d;
-}
+<div class="mti-calculator">
+        <div class="container">
+            <form id="imt" data-request="onStore">
+                <div class="imt">
+                    <div class="wrapper-select-1">
+                        <label for="nama">Nama</label>
+                        <input type="text" name="nama" id="nama" placeholder="Masukan nama kamu" required />
 
-.back-button i {
-  font-size: 16px;
-}
-      
-      .team-card {
-        min-width: 220px;
-        max-width: 300px;
-        width: 100%;
-        margin-bottom: 20px;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        border-radius: 15px;
-        background: #ffffff;
-        text-align: center;
-        padding: 25px 15px;
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-        height: 100%;
-      }
+                        <label for="usia">Usia</label>
+                        <div class="range-wrap">
+                            <input type="range" class="range" name="usia" min="19" max="70" required />
+                            <input type="hidden" name="usia" id="usia" value="45" />
+                            <output class="bubble"></output>
+                        </div>
 
-      .team-card:hover {
-        transform: translateY(-8px);
-        box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1);
-      }
+                        <label for="pekerjaan">Pekerjaan</label>
+                        <select name="pekerjaan" id="pekerjaan" required>
+                            <option value="">Masukan Pekerjaan</option>
+                            <!-- <option value="1" class="bg-red" hidden selected>Pilih Pekerjaan</option> -->
+                            <option value="Ibu Rumah Tangga tanpa Asisten Rumah Tangga (Pembantu Rumah Tangga)">Ibu Rumah Tangga tanpa Asisten Rumah Tangga (Pembantu Rumah Tangga)</option>
+                            <option value="Ibu Rumah Tangga dengan Pembantu Rumah Tangga">Ibu Rumah Tangga dengan Pembantu Rumah Tangga</option>
+                            <option value="PNS">PNS</option>
+                            <option value="SWASTA">SWASTA</option>
+                            <option value="lainnya">Lainnya</option>
+                        </select>
 
-      .team-image img {
-        width: 100%;
-        max-width: 180px;
-        height: 220px;
-        object-fit: cover;
-        border-radius: 12px;
-        margin: 0 auto 15px auto;
-        display: block;
-      }
+                        <label for="jk">Jenis Kelamin</label>
+                        <input type="hidden" id="jk" name="jk" value="L" />
+                        <div class="jk-wrapper">
+                            <div class="wrapper-img active" data-val="L">
+                                <div class="img"></div>
+                            </div>
+                            <div class="wrapper-img" data-val="P">
+                                <div class="img"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="wrapper-select-2">
+                        <label for="beratbadan">Berat Badan</label>
+                        <div class="range-wrap">
+                            <input type="range" class="range" min="40" max="150" name="beratbadan" required />
+                            <input type="hidden" name="" id="bb" value="95" />
+                            <output class="bubble"></output>
+                        </div>
 
-      .team-info h3 {
-        font-size: 18px;
-        font-weight: 600;
-        margin-bottom: 8px;
-        color: #333;
-      }
+                        <label for="tinggibadan">Tinggi Badan</label>
+                        <input type="number" name="tinggibadan" id="tinggibadan" placeholder="Masukan Angka" max="250" required />
 
-      .description {
-        font-size: 14px;
-        color: #666;
-        margin-bottom: 15px;
-        padding: 0 10px;
-      }
+                        <label for="aktivitas">Tingkat Aktivitas</label>
+                        <!-- <div class="wrapper-aktivitas swiper">
+                        <div class="swiper-wrapper">
+                            <div class="wrapper-aktif swiper-slide" data-val="1">
+                                <div class="image-activitas">
+                                    <img src="https://www.frisianflag.com/storage/app/media/imt/tidak aktif.png" alt="">
+                                    <div class="text-aktivitas">
+                                        Tidak Aktif
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="wrapper-aktif swiper-slide active" data-val="2">
+                                <div class="image-activitas">
+                                    <img src="https://www.frisianflag.com/storage/app/media/imt/kurangaktif.png" alt="">
+                                    <div class="text-aktivitas">
+                                        Kurang Aktif
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="wrapper-aktif swiper-slide" data-val="3">
+                                <div class="image-activitas">
+                                    <img src="https://www.frisianflag.com/storage/app/media/imt/aktif.png" alt="">
+                                    <div class="text-aktivitas">
+                                        Aktif
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="wrapper-aktif swiper-slide" data-val="4">
+                                <div class="image-activitas">
+                                    <img src="https://www.frisianflag.com/storage/app/media/imt/sangataktif.png" alt="">
+                                    <div class="text-aktivitas">
+                                        Sangat Aktif
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div> -->
+                        <div id="slider">
+                            <div class="dp-wrap">
+                                <div class="modal-wrapper">
+                                    <div class="modal-mobile">
+                                        <button class="close" type="button">
+                                            x
+                                        </button>
+                                        <div class="content"></div>
+                                    </div>
+                                </div>
+                                <div id="dp-slider">
+                                    <div class="dp_item active" data-class="1" data-position="1" data-pa="1">
+                                        <div class="dp-content">
+                                            <div class="wrap-img">
+                                                <img src="https://www.frisianflag.com/storage/app/media/imt/tidakaktif2.png" alt="" />
+                                            </div>
+                                            <div class="wrap-text">
+                                                <span>Tidak Aktif</span>
+                                                <button
+                                                    onclick="return false;"
+                                                    data-modal="<p><strong>&lt; 75% waktu digunakan untuk duduk atau berdiri dan &lt; 25% waktu untuk berdiri atau bergerak terdiri dari:</strong></p>
+                                                        <ul>
+                                                            <li>Berjalan kaki lambat &lt; 3 km per jam</li>
+                                                            <li>menyetir mobil</li>
+                                                            <li>membaca</li>
+                                                            <li>bermain piano/gitar, dll</li>
+                                                            <li>menjahit</li>
+                                                            <li>mengetik</li>
+                                                            <li>hanya mengerjakan sebagian kecil kegiatan rumah tangga secara keseluruhan (menyapu, memasak, mencuci baju, mencuci piring)</li>
+                                                        </ul>"
+                                                    class="open-modal"
+                                                >
+                                                    i
+                                                </button>
+                                            </div>
+                                            <div class="modal-section"></div>
+                                        </div>
+                                    </div>
 
-      .social-links a {
-        margin: 0 8px;
-        color: #555;
-        font-size: 18px;
-        transition: color 0.3s ease;
-      }
+                                    <div class="dp_item" data-class="2" data-position="2" data-pa="2">
+                                        <div class="dp-content">
+                                            <div class="wrap-img">
+                                                <img src="https://www.frisianflag.com/storage/app/media/imt/kurangaktif.png" alt="" />
+                                            </div>
+                                            <div class="wrap-text">
+                                                <span>Kurang Aktif</span>
+                                                <button
+                                                    onclick="return false;"
+                                                    data-modal="<p><strong>75% waktu digunakan untuk duduk atau berdiri dan 25% waktu untuk berdiri atau bergerak terdiri dari:</strong></p>
+                        <ul>
+                            <li>Berjalan kaki lambat 3 – 4.9 km per jam</li>
+                            <li>Berkano</li>
+                            <li>Bermain golf</li>
+                            <li>Menari/berdansa lambat</li>
+                            <li>Kerja kantor</li>
+                            <li>mengerjakan lebih banyak (lebih dari Kurang Aktif) kegiatan rumah tangga secara keseluruhan (menyapu, memasak, mencuci baju, mencuci piring)</li>
+                        </ul>
+                    "
+                                                    class="open-modal"
+                                                >
+                                                    i
+                                                </button>
+                                            </div>
+                                            <div class="modal-section"></div>
+                                        </div>
+                                    </div>
 
-      .social-links a:hover {
-        color: #0077cc;
-      }
+                                    <div class="dp_item" data-class="3" data-position="3" data-pa="3">
+                                        <div class="dp-content">
+                                            <div class="wrap-img">
+                                                <img src="https://www.frisianflag.com/storage/app/media/imt/aktif2.png" alt="" />
+                                            </div>
+                                            <div class="wrap-text">
+                                                <span>Aktif</span>
+                                                <button
+                                                    onclick="return false;"
+                                                    data-modal="<p><strong>40% waktu digunakan untuk duduk atau berdiri dan 60% waktu digunakan untuk aktivitas pekerjaan tertentu terdiri dari satu atau gabungan dari:</strong></p>
+                    <ul>
+                        <li>Berjalan kaki cepat 5 – 10 km per jam</li>
+                        <li>Bersepeda ringan &lt; 3.5 km per jam</li>
+                        <li>Menari/berdasa cepat dalam 1 jam</li>
+                        <li>mengerjakan sebagian besar kegiatan rumah tangga secara keseluruhan (menyapu, memasak, mencuci baju, mencuci piring), misalnya ibu rumah tangga tanpa asisten rumah tangga</li>
+                    </ul>"
+                                                    class="open-modal"
+                                                >
+                                                    i
+                                                </button>
+                                            </div>
+                                            <div class="modal-section"></div>
+                                        </div>
+                                    </div>
 
-      .section-title {
-        text-align: center;
-        font-weight: 700;
-        font-size: 28px;
-        margin-top: 40px;
-        margin-bottom: 20px;
-        color: #00509e;
-      }
+                                    <div class="dp_item" data-class="4" data-position="4" data-pa="4">
+                                        <div class="dp-content">
+                                            <div class="wrap-img">
+                                                <img src="https://www.frisianflag.com/storage/app/media/imt/sangataktif2.png" alt="" />
+                                            </div>
+                                            <div class="wrap-text">
+                                                <span>Sangat Aktif</span>
+                                                <button
+                                                    onclick="return false;"
+                                                    data-modal="                    <p><strong>25% waktu digunakan untuk duduk atau berdiri dan 75% waktu digunakan untuk aktivitas pekerjaan tertentu secara rutin terdiri dari satu atau gabungan dari:</strong></p>
+                        <ul>
+                            <li>Berjalan kaki ≥11 km per jam selama 10 menit</li>
+                            <li>Jogging (1 Jam)</li>
+                            <li>Berenang 3.5km</li>
+                            <li>Basket/football/footsal (1 jam)</li>
+                            <li>Memanjat tebing</li>
+                            <li>Bermain skiping/treatmill (heavy impact) selama 10 menit</li>
+                            <li>Bersepeda berat 1 jam</li>
+                            <li>bertukang</li>
+                            <li>mengapak kayu</li>
+                            <li>mengerjakan seluruh kegiatan rumah tangga secara keseluruhan (menyapu, memasak, mencuci baju, mencuci piring)</li>
+                        </ul>"
+                                                    class="open-modal"
+                                                >
+                                                    i
+                                                </button>
+                                            </div>
+                                            <div class="modal-section"></div>
+                                        </div>
+                                    </div>
+                                </div>
 
-      /* Media Queries */
-      @media screen and (max-width: 768px) {
-        .sidebar {
-          width: 60px;
-        }
+                                <span id="dp-next">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 51.401 51.401">
+                                        <defs>
+                                            <style>
+                                                .cls-1 {
+                                                    fill: none;
+                                                    stroke: #0d62a7;
+                                                    stroke-miterlimit: 10;
+                                                    stroke-width: 7px;
+                                                }
+                                            </style>
+                                        </defs>
+                                        <path id="Rectangle_4_Copy" data-name="Rectangle 4 Copy" class="cls-1" d="M32.246,0V33.178L0,31.953" transform="translate(0.094 25.276) rotate(-45)" />
+                                    </svg>
+                                </span>
 
-        .sidebar:hover {
-          width: 200px;
-        }
+                                <span id="dp-prev">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 51.401 51.401">
+                                        <defs>
+                                            <style>
+                                                .cls-1 {
+                                                    fill: none;
+                                                    stroke: #0d62a7;
+                                                    stroke-miterlimit: 10;
+                                                    stroke-width: 7px;
+                                                }
+                                            </style>
+                                        </defs>
+                                        <path id="Rectangle_4_Copy" data-name="Rectangle 4 Copy" class="cls-1" d="M32.246,0V33.178L0,31.953" transform="translate(0.094 25.276) rotate(-45)" />
+                                    </svg>
+                                </span>
 
-        .container {
-          margin-left: 60px;
-        }
-
-        .sidebar:hover + .container {
-          margin-left: 200px;
-        }
-
-        .team-card {
-          min-width: 180px;
-          max-width: 250px;
-        }
-        .team-image img {
-          max-width: 140px;
-          height: 160px;
-        }
-      }
-
-      @media screen and (max-width: 480px) {
-        .sidebar {
-          width: 50px;
-        }
-
-        .sidebar:hover {
-          width: 180px;
-        }
-
-        .container {
-          margin-left: 50px;
-        }
-
-        .sidebar:hover + .container {
-          margin-left: 180px;
-        }
-
-        .team-card {
-          min-width: 140px;
-          max-width: 100%;
-        }
-        .team-image img {
-          max-width: 100px;
-          height: 120px;
-        }
-      }
-
-      /* Tambahan agar dua kartu terakhir tetap rata tengah jika jumlah anggota ganjil */
-      @media (min-width: 992px) {
-        .row.justify-content-center > .col-lg-3:nth-last-child(2):nth-child(odd),
-        .row.justify-content-center > .col-lg-3:last-child:nth-child(odd) {
-          margin-left: calc(16.66666667% + 12px); /* Offset satu kolom plus gap agar dua kartu di tengah */
-        }
-      }
-
-.anggota-container {
-  max-width: 1100px;
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 16px;
-  padding-right: 16px;
-}
-.anggota-row {
-  justify-content: center !important;
-}
-@media (max-width: 1200px) {
-  .anggota-container {
-    max-width: 98vw;
-  }
-}
-
-.team-card-minimal {
-  background: #fff;
-  border-radius: 16px;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.07);
-  padding: 28px 18px 18px 18px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  min-width: 180px;
-  max-width: 240px;
-  width: 100%;
-  margin-bottom: 20px;
-  transition: box-shadow 0.2s, transform 0.2s;
-}
-.team-card-minimal:hover {
-  box-shadow: 0 8px 24px rgba(0,0,0,0.13);
-  transform: translateY(-6px) scale(1.03);
-}
-.team-image-minimal img {
-  width: 100px;
-  height: 100px;
-  object-fit: cover;
-  border-radius: 50%;
-  margin-bottom: 16px;
-  border: 3px solid #e6e6e6;
-  background: #f8f8f8;
-}
-.team-info-minimal h3 {
-  font-size: 1.08rem;
-  font-weight: 600;
-  margin-bottom: 10px;
-  text-align: center;
-  color: #222;
-}
-.social-links {
-  display: flex;
-  gap: 16px;
-  justify-content: center;
-}
-.social-links a {
-  color: #555;
-  font-size: 1.3rem;
-  transition: color 0.2s;
-}
-.social-links a:hover {
-  color: #0077b5;
-}
-.anggota-modern-wrapper {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
-.anggota-title {
-  text-align: center;
-  font-size: 2.8rem;
-  font-weight: 700;
-  color: #222;
-  letter-spacing: -1px;
-}
-.anggota-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 36px 32px;
-  justify-items: center;
-}
-.anggota-card {
-  background: #fff;
-  border-radius: 18px;
-  box-shadow: 0 4px 18px rgba(0,0,0,0.08);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 0 0 24px 0;
-  width: 100%;
-  max-width: 320px;
-  transition: box-shadow 0.2s, transform 0.2s;
-}
-.anggota-card:hover {
-  box-shadow: 0 8px 32px rgba(0,0,0,0.13);
-  transform: translateY(-8px) scale(1.03);
-}
-.anggota-img-wrap {
-  width: 100%;
-  aspect-ratio: 1/1;
-  background: #f5f5f5;
-  border-radius: 16px 16px 0 0;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.anggota-img-wrap img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 16px 16px 0 0;
-}
-.anggota-nama {
-  font-size: 1.25rem;
-  font-weight: 600;
-  color: #181818;
-  margin: 18px 0 10px 0;
-  text-align: center;
-}
-.anggota-sosmed {
-  display: flex;
-  gap: 18px;
-  justify-content: center;
-}
-.anggota-sosmed a {
-  color: #222;
-  font-size: 1.35rem;
-  transition: color 0.2s, transform 0.2s;
-}
-.anggota-sosmed a:hover {
-  color: #0077b5;
-  transform: scale(1.18);
-}
-@media (max-width: 992px) {
-  .anggota-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-@media (max-width: 600px) {
-  .anggota-title {
-    font-size: 2rem;
-  }
-  .anggota-grid {
-    grid-template-columns: 1fr;
-    gap: 28px 0;
-  }
-  .anggota-card {
-    max-width: 95vw;
-  }
-}
-    </style>
-  </head>
-  <body>
-    <div class="wrapper">
-      <!-- Sidebar -->
-      <div class="sidebar">
-        <div class="logo">
-          <img src="image/1.jpeg" alt="logo">
-          <span class="logo-text">NutriCalc</span>
+                                <ul id="dp-dots">
+                                    <li data-class="1" class="active"></li>
+                                    <li data-class="2"></li>
+                                    <li data-class="3"></li>
+                                    <li data-class="4"></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <input type="hidden" name="aktivitas" id="aktivitas" value="1" />
+                        
+                        
+                        <input type="hidden" name="tee" id="tee-reses"  value=""/>
+                        <input type="hidden" name="imt" id="imts" value="" />
+                        <input type="hidden" name="bbi" id="bbis" value="" />
+                        <input type="hidden" name="kbb" id="kbbs" value="" /><br>
+                        
+                        
+                    </div>
+                </div>
+                <div class="submit">
+                    <button type="submit"  id="calculate-btn">Hitung</button>
+                </div>
+            </form>
         </div>
-        <div class="menu-section">
-          <ul>
-            <li><a href="index.html"><span class="material-icons-outlined">dashboard</span><span class="text">Beranda</span></a></li>
-            <li><a href="materi.html"><span class="material-icons">description</span><span class="text">Materi</span></a></li>
-            <li><a href="anak.html"><span class="material-icons">calculate</span><span class="text">Kalkulator Anak</span></a></li>
-            <li><a href="dewasa.html"><span class="material-icons">calculate</span><span class="text">Kalkulator Dewasa</span></a></li>
-            <li class="active"><a href="anggota.html"><span class="material-icons-outlined">groups</span><span class="text">Anggota</span></a></li>
-          </ul>
-        </div>
-      </div>
-
-    <div class="container-fluid anggota-container my-5">
-      <h2 class="section-title">Tim Kami</h2>
-      <div class="anggota-modern-wrapper py-5">
-        <h1 class="anggota-title mb-5">Halaman Anggota</h1>
-        <div class="anggota-grid">
-          <div class="anggota-card">
-            <div class="anggota-img-wrap">
-              <img src="image/cewe.png" alt="Shafa Rabbani Fityatul Mukarramah" />
-            </div>
-            <div class="anggota-nama">Shafa Rabbani Fityatul Mukarramah</div>
-            <div class="anggota-sosmed">
-              <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
-              <a href="#" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-              <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
-            </div>
-          </div>
-          <div class="anggota-card">
-            <div class="anggota-img-wrap">
-              <img src="image/cewe.png" alt="Sandria Nuriya Az Zahra" />
-            </div>
-            <div class="anggota-nama">Sandria Nuriya Az Zahra</div>
-            <div class="anggota-sosmed">
-              <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
-              <a href="#" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-              <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
-            </div>
-          </div>
-          <div class="anggota-card">
-            <div class="anggota-img-wrap">
-              <img src="image/iting.jpg" alt="Ristin Iman Andini" />
-            </div>
-            <div class="anggota-nama">Ristin Iman Andini</div>
-            <div class="anggota-sosmed">
-              <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
-              <a href="#" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-              <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
-            </div>
-          </div>
-          <div class="anggota-card">
-            <div class="anggota-img-wrap">
-              <img src="image/iky.jpg" alt="Muhamad Rizky Pratama" />
-            </div>
-            <div class="anggota-nama">Muhamad Rizky Pratama</div>
-            <div class="anggota-sosmed">
-              <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
-              <a href="#" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-              <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
-            </div>
-          </div>
-          <div class="anggota-card">
-            <div class="anggota-img-wrap">
-              <img src="image/cowo.png" alt="Muhammad Fawwazul Haq" />
-            </div>
-            <div class="anggota-nama">Muhammad Fawwazul Haq</div>
-            <div class="anggota-sosmed">
-              <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
-              <a href="#" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-              <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
-  </body>
+    </head>
 </html>
