@@ -357,15 +357,7 @@
       }
     </style>
   </head>
-  <body class="bg-gray-100 relative overflow-hidden">
-    <svg class="absolute top-0 left-0 w-full h-full opacity-20">
-        <defs>
-            <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
-                <path d="M 0 10 L 20 10 M 10 0 L 10 20" fill="none" stroke="rgba(0,0,0,0.1)" stroke-width="1" />
-            </pattern>
-        </defs>
-        <rect width="100%" height="100%" fill="url(#grid)" />
-    </svg>
+  <body>
     <div class="wrapper">
       <div class="sidebar">
         <div class="logo">
@@ -598,12 +590,73 @@
               </p>
             </div>
 
-            <!-- <button
+            <button
               type="button"
               class="w-full bg-[#0e1a2b] text-white font-bold rounded-full py-2 px-4 flex justify-between items-center faq-button"
               aria-expanded="false"
               aria-controls="faq6"
-              id="faq6-button"></button> -->
+              id="faq6-button"
+            >
+              <span>Bagaimana cara menghitung kebutuhan kalori harian berdasarkan aktivitas fisik?
+</span>
+              <i class="fas fa-chevron-right"></i>
+            </button>
+
+            <div
+              id="faq6"
+              role="region"
+              aria-labelledby="faq6-button"
+              class="bg-[#dbeeff] rounded-md p-4 text-[#003a82] faq-answer"
+            >
+              <p class="mb-4 leading-relaxed">
+              Kebutuhan kalori harian dihitung berdasarkan BMR (Basal Metabolic Rate) yang kemudian dikalikan dengan faktor aktivitas. Semakin tinggi tingkat aktivitas fisik (misalnya olahraga rutin atau pekerjaan berat), maka semakin besar kalori yang dibutuhkan. Kalkulator NutriCalc secara otomatis memperhitungkan faktor aktivitas berdasarkan pilihan pengguna untuk memberikan hasil yang akurat.
+</p>
+            </div>
+            <button
+              type="button"
+              class="w-full bg-[#0e1a2b] text-white font-bold rounded-full py-2 px-4 flex justify-between items-center faq-button"
+              aria-expanded="false"
+              aria-controls="faq7"
+              id="faq7-button"
+            >
+              <span>Apa perbedaan antara IMT (Indeks Massa Tubuh) dan BMR (Basal Metabolic Rate)?
+</span>
+              <i class="fas fa-chevron-right"></i>
+            </button>
+
+            <div
+              id="faq7"
+              role="region"
+              aria-labelledby="faq7-button"
+              class="bg-[#dbeeff] rounded-md p-4 text-[#003a82] faq-answer"
+            >
+              <p class="mb-4 leading-relaxed">
+              IMT (Indeks Massa Tubuh) adalah ukuran yang digunakan untuk mengetahui status berat badan seseorang (kurus, normal, gemuk) berdasarkan berat dan tinggi badan.
+BMR (Basal Metabolic Rate) adalah jumlah energi (kalori) yang dibutuhkan tubuh untuk menjalankan fungsi dasar seperti bernapas dan sirkulasi darah saat istirahat total.
+Keduanya digunakan bersama dalam kalkulator gizi untuk memberikan gambaran lengkap tentang kondisi tubuh.
+</p>
+            </div>
+            <button
+              type="button"
+              class="w-full bg-[#0e1a2b] text-white font-bold rounded-full py-2 px-4 flex justify-between items-center faq-button"
+              aria-expanded="false"
+              aria-controls="faq8"
+              id="faq8-button"
+            >
+              <span>Mengapa penting menyesuaikan asupan gizi dengan usia dan jenis kelamin?</span>
+              <i class="fas fa-chevron-right"></i>
+            </button>
+
+            <div
+              id="faq8"
+              role="region"
+              aria-labelledby="faq8-button"
+              class="bg-[#dbeeff] rounded-md p-4 text-[#003a82] faq-answer"
+            >
+              <p class="mb-4 leading-relaxed">
+             Usia dan jenis kelamin memengaruhi kebutuhan gizi seseorang. Misalnya, pria biasanya membutuhkan lebih banyak kalori dibandingkan wanita karena perbedaan massa otot. Anak-anak, remaja, dewasa, dan lansia juga memiliki kebutuhan yang berbeda karena metabolisme dan aktivitas tubuh berubah seiring bertambahnya usia. NutriCalc mempertimbangkan faktor-faktor ini untuk memberikan rekomendasi yang lebih tepat. </p>
+            </div>
+            
           </div>
         </div>
         <footer class="text-center p-4 text-black text-sm">
