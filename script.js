@@ -57,7 +57,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const name = document.getElementById("name").value;
     const birthDate = new Date(document.getElementById("birthDate").value);
     const checkDate = new Date(document.getElementById("checkDate").value);
-    const gender = document.getElementById("gender").value;
+    const gender = document.querySelector('input[name="gender"]:checked')?.value;
     const age = parseFloat(document.getElementById("age").value);
     const weight = parseFloat(document.getElementById("weight").value);
     const height = parseFloat(document.getElementById("height").value);

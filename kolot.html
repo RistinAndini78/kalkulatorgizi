@@ -566,12 +566,19 @@
                   />
                 </div>
                 <div class="mb-3">
-                  <label for="gender" class="form-label">Jenis Kelamin</label>
-                  <select class="form-select" id="gender" required>
-                    <option value="">Pilih jenis kelamin</option>
-                    <option value="male">Laki-laki</option>
-                    <option value="female">Perempuan</option>
-                  </select>
+                  <label class="form-label d-block mb-2">Jenis Kelamin:</label>
+                  <div class="d-flex gap-3 gender-options">
+                    <label class="gender-option d-flex flex-column align-items-center">
+                      <input type="radio" name="gender" value="male" required style="display: none;">
+                      <img src="image/male.png" alt="Laki-laki" class="gender-img">
+                      <span>Laki-laki</span>
+                    </label>
+                    <label class="gender-option d-flex flex-column align-items-center">
+                      <input type="radio" name="gender" value="female" style="display: none;">
+                      <img src="image/female.png" alt="Perempuan" class="gender-img">
+                      <span>Perempuan</span>
+                    </label>
+                  </div>
                 </div>
                 <div class="mb-3">
                   <label for="age" class="form-label">Usia (tahun)</label>
