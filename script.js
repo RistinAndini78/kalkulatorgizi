@@ -142,7 +142,7 @@ document.addEventListener("DOMContentLoaded", function () {
         <p><strong>Tinggi badan:</strong> ${height} cm</p>
         <hr>
         <h5>Status Gizi:</h5>
-        <p><strong>BBI (Berat Badan Ideal):</strong> ${bbi.toFixed(2)}</p>
+        <p><strong>BBI (Berat Badan Ideal):</strong> ${bbi.toFixed(2)} kg</p>
         <p><strong>IMT (Indeks Massa Tubuh):</strong> ${bmi.toFixed(2)}</p>
         <p><strong>Status Gizi:</strong> <span class="${statusClass}">${nutritionalStatus}</span></p>
         <div class="alert alert-info mt-2">
@@ -310,6 +310,7 @@ document
 
     // Hitung Total Energy Expenditure (TEE)
     const tee = bmr * activity * growth;
+    const teeWeek = 7 * bmr * activity * growth;
 
     // Hitung kebutuhan protein (1.5-2g per kg berat badan untuk anak)
     const proteinMin = weight * 1.5;
@@ -361,7 +362,7 @@ document
       </div>
       <hr>
       <h5>Status Gizi:</h5>
-      <p><strong>BBI (Berat Bdan Ideal):</strong> ${bbi.toFixed(2)}</p>
+      <p><strong>BBI (Berat Bdan Ideal):</strong> ${bbi.toFixed(2)} kg</p>
       <p><strong>IMT (Indeks Massa Tubuh):</strong> ${bmi.toFixed(2)}</p>
       <p><strong>Status Gizi:</strong> <span class="${statusClass}">${nutritionalStatus}</span></p>
       <div class="alert alert-info mt-2">
@@ -382,6 +383,9 @@ document
       <p><strong>Total Kebutuhan Kalori (TEE):</strong> ${tee.toFixed(
         2
       )} kalori/hari</p>
+      <p><strong>Total Kebutuhan Kalori (TEE):</strong> ${teeWeek.toFixed(
+        2
+      )} kalori/minggu</p>
       <hr>
       <h5>Kebutuhan Makronutrien:</h5>
       <p><strong>Protein:</strong> ${proteinMin.toFixed(
