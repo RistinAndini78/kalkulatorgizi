@@ -196,11 +196,16 @@ document
     const prevDate = new Date(document.getElementById("childPrevCheckDate").value);
 
     // Hitung selisih waktu dalam bulan
-    const deltaTime = (checkDate - prevDate) / (30.44 * 24 * 60 * 60 * 1000); // waktu dalam bulan
+    const deltaTimemonth = (checkDate - prevDate) / (30.44 * 24 * 60 * 60 * 1000); // waktu dalam bulan
 
     // Hitung laju perubahan berat badan (turunan eksplisit)
-    let weightChangeRate = (weight - prevWeight) / deltaTime; // kg per bulan
+    let weightChangeRate = (weight - prevWeight) / deltaTimemonth; // kg per bulan
+    // Hitung selisih waktu dalam bulan
+    const deltaTimeday = (checkDate - prevDate) / (24 * 60 * 60 * 1000); // waktu dalam bulan
 
+    // Hitung laju perubahan berat badan (turunan eksplisit)
+    let weightChangeRateday = (weight - prevWeight) / deltaTimeday; // kg per bulan
+  
     // Hitung usia dalam bulan
     const ageInMonths = Math.floor(
       (checkDate - birthDate) / (30.44 * 24 * 60 * 60 * 1000)
@@ -340,7 +345,8 @@ document
       <h5>Perubahan Berat Badan:</h5>
       <p><strong>Berat Sebelumnya:</strong> ${prevWeight} kg</p>
       <p><strong>Tanggal Sebelumnya:</strong> ${formatDate(prevDate)}</p>
-      <p><strong>Laju Perubahan Berat Badan (dW/dt):</strong> ${weightChangeRate.toFixed(2)} kg/bulan</p>
+      <p><strong>Laju Perubahan Berat Badan :</strong> ${weightChangeRate.toFixed(2)} kg/bulan</p>
+      <p><strong>Laju Perubahan Berat Badan :</strong> ${weightChangeRateday.toFixed(2)} kg/hari</p>
       <div class="alert alert-info mt-2">
         <small>
           <strong>Interpretasi:</strong><br>
