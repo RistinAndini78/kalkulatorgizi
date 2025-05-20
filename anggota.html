@@ -215,6 +215,31 @@
         background-color: #f9f9f9;
         flex: 1;
       }
+      .team-card {
+  width: 500px; /* Ukuran tetap agar 3 muat di baris pertama */
+  border-radius: 20px;
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease;
+  padding: 20px;
+}
+
+.team-card:hover {
+  transform: translateY(-5px);
+}
+
+.team-image img {
+  width: 300px;
+  height: 350px;
+  object-fit: cover;
+}
+
+.team-info {
+  padding: 15px;
+}
+
 
       table {
         width: 100%;
@@ -298,12 +323,6 @@
               >
             </li>
             <li>
-              <a href="materi.html"
-                ><span class="material-icons">description</span
-                ><span class="text">Materi</span></a
-              >
-            </li>
-            <li>
               <a href="anak.html"
                 ><span class="material-icons">calculate</span
                 ><span class="text">Kalkulator Anak</span></a
@@ -325,9 +344,9 @@
         </div>
       </div>
 
-      <main class="container mx-auto">
+      <main class="container">
         <h1 class="text-4xl font-bold text-center mb-10">Anggota</h1>
-        <div class="flex items-center justify-center gap-5 flex-wrap pb-10">
+        <div class="flex items-center justify-center gap-14 flex-wrap pb-10">
           <div class="team-card">
             <div class="team-image">
               <img
@@ -380,7 +399,13 @@
           &copy; 2025 NutriCalc. All rights reserved.
         </footer>
       </main>
-    </div>
+    <a
+  href="bantuan.html"
+  class="fixed bottom-4 right-4 bg-[#0e1a2b] text-white p-4 rounded-full shadow-lg hover:bg-[#1c2b3d] transition-all duration-300"
+  title="Bantuan"
+>
+  <i class="fas fa-question"></i>
+</a>
     <script>
       const sidebar = document.querySelector(".sidebar");
       const container = document.querySelector(".container");
