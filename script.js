@@ -104,6 +104,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Hitung Total Energy Expenditure (TEE)
     const tee = bmr * activity * stress;
+    const teeWeek = bmr * activity * stress * 7;
 
     // Hitung kebutuhan protein (1.2-1.5g per kg berat badan)
     const proteinMin = weight * 1.2;
@@ -161,6 +162,9 @@ document.addEventListener("DOMContentLoaded", function () {
         <p><strong>Total Kebutuhan Kalori (TEE):</strong> ${tee.toFixed(
           2
         )} kalori/hari</p>
+        <p><strong>Total Kebutuhan Kalori (TEE):</strong> ${teeWeek.toFixed(
+          2
+        )} kalori/minggu</p>
         <hr>
         <h5>Kebutuhan Makronutrien:</h5>
         <p><strong>Protein:</strong> ${proteinMin.toFixed(
